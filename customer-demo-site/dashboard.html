@@ -214,14 +214,15 @@
             };
 
             if (pieChart) {
-                pieChart.data = chartData;
-                pieChart.update();
+                pieChart.data.datasets[0].data = [summary.botsDetected, summary.humansVerified, summary.pendingAnalysis];
+                pieChart.update('none'); // no animation on update
             } else {
                 pieChart = new Chart(ctx, {
                     type: 'doughnut',
                     data: chartData,
                     options: {
                         responsive: true,
+                        animation: { duration: 500 },
                         plugins: {
                             legend: { position: 'bottom', labels: { color: '#aaa', font: { size: 12 } } }
                         }
@@ -244,25 +245,24 @@
                 else buckets['80-100%']++;
             });
 
-            const chartData = {
-                labels: Object.keys(buckets),
-                datasets: [{
-                    label: 'Sessions',
-                    data: Object.values(buckets),
-                    backgroundColor: ['#2ecc71', '#27ae60', '#f39c12', '#e67e22', '#e74c3c'],
-                    borderRadius: 4,
-                }]
-            };
-
             if (barChart) {
-                barChart.data = chartData;
-                barChart.update();
+                barChart.data.datasets[0].data = Object.values(buckets);
+                barChart.update('none');
             } else {
                 barChart = new Chart(ctx, {
                     type: 'bar',
-                    data: chartData,
+                    data: {
+                        labels: Object.keys(buckets),
+                        datasets: [{
+                            label: 'Sessions',
+                            data: Object.values(buckets),
+                            backgroundColor: ['#2ecc71', '#27ae60', '#f39c12', '#e67e22', '#e74c3c'],
+                            borderRadius: 4,
+                        }]
+                    },
                     options: {
                         responsive: true,
+                        animation: { duration: 500 },
                         plugins: { legend: { display: false } },
                         scales: {
                             x: { ticks: { color: '#888' }, grid: { color: '#2a3a4a' } },
@@ -273,9 +273,9 @@
             }
         }
 
-        // Load on start and refresh every 5 seconds
+        // Load on start and refresh every 15 seconds (not too fast)
         loadDashboard();
-        setInterval(loadDashboard, 5000);
+        setInterval(loadDashboard, 15000);
 
         async function resetDashboard() {
             if (!confirm('Clear all session data?')) return;

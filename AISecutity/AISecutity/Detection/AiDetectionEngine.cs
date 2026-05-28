@@ -86,12 +86,12 @@ public class AiDetectionEngine : IAiDetectionEngine
 
         double combinedScore = weightedScore;
         if (strongSignals >= 3)
-            combinedScore = Math.Max(combinedScore, 0.75);
+            combinedScore += 0.20;  // Strong boost for 3+ signals
         else if (strongSignals >= 2 && secondMaxSignal >= 0.6)
-            combinedScore = Math.Max(combinedScore, 0.60);
+            combinedScore += 0.15;
 
         if (maxSignal >= 0.9)
-            combinedScore = Math.Max(combinedScore, weightedScore + 0.1);
+            combinedScore += 0.05;
 
         combinedScore = Math.Min(1.0, combinedScore);
 

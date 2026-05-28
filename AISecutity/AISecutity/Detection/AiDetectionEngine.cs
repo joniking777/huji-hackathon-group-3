@@ -689,12 +689,21 @@ public class AiDetectionEngine : IAiDetectionEngine
             score = Math.Min(1.0, typingScore * 0.5 + errorScore * 0.3 + speedPenalty + 0.2 * (mean < 100 ? 1.0 : 0.0));
         }
 
+        // Check for paste events — bots paste instead of typing
+        int pasteEvents = events.Count(e => e.EventType == "paste");
+        if (pasteEvents > 0 && keyEvents.Count > 0)
+        {
+            // If most "typing" is actually pasting, slightly suspicious
+            double pasteRatio = (double)pasteEvents / (pasteEvents + keyEvents.Count);
+            if (pasteRatio > 0.5) score = Math.Min(1.0, score + 0.15);
+        }
+
         return new DetectionSignal
         {
             SignalName = "KeyboardBehavior",
             Weight = 0.10,
             Score = Math.Round(score, 4),
-            Description = $"Analyzed {keyEvents.Count} keyboard events for consistency and error patterns."
+            Description = $"Analyzed {keyEvents.Count} keyboard events, {events.Count(e => e.EventType == "paste")} paste events."
         };
     }
 

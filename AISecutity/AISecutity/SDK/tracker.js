@@ -135,6 +135,22 @@
     lastKeyTime = now;
   });
 
+  // Paste detection — bots paste text instead of typing
+  document.addEventListener('paste', function(e) {
+    var pastedText = (e.clipboardData || window.clipboardData).getData('text');
+    var len = pastedText ? pastedText.length : 0;
+    if (len > 0) {
+      record('paste', {
+        duration: 0,
+        keyboard: {
+          interKeyDelayMs: 0,
+          burstLength: len,
+          errorRate: 0
+        }
+      });
+    }
+  });
+
   // Navigation tracking
   record('navigation', { duration: 0, mouse: null });
 

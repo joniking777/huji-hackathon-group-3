@@ -171,46 +171,5 @@
 
     <!-- AISecutity badge (shows protection is active) -->
     <div class="aisec-badge">🛡️ Protected by AISecutity</div>
-
-    <!-- BOT HONEYPOT: invisible to humans, bots click it -->
-    <!-- Hidden via CSS (display:none, opacity:0, off-screen positioning) -->
-    <!-- Any click on this = instant bot detection -->
-    <a href="/admin-panel" id="hp-link" style="position:absolute;left:-9999px;opacity:0;width:1px;height:1px;overflow:hidden;pointer-events:auto;" tabindex="-1" aria-hidden="true">Admin Panel Access</a>
-    <a href="/api/internal/users" class="hp-trap" style="display:none;">View All Users</a>
-    <div style="position:absolute;top:-1000px;left:-1000px;width:0;height:0;overflow:hidden;">
-        <a href="/secret-data" id="hp-data">Download Database</a>
-        <a href="/api/export-all" id="hp-export">Export Everything</a>
-    </div>
-
-    <script>
-    // Honeypot detection: if any hidden link is clicked or hovered, it's a bot
-    document.querySelectorAll('[id^="hp-"], .hp-trap').forEach(function(el) {
-        el.addEventListener('click', function(e) {
-            e.preventDefault();
-            // Report honeypot trigger to API
-            fetch('http://localhost:5000/api/sdk/track', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({
-                    apiKey: 'shopmax-demo-key',
-                    sessionId: sessionStorage.getItem('_aisec_sid') || 'honeypot-' + Date.now(),
-                    userAgent: navigator.userAgent,
-                    url: window.location.href,
-                    events: [{
-                        sessionId: 'honeypot',
-                        userId: 'honeypot-trigger',
-                        timestamp: new Date().toISOString(),
-                        eventType: 'honeypot_click',
-                        endpoint: e.target.href,
-                        durationMs: 0,
-                        mouse: {x: 0, y: 0, speed: 99999, hasCurve: false},
-                        keyboard: null
-                    }]
-                })
-            });
-            console.warn('[AISecutity] 🍯 Honeypot triggered! Bot detected.');
-        });
-    });
-    </script>
 </body>
 </html>

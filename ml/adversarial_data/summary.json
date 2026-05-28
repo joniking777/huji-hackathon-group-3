@@ -1,0 +1,12 @@
+{
+  "total_sessions": 1200,
+  "bots": 600,
+  "humans": 600,
+  "bot_breakdown": {
+    "medium": 200,
+    "hard": 200,
+    "extreme": 200
+  },
+  "key_constraint": "NO bot hits /api/ endpoints \u2014 all browse normal pages only",
+  "detection_challenge": "Model must learn from timing, mouse, keyboard patterns alone"
+}

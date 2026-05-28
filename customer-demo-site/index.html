@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopMax — Online Store (Demo Customer Site)</title>
+    <title>ShopMax — חנות מקוונת</title>
 
-    <!-- ============================================ -->
-    <!-- STEP 1: Add AISecutity tracker (one line!) -->
-    <!-- ============================================ -->
     <script src="http://localhost:5000/sdk/tracker.js?v=3" 
             data-api-key="shopmax-demo-key"
             data-endpoint="http://localhost:5000/api/sdk/track">
@@ -17,160 +14,230 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f5f5; color: #333; }
         
-        header { background: #2c3e50; color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
-        header h1 { font-size: 24px; }
-        header nav a { color: #ecf0f1; text-decoration: none; margin-left: 20px; font-size: 14px; }
+        header { background: #2c3e50; color: white; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; }
+        header h1 { font-size: 24px; cursor: pointer; }
+        header nav { display: flex; align-items: center; gap: 20px; }
+        header nav a { color: #ecf0f1; text-decoration: none; font-size: 14px; }
         header nav a:hover { color: #3498db; }
+        .cart-icon { position: relative; font-size: 20px; cursor: pointer; }
+        .cart-badge { position: absolute; top: -8px; right: -8px; background: #e74c3c; color: white; font-size: 11px; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
 
-        .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 40px; text-align: center; }
-        .hero h2 { font-size: 36px; margin-bottom: 10px; }
-        .hero p { font-size: 18px; opacity: 0.9; }
+        .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 50px 40px; text-align: center; }
+        .hero h2 { font-size: 32px; margin-bottom: 10px; }
+        .hero p { font-size: 16px; opacity: 0.9; }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 30px 20px; }
+
+        .search-bar { margin-bottom: 30px; position: relative; }
+        .search-bar input { width: 100%; padding: 14px 20px; border: 2px solid #ddd; border-radius: 10px; font-size: 16px; }
+        .search-bar input:focus { border-color: #3498db; outline: none; }
+        .search-results { position: absolute; top: 100%; left: 0; right: 0; background: white; border: 1px solid #ddd; border-radius: 0 0 10px 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: none; z-index: 100; }
+        .search-results a { display: flex; align-items: center; padding: 12px 20px; text-decoration: none; color: #333; border-bottom: 1px solid #eee; }
+        .search-results a:hover { background: #f0f4f8; }
+        .search-results a .sr-icon { font-size: 24px; margin-left: 12px; }
+        .search-results a .sr-name { font-weight: bold; }
+        .search-results a .sr-price { color: #27ae60; margin-right: auto; }
 
         .products { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
-        .product-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s; cursor: pointer; }
+        .product-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s; }
         .product-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
-        .product-img { width: 100%; height: 200px; background: #e0e0e0; display: flex; align-items: center; justify-content: center; font-size: 48px; }
+        .product-card a { text-decoration: none; color: inherit; }
+        .product-img { width: 100%; height: 200px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; font-size: 64px; cursor: pointer; }
         .product-info { padding: 16px; }
         .product-info h3 { font-size: 18px; margin-bottom: 8px; }
+        .product-info h3 a { text-decoration: none; color: #2c3e50; }
+        .product-info h3 a:hover { color: #3498db; }
         .product-info p { color: #666; font-size: 14px; margin-bottom: 12px; }
-        .product-info .price { font-size: 22px; font-weight: bold; color: #27ae60; }
-        .product-info button { width: 100%; padding: 10px; background: #3498db; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; }
-        .product-info button:hover { background: #2980b9; }
-
-        .search-bar { margin-bottom: 30px; display: flex; gap: 10px; }
-        .search-bar input { flex: 1; padding: 12px 16px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; }
-        .search-bar input:focus { border-color: #3498db; outline: none; }
-        .search-bar button { padding: 12px 24px; background: #3498db; color: white; border: none; border-radius: 8px; cursor: pointer; }
+        .product-info .price { font-size: 22px; font-weight: bold; color: #27ae60; margin-bottom: 12px; }
+        .add-to-cart-btn { width: 100%; padding: 10px; background: #3498db; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; transition: background 0.2s; }
+        .add-to-cart-btn:hover { background: #2980b9; }
+        .add-to-cart-btn.added { background: #27ae60; }
 
         .blog { margin-top: 40px; }
         .blog h2 { margin-bottom: 20px; }
         .blog-post { background: white; padding: 24px; border-radius: 8px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
-        .blog-post h3 { margin-bottom: 8px; }
+        .blog-post h3 a { text-decoration: none; color: #2c3e50; }
+        .blog-post h3 a:hover { color: #3498db; }
         .blog-post p { color: #555; line-height: 1.6; }
 
         footer { background: #2c3e50; color: #bdc3c7; padding: 30px 40px; text-align: center; margin-top: 60px; }
+        .aisec-badge { position: fixed; bottom: 20px; left: 20px; background: rgba(0,0,0,0.8); color: #4ecdc4; padding: 8px 16px; border-radius: 20px; font-size: 12px; z-index: 9999; }
 
-        .contact-form { max-width: 500px; margin: 30px auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        .contact-form h2 { margin-bottom: 20px; }
-        .contact-form input, .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; }
-        .contact-form textarea { height: 120px; resize: vertical; }
-        .contact-form button { padding: 12px 24px; background: #27ae60; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; }
-
-        .aisec-badge { position: fixed; bottom: 20px; right: 20px; background: rgba(0,0,0,0.8); color: #4ecdc4; padding: 8px 16px; border-radius: 20px; font-size: 12px; z-index: 9999; }
+        .toast { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%); background: #27ae60; color: white; padding: 12px 24px; border-radius: 8px; font-size: 14px; display: none; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
     </style>
 </head>
 <body>
     <header>
-        <h1>🛒 ShopMax</h1>
+        <h1 onclick="location.href='index.html'">🛒 ShopMax</h1>
         <nav>
             <a href="index.html">ראשי</a>
             <a href="about.html">אודות</a>
-            <a href="product1.html">נעלי ריצה</a>
-            <a href="product2.html">אוזניות</a>
-            <a href="product3.html">שעון חכם</a>
+            <a href="blog.html">בלוג</a>
+            <a href="contact.html">צור קשר</a>
+            <a href="faq.html">שאלות נפוצות</a>
+            <a href="cart.html" class="cart-icon">🛒<span class="cart-badge" id="cart-count">0</span></a>
         </nav>
     </header>
 
     <div class="hero">
-        <h2>Summer Sale — Up to 50% Off!</h2>
-        <p>Browse our collection of premium products</p>
+        <h2>🔥 מבצע קיץ — עד 50% הנחה!</h2>
+        <p>גלו את קולקציית המוצרים הפרימיום שלנו</p>
     </div>
 
     <div class="container">
         <div class="search-bar">
-            <input type="text" placeholder="Search products..." id="search-input">
-            <button onclick="alert('Searching...')">Search</button>
+            <input type="text" placeholder="חפש מוצרים..." id="search-input" oninput="liveSearch(this.value)">
+            <div class="search-results" id="search-results"></div>
         </div>
 
         <div class="products" id="products">
-            <div class="product-card">
-                <div class="product-img">👟</div>
+            <div class="product-card" data-name="נעלי ריצה Pro" data-price="₪329.90">
+                <a href="product1.html"><div class="product-img">👟</div></a>
                 <div class="product-info">
-                    <h3>Running Shoes Pro</h3>
-                    <p>Lightweight performance shoes for daily training</p>
-                    <div class="price">$89.99</div>
-                    <button>Add to Cart</button>
+                    <h3><a href="product1.html">נעלי ריצה Pro</a></h3>
+                    <p>נעליים קלות משקל לאימונים יומיומיים</p>
+                    <div class="price">₪329.90</div>
+                    <button class="add-to-cart-btn" onclick="addToCart('נעלי ריצה Pro', 329.90)">הוסף לסל</button>
                 </div>
             </div>
-            <div class="product-card">
-                <div class="product-img">🎧</div>
+            <div class="product-card" data-name="אוזניות אלחוטיות" data-price="₪549.90">
+                <a href="product2.html"><div class="product-img">🎧</div></a>
                 <div class="product-info">
-                    <h3>Wireless Headphones</h3>
-                    <p>Noise-cancelling with 30hr battery life</p>
-                    <div class="price">$149.99</div>
-                    <button>Add to Cart</button>
+                    <h3><a href="product2.html">אוזניות אלחוטיות</a></h3>
+                    <p>ביטול רעשים אקטיבי, סוללה ל-30 שעות</p>
+                    <div class="price">₪549.90</div>
+                    <button class="add-to-cart-btn" onclick="addToCart('אוזניות אלחוטיות', 549.90)">הוסף לסל</button>
                 </div>
             </div>
-            <div class="product-card">
-                <div class="product-img">⌚</div>
+            <div class="product-card" data-name="שעון חכם X" data-price="₪1,099.90">
+                <a href="product3.html"><div class="product-img">⌚</div></a>
                 <div class="product-info">
-                    <h3>Smart Watch X</h3>
-                    <p>Health tracking, GPS, water resistant</p>
-                    <div class="price">$299.99</div>
-                    <button>Add to Cart</button>
+                    <h3><a href="product3.html">שעון חכם X</a></h3>
+                    <p>מעקב בריאות, GPS, עמיד במים</p>
+                    <div class="price">₪1,099.90</div>
+                    <button class="add-to-cart-btn" onclick="addToCart('שעון חכם X', 1099.90)">הוסף לסל</button>
                 </div>
             </div>
-            <div class="product-card">
-                <div class="product-img">💻</div>
+            <div class="product-card" data-name="מעמד למחשב נייד" data-price="₪189.90">
+                <a href="product1.html"><div class="product-img">💻</div></a>
                 <div class="product-info">
-                    <h3>Laptop Stand</h3>
-                    <p>Ergonomic aluminum stand for any laptop</p>
-                    <div class="price">$49.99</div>
-                    <button>Add to Cart</button>
+                    <h3><a href="product1.html">מעמד למחשב נייד</a></h3>
+                    <p>מעמד ארגונומי מאלומיניום</p>
+                    <div class="price">₪189.90</div>
+                    <button class="add-to-cart-btn" onclick="addToCart('מעמד למחשב נייד', 189.90)">הוסף לסל</button>
                 </div>
             </div>
-            <div class="product-card">
-                <div class="product-img">📱</div>
+            <div class="product-card" data-name="כיסוי לטלפון" data-price="₪89.90">
+                <a href="product2.html"><div class="product-img">📱</div></a>
                 <div class="product-info">
-                    <h3>Phone Case Ultra</h3>
-                    <p>Military-grade protection, slim design</p>
-                    <div class="price">$29.99</div>
-                    <button>Add to Cart</button>
+                    <h3><a href="product2.html">כיסוי לטלפון Ultra</a></h3>
+                    <p>הגנה צבאית, עיצוב דק</p>
+                    <div class="price">₪89.90</div>
+                    <button class="add-to-cart-btn" onclick="addToCart('כיסוי לטלפון', 89.90)">הוסף לסל</button>
                 </div>
             </div>
-            <div class="product-card">
-                <div class="product-img">🎒</div>
+            <div class="product-card" data-name="תיק גב לטיולים" data-price="₪299.90">
+                <a href="product3.html"><div class="product-img">🎒</div></a>
                 <div class="product-info">
-                    <h3>Travel Backpack</h3>
-                    <p>40L capacity, USB charging port</p>
-                    <div class="price">$79.99</div>
-                    <button>Add to Cart</button>
+                    <h3><a href="product3.html">תיק גב לטיולים</a></h3>
+                    <p>40 ליטר, יציאת USB לטעינה</p>
+                    <div class="price">₪299.90</div>
+                    <button class="add-to-cart-btn" onclick="addToCart('תיק גב לטיולים', 299.90)">הוסף לסל</button>
                 </div>
             </div>
         </div>
 
         <div class="blog" id="blog">
-            <h2>Latest from our Blog</h2>
+            <h2>מהבלוג שלנו</h2>
             <div class="blog-post">
-                <h3>Top 10 Running Shoes for 2026</h3>
-                <p>Finding the perfect running shoe can be overwhelming with so many options available. We've tested dozens of pairs to bring you our top picks for comfort, performance, and durability. Whether you're a beginner or a marathon runner, there's something here for everyone.</p>
+                <h3><a href="blog.html">10 נעלי הריצה הטובות ביותר ל-2026</a></h3>
+                <p>מצאו את נעל הריצה המושלמת עבורכם. בדקנו עשרות זוגות כדי להביא לכם את הבחירות המובילות לנוחות, ביצועים ועמידות.</p>
             </div>
             <div class="blog-post">
-                <h3>How to Choose the Right Headphones</h3>
-                <p>With so many headphone options on the market, it's important to consider your use case. Are you commuting? Working out? Working from home? Each scenario calls for different features like noise cancellation, water resistance, or microphone quality.</p>
+                <h3><a href="blog.html">איך לבחור אוזניות אלחוטיות</a></h3>
+                <p>עם כל כך הרבה אפשרויות בשוק, חשוב להבין מה אתם צריכים. נסיעות? אימונים? עבודה מהבית? לכל תרחיש יש אוזניות מתאימות.</p>
             </div>
-            <div class="blog-post">
-                <h3>Smart Watch Buying Guide</h3>
-                <p>Smart watches have evolved from simple step counters to full health monitoring devices. Modern watches can track heart rate, blood oxygen, sleep quality, and even detect irregular heart rhythms. Here's what to look for when buying one.</p>
-            </div>
-        </div>
-
-        <div class="contact-form" id="contact">
-            <h2>Contact Us</h2>
-            <input type="text" placeholder="Your Name">
-            <input type="email" placeholder="Your Email">
-            <textarea placeholder="Your Message"></textarea>
-            <button>Send Message</button>
         </div>
     </div>
 
     <footer>
-        <p>© 2026 ShopMax Demo Store | Protected by AISecutity Bot Detection</p>
+        <p>© 2026 ShopMax | מוגנים על ידי AISecutity Bot Detection</p>
     </footer>
 
-    <!-- AISecutity badge (shows protection is active) -->
     <div class="aisec-badge">🛡️ Protected by AISecutity</div>
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // === CART ===
+        let cart = JSON.parse(localStorage.getItem('shopmax_cart') || '[]');
+        updateCartBadge();
+
+        function addToCart(name, price) {
+            const existing = cart.find(item => item.name === name);
+            if (existing) {
+                existing.qty++;
+            } else {
+                cart.push({ name, price, qty: 1 });
+            }
+            localStorage.setItem('shopmax_cart', JSON.stringify(cart));
+            updateCartBadge();
+            showToast('✓ ' + name + ' נוסף לסל!');
+            
+            // Visual feedback on button
+            event.target.textContent = '✓ נוסף!';
+            event.target.classList.add('added');
+            setTimeout(() => {
+                event.target.textContent = 'הוסף לסל';
+                event.target.classList.remove('added');
+            }, 1500);
+        }
+
+        function updateCartBadge() {
+            const total = cart.reduce((sum, item) => sum + item.qty, 0);
+            document.getElementById('cart-count').textContent = total;
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.style.display = 'block';
+            setTimeout(() => { toast.style.display = 'none'; }, 2000);
+        }
+
+        // === LIVE SEARCH ===
+        const products = [
+            { name: 'נעלי ריצה Pro', icon: '👟', price: '₪329.90', link: 'product1.html' },
+            { name: 'אוזניות אלחוטיות', icon: '🎧', price: '₪549.90', link: 'product2.html' },
+            { name: 'שעון חכם X', icon: '⌚', price: '₪1,099.90', link: 'product3.html' },
+            { name: 'מעמד למחשב נייד', icon: '💻', price: '₪189.90', link: 'product1.html' },
+            { name: 'כיסוי לטלפון Ultra', icon: '📱', price: '₪89.90', link: 'product2.html' },
+            { name: 'תיק גב לטיולים', icon: '🎒', price: '₪299.90', link: 'product3.html' },
+        ];
+
+        function liveSearch(query) {
+            const results = document.getElementById('search-results');
+            if (!query || query.length < 1) {
+                results.style.display = 'none';
+                return;
+            }
+
+            const matches = products.filter(p => p.name.includes(query));
+            if (matches.length === 0) {
+                results.innerHTML = '<div style="padding:16px;color:#888;text-align:center">לא נמצאו תוצאות</div>';
+            } else {
+                results.innerHTML = matches.map(p => 
+                    `<a href="${p.link}"><span class="sr-icon">${p.icon}</span><span class="sr-name">${p.name}</span><span class="sr-price">${p.price}</span></a>`
+                ).join('');
+            }
+            results.style.display = 'block';
+        }
+
+        // Close search results when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.search-bar')) {
+                document.getElementById('search-results').style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>

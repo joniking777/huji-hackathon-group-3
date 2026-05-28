@@ -437,7 +437,7 @@ public class AiDetectionEngine : IAiDetectionEngine
         var mouseEvents = events.Where(e => e.Mouse != null).ToList();
 
         if (mouseEvents.Count < 3)
-            return new DetectionSignal { SignalName = "MouseBehavior", Weight = 0.10, Score = 0.5, Description = "Insufficient mouse data." };
+            return new DetectionSignal { SignalName = "MouseBehavior", Weight = 0.06, Score = 0.5, Description = "Insufficient mouse data." };
 
         int linearMoves = 0;
         int totalMoves = 0;
@@ -499,7 +499,7 @@ public class AiDetectionEngine : IAiDetectionEngine
         var mouseEvents = events.Where(e => e.Mouse != null).ToList();
 
         if (mouseEvents.Count < 4)
-            return new DetectionSignal { SignalName = "MouseJerk", Weight = 0.12, Score = 0.5, Description = "Insufficient mouse data for jerk analysis." };
+            return new DetectionSignal { SignalName = "MouseJerk", Weight = 0.07, Score = 0.5, Description = "Insufficient mouse data for jerk analysis." };
 
         // Calculate velocities between consecutive points
         var velocitiesX = new List<double>();
@@ -517,7 +517,7 @@ public class AiDetectionEngine : IAiDetectionEngine
         }
 
         if (velocitiesX.Count < 3)
-            return new DetectionSignal { SignalName = "MouseJerk", Weight = 0.12, Score = 0.5, Description = "Insufficient velocity data." };
+            return new DetectionSignal { SignalName = "MouseJerk", Weight = 0.07, Score = 0.5, Description = "Insufficient velocity data." };
 
         // Calculate accelerations
         var accX = new List<double>();
@@ -532,7 +532,7 @@ public class AiDetectionEngine : IAiDetectionEngine
         }
 
         if (accX.Count < 2)
-            return new DetectionSignal { SignalName = "MouseJerk", Weight = 0.12, Score = 0.5, Description = "Insufficient acceleration data." };
+            return new DetectionSignal { SignalName = "MouseJerk", Weight = 0.07, Score = 0.5, Description = "Insufficient acceleration data." };
 
         // Calculate jerk (change in acceleration)
         var jerks = new List<double>();
@@ -547,7 +547,7 @@ public class AiDetectionEngine : IAiDetectionEngine
         }
 
         if (jerks.Count == 0)
-            return new DetectionSignal { SignalName = "MouseJerk", Weight = 0.12, Score = 0.5, Description = "Could not compute jerk." };
+            return new DetectionSignal { SignalName = "MouseJerk", Weight = 0.07, Score = 0.5, Description = "Could not compute jerk." };
 
         // 1. Zero-jerk ratio: what % of jerk values are near zero?
         // Bots with constant speed have zero jerk. Humans never have exactly zero.
@@ -602,7 +602,7 @@ public class AiDetectionEngine : IAiDetectionEngine
         var mouseEvents = events.Where(e => e.Mouse?.Speed != null).ToList();
 
         if (mouseEvents.Count < 3)
-            return new DetectionSignal { SignalName = "MouseSpeedProfile", Weight = 0.20, Score = 0.5, Description = "Insufficient mouse speed data." };
+            return new DetectionSignal { SignalName = "MouseSpeedProfile", Weight = 0.12, Score = 0.5, Description = "Insufficient mouse speed data." };
 
         var speeds = mouseEvents.Select(e => e.Mouse!.Speed!.Value).ToList();
 

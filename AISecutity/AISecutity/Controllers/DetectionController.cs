@@ -45,14 +45,14 @@ public class DetectionController : ControllerBase
                     result.Signals.Add(new DetectionSignal
                     {
                         SignalName = "ML_Model_v2",
-                        Weight = 0.25,
+                        Weight = 0.35,
                         Score = mlResult.BotProbability,
                         Description = $"ML prediction: {mlResult.Prediction} (confidence: {mlResult.Confidence:F2}, model: {mlResult.ModelVersion})"
                     });
 
                     // Recalculate combined score with ML input
                     double mlBoost = mlResult.BotProbability * 0.3;
-                    double newScore = result.AiProbabilityScore * 0.6 + mlResult.BotProbability * 0.4;
+                    double newScore = result.AiProbabilityScore * 0.5 + mlResult.BotProbability * 0.5;
 
                     if (mlSaysBot && mlResult.Confidence >= 0.90)
                     {

@@ -26,9 +26,9 @@ namespace AISecutity.Detection;
 public class AiDetectionEngine : IAiDetectionEngine
 {
     // Tiered thresholds — separate "monitor", "challenge", and "block" levels
-    private const double MonitorThreshold = 0.30;   // Log it, watch closely
-    private const double ChallengeThreshold = 0.50; // Show CAPTCHA
-    private const double BlockThreshold = 0.65;     // Hard block
+    private const double MonitorThreshold = 0.25;   // Log it, watch closely
+    private const double ChallengeThreshold = 0.40; // Show CAPTCHA
+    private const double BlockThreshold = 0.55;     // Hard block
 
     // Threshold adjustments based on user history
     private const double FirstVisitBonus = 0.10;    // First-timers get +0.10 threshold (more lenient)
@@ -86,9 +86,9 @@ public class AiDetectionEngine : IAiDetectionEngine
 
         double combinedScore = weightedScore;
         if (strongSignals >= 3)
-            combinedScore += 0.20;  // Strong boost for 3+ signals
+            combinedScore += 0.25;  // Strong boost for 3+ signals
         else if (strongSignals >= 2 && secondMaxSignal >= 0.6)
-            combinedScore += 0.15;
+            combinedScore += 0.20;  // Catches Camoufox (2 signals)
 
         if (maxSignal >= 0.9)
             combinedScore += 0.05;

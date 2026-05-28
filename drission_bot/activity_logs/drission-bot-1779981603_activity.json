@@ -1,0 +1,158 @@
+{
+  "sessionId": "drission-bot-1779981603",
+  "userId": "drission-user-001",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/125.0.0.0 Safari/537.36",
+  "ipAddress": "127.0.0.1",
+  "events": [
+    {
+      "sessionId": "drission-bot-1779981603",
+      "userId": "drission-user-001",
+      "timestamp": "2026-05-28T15:20:10.107027+00:00",
+      "eventType": "navigation",
+      "endpoint": "/about",
+      "durationMs": 6131,
+      "mouse": {
+        "x": 630,
+        "y": 520,
+        "speed": 1194.0,
+        "hasCurve": true
+      },
+      "keyboard": null
+    },
+    {
+      "sessionId": "drission-bot-1779981603",
+      "userId": "drission-user-001",
+      "timestamp": "2026-05-28T15:20:17.104015+00:00",
+      "eventType": "navigation",
+      "endpoint": "/",
+      "durationMs": 6108,
+      "mouse": {
+        "x": 158,
+        "y": 467,
+        "speed": 889.7,
+        "hasCurve": false
+      },
+      "keyboard": null
+    },
+    {
+      "sessionId": "drission-bot-1779981603",
+      "userId": "drission-user-001",
+      "timestamp": "2026-05-28T15:20:23.949651+00:00",
+      "eventType": "navigation",
+      "endpoint": "/products",
+      "durationMs": 6088,
+      "mouse": {
+        "x": 862,
+        "y": 190,
+        "speed": 1345.3,
+        "hasCurve": false
+      },
+      "keyboard": null
+    },
+    {
+      "sessionId": "drission-bot-1779981603",
+      "userId": "drission-user-001",
+      "timestamp": "2026-05-28T15:20:30.866933+00:00",
+      "eventType": "navigation",
+      "endpoint": "/contact",
+      "durationMs": 6063,
+      "mouse": {
+        "x": 329,
+        "y": 178,
+        "speed": 1147.7,
+        "hasCurve": false
+      },
+      "keyboard": null
+    },
+    {
+      "sessionId": "drission-bot-1779981603",
+      "userId": "drission-user-001",
+      "timestamp": "2026-05-28T15:20:37.638283+00:00",
+      "eventType": "navigation",
+      "endpoint": "/products",
+      "durationMs": 6057,
+      "mouse": {
+        "x": 246,
+        "y": 377,
+        "speed": 979.0,
+        "hasCurve": false
+      },
+      "keyboard": null
+    },
+    {
+      "sessionId": "drission-bot-1779981603",
+      "userId": "drission-user-001",
+      "timestamp": "2026-05-28T15:20:54.531002+00:00",
+      "eventType": "navigation",
+      "endpoint": "/",
+      "durationMs": 6081,
+      "mouse": {
+        "x": 920,
+        "y": 664,
+        "speed": 1342.2,
+        "hasCurve": false
+      },
+      "keyboard": null
+    },
+    {
+      "sessionId": "drission-bot-1779981603",
+      "userId": "drission-user-001",
+      "timestamp": "2026-05-28T15:21:11.491544+00:00",
+      "eventType": "navigation",
+      "endpoint": "/",
+      "durationMs": 6086,
+      "mouse": {
+        "x": 259,
+        "y": 796,
+        "speed": 1173.7,
+        "hasCurve": true
+      },
+      "keyboard": null
+    },
+    {
+      "sessionId": "drission-bot-1779981603",
+      "userId": "drission-user-001",
+      "timestamp": "2026-05-28T15:21:18.474247+00:00",
+      "eventType": "navigation",
+      "endpoint": "/about",
+      "durationMs": 6075,
+      "mouse": {
+        "x": 544,
+        "y": 535,
+        "speed": 911.9,
+        "hasCurve": false
+      },
+      "keyboard": null
+    },
+    {
+      "sessionId": "drission-bot-1779981603",
+      "userId": "drission-user-001",
+      "timestamp": "2026-05-28T15:21:35.230035+00:00",
+      "eventType": "navigation",
+      "endpoint": "/contact",
+      "durationMs": 6077,
+      "mouse": {
+        "x": 127,
+        "y": 666,
+        "speed": 1346.4,
+        "hasCurve": false
+      },
+      "keyboard": null
+    },
+    {
+      "sessionId": "drission-bot-1779981603",
+      "userId": "drission-user-001",
+      "timestamp": "2026-05-28T15:21:42.104186+00:00",
+      "eventType": "navigation",
+      "endpoint": "/",
+      "durationMs": 6091,
+      "mouse": {
+        "x": 913,
+        "y": 688,
+        "speed": 1219.1,
+        "hasCurve": false
+      },
+      "keyboard": null
+    }
+  ]
+}

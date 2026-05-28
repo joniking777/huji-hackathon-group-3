@@ -63,8 +63,10 @@ public class AiDetectionEngine : IAiDetectionEngine
         // Run each detection heuristic
         signals.Add(AnalyzeTimingRegularity(events));
         signals.Add(AnalyzeTimingJitter(events));
+        signals.Add(AnalyzeTimingDistribution(events));    // NEW v3: catches Camoufox
         signals.Add(AnalyzeActionSpeed(events));
         signals.Add(AnalyzeMouseBehavior(events));
+        signals.Add(AnalyzeMouseJerk(events));             // NEW v3: jerk analysis
         signals.Add(AnalyzeMouseSpeedProfile(events));
         signals.Add(AnalyzeKeyboardBehavior(events));
         signals.Add(AnalyzeNavigationPattern(events));
@@ -307,6 +309,83 @@ public class AiDetectionEngine : IAiDetectionEngine
     }
 
     /// <summary>
+    /// NEW v3: Timing Distribution Shape — catches Camoufox and similar tools.
+    /// 
+    /// Human timing follows a LOG-NORMAL distribution (right-skewed):
+    /// - Most actions are moderate speed (1-3 seconds)
+    /// - Occasional long pauses (5-20 seconds) create a right tail
+    /// - Skewness > 1.0 is typical for humans
+    /// 
+    /// Bot timing (Camoufox, Playwright) uses UNIFORM random:
+    /// - random.uniform(min, max) produces flat distribution
+    /// - Skewness ≈ 0 (symmetric)
+    /// - No right tail (max is capped)
+    /// 
+    /// We detect this by measuring:
+    /// 1. Skewness of interval distribution
+    /// 2. Kurtosis (peakedness) — uniform is flat, log-normal is peaked
+    /// 3. Ratio of median to mean — log-normal has mean > median
+    /// </summary>
+    private DetectionSignal AnalyzeTimingDistribution(List<ActivityEvent> events)
+    {
+        var intervals = new List<double>();
+        for (int i = 1; i < events.Count; i++)
+        {
+            var gap = (events[i].Timestamp - events[i - 1].Timestamp).TotalMilliseconds;
+            intervals.Add(gap);
+        }
+
+        if (intervals.Count < 6)
+            return new DetectionSignal { SignalName = "TimingDistribution", Weight = 0.10, Score = 0.5, Description = "Insufficient data for distribution analysis." };
+
+        double mean = intervals.Average();
+        double median = intervals.OrderBy(x => x).ElementAt(intervals.Count / 2);
+        double stdDev = Math.Sqrt(intervals.Sum(x => Math.Pow(x - mean, 2)) / intervals.Count);
+
+        if (stdDev == 0)
+            return new DetectionSignal { SignalName = "TimingDistribution", Weight = 0.10, Score = 0.9, Description = "Zero variance = bot." };
+
+        // 1. Skewness: humans > 1.0 (right-skewed), bots ≈ 0 (symmetric/uniform)
+        double skewness = intervals.Sum(x => Math.Pow((x - mean) / stdDev, 3)) / intervals.Count;
+
+        // 2. Mean/Median ratio: log-normal has mean > median (ratio > 1.2)
+        // Uniform has mean ≈ median (ratio ≈ 1.0)
+        double meanMedianRatio = median > 0 ? mean / median : 1;
+
+        // 3. Tail weight: what % of intervals are > 2x the median?
+        // Humans have a heavy right tail (10-20%), uniform bots don't (< 5%)
+        int tailCount = intervals.Count(i => i > median * 2);
+        double tailRatio = (double)tailCount / intervals.Count;
+
+        // Score
+        double skewScore;
+        if (skewness < 0.2) skewScore = 0.85;       // Symmetric = uniform = bot
+        else if (skewness < 0.5) skewScore = 0.65;  // Slightly skewed = suspicious
+        else if (skewness < 1.0) skewScore = 0.4;   // Moderately skewed = borderline
+        else skewScore = 0.1;                         // Highly skewed = human (log-normal)
+
+        double ratioScore;
+        if (meanMedianRatio < 1.05) ratioScore = 0.8;   // Mean ≈ median = uniform
+        else if (meanMedianRatio < 1.15) ratioScore = 0.5;
+        else ratioScore = 0.1;                            // Mean >> median = log-normal
+
+        double tailScore;
+        if (tailRatio < 0.03) tailScore = 0.8;      // No tail = uniform/bot
+        else if (tailRatio < 0.08) tailScore = 0.5;
+        else tailScore = 0.1;                         // Heavy tail = human
+
+        double score = skewScore * 0.40 + ratioScore * 0.30 + tailScore * 0.30;
+
+        return new DetectionSignal
+        {
+            SignalName = "TimingDistribution",
+            Weight = 0.10,
+            Score = Math.Round(score, 4),
+            Description = $"Skewness: {skewness:F2} (low=uniform/bot), Mean/Median: {meanMedianRatio:F2}, Tail: {tailRatio:F2}."
+        };
+    }
+
+    /// <summary>
     /// AI agents can perform actions faster than any human.
     /// Sub-100ms response times for complex actions are suspicious.
     /// Also flags sessions where ALL actions are suspiciously fast (< 500ms).
@@ -390,6 +469,122 @@ public class AiDetectionEngine : IAiDetectionEngine
             Weight = 0.10,
             Score = Math.Round(score, 4),
             Description = $"Linear movement ratio: {linearRatio:F2}, No-curve ratio: {noCurveRatio:F2}."
+        };
+    }
+
+    /// <summary>
+    /// NEW v3: Mouse Jerk Analysis — the strongest anti-automation signal.
+    /// 
+    /// Jerk = rate of change of acceleration (3rd derivative of position).
+    /// 
+    /// Human hands produce SMOOTH jerk profiles because:
+    /// - Muscles have inertia — can't change acceleration instantly
+    /// - Natural movements follow "minimum jerk" trajectories
+    /// - Jerk values are continuous and bounded
+    /// 
+    /// Bot mouse movements produce ABNORMAL jerk because:
+    /// - Bezier curves have mathematical discontinuities at control points
+    /// - Linear interpolation has zero jerk (then infinite at direction changes)
+    /// - Automation tools sample at fixed intervals (uniform spacing = zero jerk)
+    /// 
+    /// We measure:
+    /// 1. Jerk smoothness — ratio of smooth vs abrupt acceleration changes
+    /// 2. Zero-jerk ratio — % of movements with exactly zero jerk (impossible for humans)
+    /// 3. Jerk variance — humans have moderate variance, bots have either zero or extreme
+    /// </summary>
+    private DetectionSignal AnalyzeMouseJerk(List<ActivityEvent> events)
+    {
+        var mouseEvents = events.Where(e => e.Mouse != null).ToList();
+
+        if (mouseEvents.Count < 4)
+            return new DetectionSignal { SignalName = "MouseJerk", Weight = 0.12, Score = 0.5, Description = "Insufficient mouse data for jerk analysis." };
+
+        // Calculate velocities between consecutive points
+        var velocitiesX = new List<double>();
+        var velocitiesY = new List<double>();
+
+        for (int i = 1; i < mouseEvents.Count; i++)
+        {
+            double dx = mouseEvents[i].Mouse!.X - mouseEvents[i - 1].Mouse!.X;
+            double dy = mouseEvents[i].Mouse!.Y - mouseEvents[i - 1].Mouse!.Y;
+            var dt = (mouseEvents[i].Timestamp - mouseEvents[i - 1].Timestamp).TotalSeconds;
+            if (dt <= 0) dt = 0.001;
+
+            velocitiesX.Add(dx / dt);
+            velocitiesY.Add(dy / dt);
+        }
+
+        if (velocitiesX.Count < 3)
+            return new DetectionSignal { SignalName = "MouseJerk", Weight = 0.12, Score = 0.5, Description = "Insufficient velocity data." };
+
+        // Calculate accelerations
+        var accX = new List<double>();
+        var accY = new List<double>();
+
+        for (int i = 1; i < velocitiesX.Count; i++)
+        {
+            var dt = (mouseEvents[i + 1].Timestamp - mouseEvents[i].Timestamp).TotalSeconds;
+            if (dt <= 0) dt = 0.001;
+            accX.Add((velocitiesX[i] - velocitiesX[i - 1]) / dt);
+            accY.Add((velocitiesY[i] - velocitiesY[i - 1]) / dt);
+        }
+
+        if (accX.Count < 2)
+            return new DetectionSignal { SignalName = "MouseJerk", Weight = 0.12, Score = 0.5, Description = "Insufficient acceleration data." };
+
+        // Calculate jerk (change in acceleration)
+        var jerks = new List<double>();
+        for (int i = 1; i < accX.Count; i++)
+        {
+            var dt = (mouseEvents[i + 2].Timestamp - mouseEvents[i + 1].Timestamp).TotalSeconds;
+            if (dt <= 0) dt = 0.001;
+            double jerkX = (accX[i] - accX[i - 1]) / dt;
+            double jerkY = (accY[i] - accY[i - 1]) / dt;
+            double jerkMagnitude = Math.Sqrt(jerkX * jerkX + jerkY * jerkY);
+            jerks.Add(jerkMagnitude);
+        }
+
+        if (jerks.Count == 0)
+            return new DetectionSignal { SignalName = "MouseJerk", Weight = 0.12, Score = 0.5, Description = "Could not compute jerk." };
+
+        // 1. Zero-jerk ratio: what % of jerk values are near zero?
+        // Bots with constant speed have zero jerk. Humans never have exactly zero.
+        double jerkThreshold = 100; // Below this = effectively zero
+        int zeroJerks = jerks.Count(j => j < jerkThreshold);
+        double zeroJerkRatio = (double)zeroJerks / jerks.Count;
+
+        // 2. Jerk variance: humans have moderate, consistent jerk.
+        // Bots have either all-zero or extreme spikes (no middle ground).
+        double meanJerk = jerks.Average();
+        double stdJerk = Math.Sqrt(jerks.Sum(j => Math.Pow(j - meanJerk, 2)) / jerks.Count);
+        double jerkCV = meanJerk > 0 ? stdJerk / meanJerk : 0;
+
+        // 3. Smoothness: ratio of "smooth" transitions (jerk < 2x mean) vs spikes
+        int smoothTransitions = jerks.Count(j => j < meanJerk * 2);
+        double smoothRatio = (double)smoothTransitions / jerks.Count;
+
+        // Score: high zero-jerk = bot, very low jerk CV = bot, very high smoothness = bot
+        double zeroScore;
+        if (zeroJerkRatio > 0.7) zeroScore = 0.9;      // Mostly zero jerk = automation
+        else if (zeroJerkRatio > 0.5) zeroScore = 0.7;
+        else if (zeroJerkRatio > 0.3) zeroScore = 0.4;
+        else zeroScore = 0.1;                            // Low zero-jerk = human
+
+        // Jerk CV: humans ~0.8-1.5, bots either <0.3 (constant) or >3.0 (spiky)
+        double cvScore;
+        if (jerkCV < 0.3) cvScore = 0.85;               // Too consistent = bot
+        else if (jerkCV > 3.0) cvScore = 0.7;           // Too spiky = bot (Bezier control points)
+        else if (jerkCV < 0.6) cvScore = 0.5;
+        else cvScore = 0.1;                              // Normal variance = human
+
+        double score = zeroScore * 0.45 + cvScore * 0.35 + (smoothRatio > 0.9 ? 0.6 : 0.1) * 0.20;
+
+        return new DetectionSignal
+        {
+            SignalName = "MouseJerk",
+            Weight = 0.12,
+            Score = Math.Round(score, 4),
+            Description = $"Zero-jerk ratio: {zeroJerkRatio:F2}, Jerk CV: {jerkCV:F2}, Smooth ratio: {smoothRatio:F2}."
         };
     }
 

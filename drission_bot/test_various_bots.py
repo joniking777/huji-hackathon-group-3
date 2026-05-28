@@ -297,6 +297,86 @@ def bot_5_drission_bot() -> dict:
     }
 
 
+def bot_6_camoufox() -> dict:
+    """Camoufox Bot: Hardened Firefox fork designed to evade detection.
+
+    Camoufox patches browser fingerprinting but still has automation tells:
+    - Mouse movements use Bezier curves but with mathematical precision
+      (jerk profile is too smooth — no hand tremor)
+    - Timing is randomized but from a uniform distribution (not log-normal like humans)
+    - Mouse positions land exactly on elements (pixel-perfect targeting)
+    - Speed between points is calculated, not physical (constant acceleration)
+    """
+    base = datetime(2026, 5, 28, 18, 25, 0, tzinfo=timezone.utc)
+    events = []
+    offset = 0
+
+    pages = ["/home", "/products", "/products/3", "/products/7",
+             "/cart", "/checkout", "/products/12", "/about",
+             "/products/3", "/home", "/blog"]
+
+    # Camoufox uses randomized delays but from uniform distribution
+    for i, page in enumerate(pages):
+        offset += random.uniform(1500, 4500)  # Uniform, not log-normal
+
+        # Mouse: Bezier-calculated positions — looks curved but jerk is wrong
+        # Points are mathematically spaced (constant velocity segments)
+        prev_x = events[-1]["mouse"]["x"] if events and events[-1].get("mouse") else 600
+        prev_y = events[-1]["mouse"]["y"] if events and events[-1].get("mouse") else 400
+
+        # Camoufox calculates target position precisely (center of element)
+        target_x = 400 + (i * 97) % 800  # Deterministic-looking positions
+        target_y = 250 + (i * 73) % 500
+
+        # Speed is calculated from distance/time — too consistent per-move
+        distance = ((target_x - prev_x)**2 + (target_y - prev_y)**2)**0.5
+        move_time = random.uniform(300, 500)  # Fixed move duration
+        speed = distance / (move_time / 1000)
+
+        events.append({
+            "sessionId": "camoufox-bot-001",
+            "userId": "camoufox-user",
+            "timestamp": make_timestamp(base, offset),
+            "eventType": random.choice(["click", "navigation"]),
+            "endpoint": page,
+            "durationMs": random.randint(800, 2500),
+            "mouse": {
+                "x": target_x,
+                "y": target_y,
+                "speed": round(speed, 1),
+                "hasCurve": True,  # Camoufox always curves (Bezier)
+            },
+            "keyboard": None,
+        })
+
+        # Camoufox sometimes scrolls (with calculated positions)
+        if random.random() < 0.4:
+            offset += random.uniform(500, 1500)
+            events.append({
+                "sessionId": "camoufox-bot-001",
+                "userId": "camoufox-user",
+                "timestamp": make_timestamp(base, offset),
+                "eventType": "scroll",
+                "endpoint": page,
+                "durationMs": random.randint(300, 800),
+                "mouse": {
+                    "x": target_x,  # Same X (scrolling doesn't move X)
+                    "y": target_y + random.randint(100, 300),
+                    "speed": round(random.uniform(400, 700), 1),
+                    "hasCurve": True,
+                },
+                "keyboard": None,
+            })
+
+    return {
+        "sessionId": "camoufox-bot-001",
+        "userId": "camoufox-user",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0",
+        "ipAddress": "203.0.113.42",
+        "events": events,
+    }
+
+
 def generate_human_control() -> dict:
     """Control: A real human session for comparison."""
     base = datetime(2026, 5, 28, 18, 25, 0, tzinfo=timezone.utc)
@@ -387,7 +467,8 @@ def main():
         ("3. Form Spammer", bot_3_form_spammer(), "Rapid form fills with perfect typing, credential stuffing"),
         ("4. Content Thief", bot_4_content_thief(), "Scrolls articles systematically, copies content"),
         ("5. DrissionPage Bot", bot_5_drission_bot(), "Real browser automation, consistent page load timing"),
-        ("6. Human (control)", generate_human_control(), "Real human browsing pattern for comparison"),
+        ("6. Camoufox Bot", bot_6_camoufox(), "Hardened Firefox fork, Bezier curves but wrong jerk profile"),
+        ("7. Human (control)", generate_human_control(), "Real human browsing pattern for comparison"),
     ]
 
     results = []

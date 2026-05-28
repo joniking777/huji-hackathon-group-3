@@ -31,12 +31,12 @@ public class BanController : ControllerBase
     {
         var result = _engine.Analyze(session);
 
-        // ALWAYS consult ML model for a second opinion (not just uncertain cases)
-        // If the rule engine already blocked it (score > 0.60), ML confirms
-        // If the rule engine is uncertain, ML decides
-        // If both are uncertain, escalate to "monitor" instead of allowing
-        var mlResult = await _mlClient.PredictAsync(session);
-        if (mlResult != null)
+        // Consult ML only when uncertain (saves ~2s per request for clear cases)
+        // Clear bots (>0.55) and clear humans (<0.05) don't need ML
+        if (result.AiProbabilityScore >= 0.05 && result.AiProbabilityScore < 0.55)
+        {
+            var mlResult = await _mlClient.PredictAsync(session);
+            if (mlResult != null)
         {
             result.Signals.Add(new DetectionSignal
             {
@@ -76,6 +76,7 @@ public class BanController : ControllerBase
                     result.RecommendedAction = result.AiProbabilityScore >= 0.75 ? "block" : "challenge";
                     result.ThreatLevel = result.AiProbabilityScore >= 0.75 ? "critical" : "high";
                 }
+            }
             }
         }
 

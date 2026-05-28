@@ -60,21 +60,39 @@ public class AiDetectionEngine : IAiDetectionEngine
             };
         }
 
-        // Run each detection heuristic
+        // === OPTIMIZED SIGNAL EVALUATION ===
+        // Phase 1: Run cheap signals first (timing + navigation + API)
         signals.Add(AnalyzeTimingRegularity(events));
-        signals.Add(AnalyzeTimingJitter(events));
-        signals.Add(AnalyzeTimingDistribution(events));    // NEW v3: catches Camoufox
         signals.Add(AnalyzeActionSpeed(events));
-        signals.Add(AnalyzeMouseBehavior(events));
-        signals.Add(AnalyzeMouseJerk(events));             // NEW v3: jerk analysis
-        signals.Add(AnalyzeMouseSpeedProfile(events));
-        signals.Add(AnalyzeKeyboardBehavior(events));
-        signals.Add(AnalyzeNavigationPattern(events));
-        signals.Add(AnalyzeNavigationBehavior(events));
-        signals.Add(AnalyzeScrollBehavior(events));        // NEW v3.2: reading focal point
-        signals.Add(AnalyzeHumanProof(events));            // NEW v4: catches Camoufox
         signals.Add(AnalyzeApiTargeting(events));
         signals.Add(AnalyzeSessionRhythm(events));
+        signals.Add(AnalyzeHumanProof(events));
+
+        // Early exit: if already clearly a bot from cheap signals, skip expensive ones
+        double quickScore = signals.Sum(s => s.Score * s.Weight) / signals.Sum(s => s.Weight);
+        int quickStrong = signals.Count(s => s.Score >= 0.55);
+
+        if (quickScore < 0.70 || quickStrong < 3)
+        {
+            // Phase 2: Need more signals — run medium-cost ones
+            signals.Add(AnalyzeTimingJitter(events));
+            signals.Add(AnalyzeTimingDistribution(events));
+            signals.Add(AnalyzeNavigationPattern(events));
+            signals.Add(AnalyzeNavigationBehavior(events));
+            signals.Add(AnalyzeKeyboardBehavior(events));
+            signals.Add(AnalyzeScrollBehavior(events));
+
+            quickScore = signals.Sum(s => s.Score * s.Weight) / signals.Sum(s => s.Weight);
+            quickStrong = signals.Count(s => s.Score >= 0.55);
+
+            if (quickScore < 0.60 || quickStrong < 3)
+            {
+                // Phase 3: Still uncertain — run expensive mouse analysis
+                signals.Add(AnalyzeMouseBehavior(events));
+                signals.Add(AnalyzeMouseSpeedProfile(events));
+                signals.Add(AnalyzeMouseJerk(events));
+            }
+        }
 
         // Weighted score calculation
         double totalWeight = signals.Sum(s => s.Weight);

@@ -36,17 +36,18 @@
   }
 
   function record(eventType, data) {
-    events.push({
+    var evt = {
       sessionId: SESSION_ID,
       userId: API_KEY,
       timestamp: new Date().toISOString(),
       eventType: eventType,
       endpoint: window.location.pathname,
       durationMs: data.duration || 0,
-      mouse: data.mouse || null,
-      keyboard: data.keyboard || null,
-      scroll: data.scroll || null,
-    });
+    };
+    if (data.mouse) evt.mouse = data.mouse;
+    if (data.keyboard) evt.keyboard = data.keyboard;
+    if (data.scroll) evt.scroll = data.scroll;
+    events.push(evt);
   }
 
   // Mouse tracking

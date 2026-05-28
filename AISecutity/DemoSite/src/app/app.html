@@ -1,0 +1,183 @@
+<div class="ynet-wrapper">
+  <!-- Top Red Bar -->
+  <header class="top-bar">
+    <div class="top-bar-inner">
+      <div class="logo">
+        <span class="logo-icon">🛡️</span>
+        <span class="logo-text">AI Security Monitor</span>
+      </div>
+      <div class="header-date">{{ currentDate }}</div>
+      <div class="header-stats">
+        <span class="stat-badge threats">🤖 {{ threatCount }} איומים</span>
+        <span class="stat-badge safe">✅ {{ safeCount }} תקין</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breaking News Ticker -->
+  <div class="ticker-bar">
+    <span class="ticker-label">⚡ עדכון חי</span>
+    <div class="ticker-content">
+      <marquee behavior="scroll" direction="right" scrollamount="4">
+        @for (result of latestThreats; track result.sessionId) {
+          <span class="ticker-item" [class.threat]="result.isLikelyAiAgent">
+            {{ result.isLikelyAiAgent ? '🚨' : '✓' }}
+            Session {{ result.sessionId }} | {{ result.userId }} |
+            סיכון: {{ (result.aiProbabilityScore * 100).toFixed(0) }}%
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+          </span>
+        }
+      </marquee>
+    </div>
+  </div>
+
+  <!-- Main Content Grid (Ynet-style) -->
+  <div class="main-grid">
+    <!-- Left Sidebar - Stats -->
+    <aside class="sidebar-left">
+      <div class="sidebar-box">
+        <h3 class="sidebar-title">📊 סטטיסטיקות</h3>
+        <div class="stat-row">
+          <span>סה"כ סשנים</span>
+          <strong>{{ results.length }}</strong>
+        </div>
+        <div class="stat-row">
+          <span>זוהו כבוטים</span>
+          <strong class="red">{{ threatCount }}</strong>
+        </div>
+        <div class="stat-row">
+          <span>משתמשים תקינים</span>
+          <strong class="green">{{ safeCount }}</strong>
+        </div>
+        <div class="stat-row">
+          <span>ציון ממוצע</span>
+          <strong>{{ avgScore }}%</strong>
+        </div>
+      </div>
+
+      <div class="sidebar-box">
+        <h3 class="sidebar-title">🔍 סיגנלים מובילים</h3>
+        @for (signal of topSignals; track signal.name) {
+          <div class="signal-bar">
+            <span class="signal-name">{{ signal.name }}</span>
+            <div class="signal-meter">
+              <div class="signal-fill" [style.width.%]="signal.avgScore * 100"
+                   [class.high]="signal.avgScore > 0.7"
+                   [class.medium]="signal.avgScore > 0.4 && signal.avgScore <= 0.7"
+                   [class.low]="signal.avgScore <= 0.4"></div>
+            </div>
+          </div>
+        }
+      </div>
+    </aside>
+
+    <!-- Main Content - News Feed -->
+    <main class="content-main">
+      <!-- Featured / Top Story -->
+      @if (featuredResult) {
+        <div class="featured-story" [class.threat]="featuredResult.isLikelyAiAgent">
+          <div class="featured-badge">{{ featuredResult.isLikelyAiAgent ? '🚨 התראה ראשית' : '📋 אירוע אחרון' }}</div>
+          <h1 class="featured-title">
+            {{ featuredResult.isLikelyAiAgent ? 'זוהה סוכן AI חשוד' : 'פעילות משתמש תקינה' }}
+          </h1>
+          <div class="featured-meta">
+            <span>👤 {{ featuredResult.userId }}</span>
+            <span>🔑 {{ featuredResult.sessionId }}</span>
+            <span>📊 {{ featuredResult.totalEventsAnalyzed }} אירועים</span>
+          </div>
+          <div class="featured-score">
+            <div class="score-circle" [class.danger]="featuredResult.aiProbabilityScore >= 0.65"
+                 [class.warning]="featuredResult.aiProbabilityScore >= 0.4 && featuredResult.aiProbabilityScore < 0.65"
+                 [class.safe]="featuredResult.aiProbabilityScore < 0.4">
+              {{ (featuredResult.aiProbabilityScore * 100).toFixed(0) }}%
+            </div>
+            <span class="score-label">ציון AI</span>
+          </div>
+          <div class="featured-signals">
+            @for (signal of featuredResult.signals; track signal.signalName) {
+              <div class="signal-chip" [class.hot]="signal.score > 0.7">
+                {{ signal.signalName }}: {{ (signal.score * 100).toFixed(0) }}%
+              </div>
+            }
+          </div>
+          <div class="featured-time">{{ featuredResult.analyzedAt | date:'HH:mm:ss' }}</div>
+        </div>
+      }
+
+      <!-- News Feed Items -->
+      <div class="feed-grid">
+        @for (result of results; track result.sessionId; let i = $index) {
+          @if (i > 0) {
+            <article class="feed-item" [class.threat]="result.isLikelyAiAgent" (click)="selectResult(result)">
+              <div class="feed-item-header">
+                <span class="feed-badge" [class.danger]="result.isLikelyAiAgent">
+                  {{ result.isLikelyAiAgent ? '🤖 BOT' : '👤 HUMAN' }}
+                </span>
+                <span class="feed-time">{{ result.analyzedAt | date:'HH:mm' }}</span>
+              </div>
+              <h3 class="feed-title">
+                {{ result.isLikelyAiAgent ? 'נתפס: סוכן אוטומטי' : 'משתמש אנושי מאומת' }}
+              </h3>
+              <p class="feed-meta">
+                {{ result.userId }} | {{ result.totalEventsAnalyzed }} אירועים |
+                סיכון {{ (result.aiProbabilityScore * 100).toFixed(0) }}%
+              </p>
+              <div class="feed-score-bar">
+                <div class="feed-score-fill"
+                     [style.width.%]="result.aiProbabilityScore * 100"
+                     [class.danger]="result.aiProbabilityScore >= 0.65"
+                     [class.warning]="result.aiProbabilityScore >= 0.4 && result.aiProbabilityScore < 0.65"
+                     [class.safe]="result.aiProbabilityScore < 0.4">
+                </div>
+              </div>
+            </article>
+          }
+        }
+      </div>
+    </main>
+
+    <!-- Right Sidebar - Live Log -->
+    <aside class="sidebar-right">
+      <div class="sidebar-box">
+        <h3 class="sidebar-title">📡 לוג חי</h3>
+        <div class="live-log">
+          @for (result of results.slice(0, 10); track result.sessionId) {
+            <div class="log-entry" [class.threat]="result.isLikelyAiAgent">
+              <span class="log-time">{{ result.analyzedAt | date:'HH:mm:ss' }}</span>
+              <span class="log-icon">{{ result.isLikelyAiAgent ? '🚨' : '✅' }}</span>
+              <span class="log-text">{{ result.userId }}</span>
+              <span class="log-score">{{ (result.aiProbabilityScore * 100).toFixed(0) }}%</span>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="sidebar-box">
+        <h3 class="sidebar-title">⚙️ מצב מערכת</h3>
+        <div class="system-status">
+          <div class="status-item">
+            <span class="status-dot online"></span>
+            <span>מנוע זיהוי: פעיל</span>
+          </div>
+          <div class="status-item">
+            <span class="status-dot online"></span>
+            <span>API: תקין</span>
+          </div>
+          <div class="status-item">
+            <span class="status-dot online"></span>
+            <span>ניטור: זמן אמת</span>
+          </div>
+          <div class="status-item">
+            <span class="status-dot"></span>
+            <span>סף זיהוי: 65%</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <span>AI Security Detection System v1.0 | Powered by AISecutity Engine</span>
+  </footer>
+</div>

@@ -1,0 +1,118 @@
+[
+  {
+    "sessionId": "sess-001",
+    "userId": "user-abc",
+    "userAgent": "Mozilla/5.0 (compatible; GPTBot/1.0)",
+    "ipAddress": "10.0.0.50",
+    "events": [
+      {
+        "sessionId": "sess-001",
+        "userId": "user-abc",
+        "timestamp": "2026-05-28T10:00:00.000Z",
+        "eventType": "navigation",
+        "endpoint": "/api/products",
+        "durationMs": 45,
+        "mouse": { "x": 100, "y": 200, "speed": 5000, "hasCurve": false },
+        "keyboard": null
+      },
+      {
+        "sessionId": "sess-001",
+        "userId": "user-abc",
+        "timestamp": "2026-05-28T10:00:00.120Z",
+        "eventType": "api_call",
+        "endpoint": "/api/products/1",
+        "durationMs": 30,
+        "mouse": { "x": 300, "y": 200, "speed": 8000, "hasCurve": false },
+        "keyboard": null
+      },
+      {
+        "sessionId": "sess-001",
+        "userId": "user-abc",
+        "timestamp": "2026-05-28T10:00:00.250Z",
+        "eventType": "api_call",
+        "endpoint": "/api/products/1/reviews",
+        "durationMs": 25,
+        "mouse": { "x": 500, "y": 200, "speed": 9000, "hasCurve": false },
+        "keyboard": null
+      },
+      {
+        "sessionId": "sess-001",
+        "userId": "user-abc",
+        "timestamp": "2026-05-28T10:00:00.380Z",
+        "eventType": "api_call",
+        "endpoint": "/api/cart/add",
+        "durationMs": 20,
+        "mouse": { "x": 700, "y": 200, "speed": 10000, "hasCurve": false },
+        "keyboard": null
+      },
+      {
+        "sessionId": "sess-001",
+        "userId": "user-abc",
+        "timestamp": "2026-05-28T10:00:00.500Z",
+        "eventType": "form_submit",
+        "endpoint": "/api/checkout",
+        "durationMs": 15,
+        "mouse": null,
+        "keyboard": { "interKeyDelayMs": 12, "burstLength": 50, "errorRate": 0.0 }
+      }
+    ]
+  },
+  {
+    "sessionId": "sess-002",
+    "userId": "user-xyz",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/125.0",
+    "ipAddress": "192.168.1.100",
+    "events": [
+      {
+        "sessionId": "sess-002",
+        "userId": "user-xyz",
+        "timestamp": "2026-05-28T10:00:00.000Z",
+        "eventType": "navigation",
+        "endpoint": "/home",
+        "durationMs": 3200,
+        "mouse": { "x": 400, "y": 300, "speed": 800, "hasCurve": true },
+        "keyboard": null
+      },
+      {
+        "sessionId": "sess-002",
+        "userId": "user-xyz",
+        "timestamp": "2026-05-28T10:00:05.400Z",
+        "eventType": "click",
+        "endpoint": "/products",
+        "durationMs": 800,
+        "mouse": { "x": 620, "y": 450, "speed": 600, "hasCurve": true },
+        "keyboard": null
+      },
+      {
+        "sessionId": "sess-002",
+        "userId": "user-xyz",
+        "timestamp": "2026-05-28T10:00:12.100Z",
+        "eventType": "scroll",
+        "endpoint": "/products",
+        "durationMs": 2000,
+        "mouse": { "x": 620, "y": 800, "speed": 400, "hasCurve": true },
+        "keyboard": null
+      },
+      {
+        "sessionId": "sess-002",
+        "userId": "user-xyz",
+        "timestamp": "2026-05-28T10:00:18.500Z",
+        "eventType": "click",
+        "endpoint": "/products/5",
+        "durationMs": 1500,
+        "mouse": { "x": 350, "y": 520, "speed": 550, "hasCurve": true },
+        "keyboard": null
+      },
+      {
+        "sessionId": "sess-002",
+        "userId": "user-xyz",
+        "timestamp": "2026-05-28T10:00:30.200Z",
+        "eventType": "keypress",
+        "endpoint": "/products/5/review",
+        "durationMs": 8000,
+        "mouse": null,
+        "keyboard": { "interKeyDelayMs": 145, "burstLength": 5, "errorRate": 0.08 }
+      }
+    ]
+  }
+]

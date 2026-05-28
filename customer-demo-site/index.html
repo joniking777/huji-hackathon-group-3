@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopMax — Online Store (Demo Customer Site)</title>
+
+    <!-- ============================================ -->
+    <!-- STEP 1: Add AISecutity tracker (one line!) -->
+    <!-- ============================================ -->
+    <script src="http://localhost:5000/sdk/tracker.js" 
+            data-api-key="shopmax-demo-key"
+            data-endpoint="http://localhost:5000/api/sdk/track">
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f5f5; color: #333; }
+        
+        header { background: #2c3e50; color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
+        header h1 { font-size: 24px; }
+        header nav a { color: #ecf0f1; text-decoration: none; margin-left: 20px; font-size: 14px; }
+        header nav a:hover { color: #3498db; }
+
+        .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 40px; text-align: center; }
+        .hero h2 { font-size: 36px; margin-bottom: 10px; }
+        .hero p { font-size: 18px; opacity: 0.9; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+
+        .products { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+        .product-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s; cursor: pointer; }
+        .product-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+        .product-img { width: 100%; height: 200px; background: #e0e0e0; display: flex; align-items: center; justify-content: center; font-size: 48px; }
+        .product-info { padding: 16px; }
+        .product-info h3 { font-size: 18px; margin-bottom: 8px; }
+        .product-info p { color: #666; font-size: 14px; margin-bottom: 12px; }
+        .product-info .price { font-size: 22px; font-weight: bold; color: #27ae60; }
+        .product-info button { width: 100%; padding: 10px; background: #3498db; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; }
+        .product-info button:hover { background: #2980b9; }
+
+        .search-bar { margin-bottom: 30px; display: flex; gap: 10px; }
+        .search-bar input { flex: 1; padding: 12px 16px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; }
+        .search-bar input:focus { border-color: #3498db; outline: none; }
+        .search-bar button { padding: 12px 24px; background: #3498db; color: white; border: none; border-radius: 8px; cursor: pointer; }
+
+        .blog { margin-top: 40px; }
+        .blog h2 { margin-bottom: 20px; }
+        .blog-post { background: white; padding: 24px; border-radius: 8px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+        .blog-post h3 { margin-bottom: 8px; }
+        .blog-post p { color: #555; line-height: 1.6; }
+
+        footer { background: #2c3e50; color: #bdc3c7; padding: 30px 40px; text-align: center; margin-top: 60px; }
+
+        .contact-form { max-width: 500px; margin: 30px auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .contact-form h2 { margin-bottom: 20px; }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; }
+        .contact-form textarea { height: 120px; resize: vertical; }
+        .contact-form button { padding: 12px 24px; background: #27ae60; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; }
+
+        .aisec-badge { position: fixed; bottom: 20px; right: 20px; background: rgba(0,0,0,0.8); color: #4ecdc4; padding: 8px 16px; border-radius: 20px; font-size: 12px; z-index: 9999; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🛒 ShopMax</h1>
+        <nav>
+            <a href="#products">Products</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
+            <a href="#login">Login</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h2>Summer Sale — Up to 50% Off!</h2>
+        <p>Browse our collection of premium products</p>
+    </div>
+
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" placeholder="Search products..." id="search-input">
+            <button onclick="alert('Searching...')">Search</button>
+        </div>
+
+        <div class="products" id="products">
+            <div class="product-card">
+                <div class="product-img">👟</div>
+                <div class="product-info">
+                    <h3>Running Shoes Pro</h3>
+                    <p>Lightweight performance shoes for daily training</p>
+                    <div class="price">$89.99</div>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">🎧</div>
+                <div class="product-info">
+                    <h3>Wireless Headphones</h3>
+                    <p>Noise-cancelling with 30hr battery life</p>
+                    <div class="price">$149.99</div>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">⌚</div>
+                <div class="product-info">
+                    <h3>Smart Watch X</h3>
+                    <p>Health tracking, GPS, water resistant</p>
+                    <div class="price">$299.99</div>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">💻</div>
+                <div class="product-info">
+                    <h3>Laptop Stand</h3>
+                    <p>Ergonomic aluminum stand for any laptop</p>
+                    <div class="price">$49.99</div>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">📱</div>
+                <div class="product-info">
+                    <h3>Phone Case Ultra</h3>
+                    <p>Military-grade protection, slim design</p>
+                    <div class="price">$29.99</div>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">🎒</div>
+                <div class="product-info">
+                    <h3>Travel Backpack</h3>
+                    <p>40L capacity, USB charging port</p>
+                    <div class="price">$79.99</div>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="blog" id="blog">
+            <h2>Latest from our Blog</h2>
+            <div class="blog-post">
+                <h3>Top 10 Running Shoes for 2026</h3>
+                <p>Finding the perfect running shoe can be overwhelming with so many options available. We've tested dozens of pairs to bring you our top picks for comfort, performance, and durability. Whether you're a beginner or a marathon runner, there's something here for everyone.</p>
+            </div>
+            <div class="blog-post">
+                <h3>How to Choose the Right Headphones</h3>
+                <p>With so many headphone options on the market, it's important to consider your use case. Are you commuting? Working out? Working from home? Each scenario calls for different features like noise cancellation, water resistance, or microphone quality.</p>
+            </div>
+            <div class="blog-post">
+                <h3>Smart Watch Buying Guide</h3>
+                <p>Smart watches have evolved from simple step counters to full health monitoring devices. Modern watches can track heart rate, blood oxygen, sleep quality, and even detect irregular heart rhythms. Here's what to look for when buying one.</p>
+            </div>
+        </div>
+
+        <div class="contact-form" id="contact">
+            <h2>Contact Us</h2>
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea placeholder="Your Message"></textarea>
+            <button>Send Message</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 ShopMax Demo Store | Protected by AISecutity Bot Detection</p>
+    </footer>
+
+    <!-- AISecutity badge (shows protection is active) -->
+    <div class="aisec-badge">🛡️ Protected by AISecutity</div>
+</body>
+</html>

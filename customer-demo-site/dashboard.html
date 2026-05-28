@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AISecutity Dashboard — Bot Detection Monitor</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #0f1923; color: #e0e0e0; min-height: 100vh; }
+
+        .header { background: #1a2332; padding: 20px 30px; border-bottom: 1px solid #2a3a4a; display: flex; justify-content: space-between; align-items: center; }
+        .header h1 { font-size: 22px; color: #4ecdc4; }
+        .header .api-key { font-size: 12px; color: #666; background: #0d1520; padding: 6px 12px; border-radius: 4px; font-family: monospace; }
+
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 24px 30px; }
+        .stat-card { background: #1a2332; border-radius: 10px; padding: 20px; text-align: center; border: 1px solid #2a3a4a; }
+        .stat-card .number { font-size: 36px; font-weight: bold; margin: 8px 0; }
+        .stat-card .label { font-size: 13px; color: #888; }
+        .stat-card.bots .number { color: #e74c3c; }
+        .stat-card.humans .number { color: #2ecc71; }
+        .stat-card.total .number { color: #3498db; }
+        .stat-card.rate .number { color: #f39c12; }
+
+        .content { padding: 0 30px 30px; }
+
+        .section-title { font-size: 16px; color: #4ecdc4; margin: 24px 0 12px; padding-bottom: 8px; border-bottom: 1px solid #2a3a4a; }
+
+        .sessions-table { width: 100%; border-collapse: collapse; background: #1a2332; border-radius: 8px; overflow: hidden; }
+        .sessions-table th { background: #0d1520; padding: 12px 16px; text-align: left; font-size: 12px; color: #888; text-transform: uppercase; }
+        .sessions-table td { padding: 12px 16px; border-top: 1px solid #2a3a4a; font-size: 13px; }
+        .sessions-table tr:hover { background: #1e2d3d; }
+
+        .badge { padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: bold; }
+        .badge.bot { background: rgba(231, 76, 60, 0.2); color: #e74c3c; }
+        .badge.human { background: rgba(46, 204, 113, 0.2); color: #2ecc71; }
+        .badge.pending { background: rgba(241, 196, 15, 0.2); color: #f1c40f; }
+
+        .score-bar { width: 80px; height: 6px; background: #2a3a4a; border-radius: 3px; display: inline-block; vertical-align: middle; margin-right: 8px; }
+        .score-bar .fill { height: 100%; border-radius: 3px; }
+        .score-bar .fill.danger { background: #e74c3c; }
+        .score-bar .fill.warning { background: #f39c12; }
+        .score-bar .fill.safe { background: #2ecc71; }
+
+        .action-badge { padding: 3px 8px; border-radius: 4px; font-size: 11px; }
+        .action-badge.block { background: rgba(231, 76, 60, 0.2); color: #e74c3c; }
+        .action-badge.challenge { background: rgba(243, 156, 18, 0.2); color: #f39c12; }
+        .action-badge.monitor { background: rgba(52, 152, 219, 0.2); color: #3498db; }
+        .action-badge.allow { background: rgba(46, 204, 113, 0.1); color: #2ecc71; }
+
+        .refresh-btn { padding: 8px 16px; background: #4ecdc4; color: #0f1923; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
+        .refresh-btn:hover { background: #45b7aa; }
+
+        .loading { text-align: center; padding: 40px; color: #666; }
+        .error { text-align: center; padding: 40px; color: #e74c3c; }
+
+        .integration-box { background: #1a2332; border: 1px solid #2a3a4a; border-radius: 8px; padding: 20px; margin-top: 20px; }
+        .integration-box code { background: #0d1520; padding: 12px; display: block; border-radius: 4px; font-size: 13px; color: #4ecdc4; white-space: pre-wrap; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🛡️ AISecutity Dashboard</h1>
+        <div>
+            <button class="refresh-btn" onclick="loadDashboard()">↻ Refresh</button>
+            <span class="api-key" id="api-key-display">API Key: shopmax-demo-key</span>
+        </div>
+    </div>
+
+    <div class="stats-grid" id="stats">
+        <div class="stat-card total"><div class="label">Total Sessions</div><div class="number" id="stat-total">—</div></div>
+        <div class="stat-card bots"><div class="label">Bots Detected</div><div class="number" id="stat-bots">—</div></div>
+        <div class="stat-card humans"><div class="label">Humans Verified</div><div class="number" id="stat-humans">—</div></div>
+        <div class="stat-card rate"><div class="label">Bot Rate</div><div class="number" id="stat-rate">—</div></div>
+    </div>
+
+    <div class="content">
+        <div class="section-title">Live Sessions</div>
+        <table class="sessions-table">
+            <thead>
+                <tr>
+                    <th>Session</th>
+                    <th>Status</th>
+                    <th>Score</th>
+                    <th>Action</th>
+                    <th>Events</th>
+                    <th>Duration</th>
+                    <th>URL</th>
+                </tr>
+            </thead>
+            <tbody id="sessions-body">
+                <tr><td colspan="7" class="loading">Loading...</td></tr>
+            </tbody>
+        </table>
+
+        <div class="section-title">Integration</div>
+        <div class="integration-box">
+            <p>Add this to your website's &lt;head&gt; tag:</p>
+            <code id="snippet-code">Loading...</code>
+        </div>
+    </div>
+
+    <script>
+        const API_KEY = 'shopmax-demo-key';
+        const API_BASE = 'http://localhost:5000';
+
+        async function loadDashboard() {
+            try {
+                const resp = await fetch(`${API_BASE}/api/sdk/dashboard?apiKey=${API_KEY}`);
+                const data = await resp.json();
+
+                // Update stats
+                document.getElementById('stat-total').textContent = data.summary.totalSessions;
+                document.getElementById('stat-bots').textContent = data.summary.botsDetected;
+                document.getElementById('stat-humans').textContent = data.summary.humansVerified;
+                document.getElementById('stat-rate').textContent = data.summary.detectionRate.toFixed(1) + '%';
+
+                // Update sessions table
+                const tbody = document.getElementById('sessions-body');
+                if (data.sessions.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="7" class="loading">No sessions yet. Browse the demo site to generate data.</td></tr>';
+                    return;
+                }
+
+                tbody.innerHTML = data.sessions.map(s => {
+                    const statusClass = s.isBot ? 'bot' : (s.eventCount < 5 ? 'pending' : 'human');
+                    const statusText = s.isBot ? 'BOT' : (s.eventCount < 5 ? 'PENDING' : 'HUMAN');
+                    const scorePercent = (s.lastScore * 100).toFixed(0);
+                    const scoreClass = s.lastScore >= 0.6 ? 'danger' : s.lastScore >= 0.4 ? 'warning' : 'safe';
+                    const actionClass = s.lastAction || 'allow';
+                    const duration = s.duration ? s.duration.toFixed(0) + 's' : '—';
+
+                    return `<tr>
+                        <td style="font-family:monospace;font-size:11px">${s.sessionId.substring(0, 20)}...</td>
+                        <td><span class="badge ${statusClass}">${statusText}</span></td>
+                        <td><span class="score-bar"><span class="fill ${scoreClass}" style="width:${scorePercent}%"></span></span>${scorePercent}%</td>
+                        <td><span class="action-badge ${actionClass}">${(s.lastAction || 'pending').toUpperCase()}</span></td>
+                        <td>${s.eventCount}</td>
+                        <td>${duration}</td>
+                        <td style="font-size:11px;color:#666">${(s.url || '').substring(0, 30)}</td>
+                    </tr>`;
+                }).join('');
+
+            } catch (e) {
+                document.getElementById('sessions-body').innerHTML = 
+                    `<tr><td colspan="7" class="error">Cannot connect to API. Make sure the server is running on ${API_BASE}</td></tr>`;
+            }
+        }
+
+        async function loadSnippet() {
+            try {
+                const resp = await fetch(`${API_BASE}/api/sdk/script?apiKey=${API_KEY}`);
+                const data = await resp.json();
+                document.getElementById('snippet-code').textContent = data.snippet;
+            } catch (e) {
+                document.getElementById('snippet-code').textContent = '<!-- Could not load snippet -->';
+            }
+        }
+
+        // Load on start and refresh every 5 seconds
+        loadDashboard();
+        loadSnippet();
+        setInterval(loadDashboard, 5000);
+    </script>
+</body>
+</html>

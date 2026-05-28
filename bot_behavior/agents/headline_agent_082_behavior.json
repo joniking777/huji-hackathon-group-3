@@ -1,0 +1,78 @@
+[
+  {
+    "agent_name": "headline_agent_082",
+    "event_type": "started",
+    "timestamp": "2026-05-28T12:04:58.466165+00:00",
+    "elapsed_since_start_ms": 31.02,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_082",
+    "event_type": "waiting_semaphore",
+    "timestamp": "2026-05-28T12:04:58.466165+00:00",
+    "elapsed_since_start_ms": 31.02,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_082",
+    "event_type": "acquired_semaphore",
+    "timestamp": "2026-05-28T12:05:02.372706+00:00",
+    "elapsed_since_start_ms": 3937.56,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_082",
+    "event_type": "fetch_start",
+    "timestamp": "2026-05-28T12:05:02.372706+00:00",
+    "elapsed_since_start_ms": 3937.56,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_082",
+    "event_type": "fetch_end",
+    "timestamp": "2026-05-28T12:05:05.395896+00:00",
+    "elapsed_since_start_ms": 6960.75,
+    "details": {
+      "bytes": 590105
+    }
+  },
+  {
+    "agent_name": "headline_agent_082",
+    "event_type": "parse_start",
+    "timestamp": "2026-05-28T12:05:05.395896+00:00",
+    "elapsed_since_start_ms": 6960.75,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_082",
+    "event_type": "parse_end",
+    "timestamp": "2026-05-28T12:05:05.456248+00:00",
+    "elapsed_since_start_ms": 7021.11,
+    "details": {
+      "item_count": 5
+    }
+  },
+  {
+    "agent_name": "headline_agent_082",
+    "event_type": "write_start",
+    "timestamp": "2026-05-28T12:05:05.456248+00:00",
+    "elapsed_since_start_ms": 7021.11,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_082",
+    "event_type": "write_end",
+    "timestamp": "2026-05-28T12:05:05.456248+00:00",
+    "elapsed_since_start_ms": 7021.11,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_082",
+    "event_type": "completed",
+    "timestamp": "2026-05-28T12:05:05.456248+00:00",
+    "elapsed_since_start_ms": 7021.11,
+    "details": {
+      "item_count": 5
+    }
+  }
+]

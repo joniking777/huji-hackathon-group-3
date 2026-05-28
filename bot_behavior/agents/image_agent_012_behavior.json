@@ -1,0 +1,78 @@
+[
+  {
+    "agent_name": "image_agent_012",
+    "event_type": "started",
+    "timestamp": "2026-05-28T12:04:58.467399+00:00",
+    "elapsed_since_start_ms": 32.26,
+    "details": {}
+  },
+  {
+    "agent_name": "image_agent_012",
+    "event_type": "waiting_semaphore",
+    "timestamp": "2026-05-28T12:04:58.467399+00:00",
+    "elapsed_since_start_ms": 32.26,
+    "details": {}
+  },
+  {
+    "agent_name": "image_agent_012",
+    "event_type": "acquired_semaphore",
+    "timestamp": "2026-05-28T12:05:16.237697+00:00",
+    "elapsed_since_start_ms": 17802.55,
+    "details": {}
+  },
+  {
+    "agent_name": "image_agent_012",
+    "event_type": "fetch_start",
+    "timestamp": "2026-05-28T12:05:16.237697+00:00",
+    "elapsed_since_start_ms": 17802.55,
+    "details": {}
+  },
+  {
+    "agent_name": "image_agent_012",
+    "event_type": "fetch_end",
+    "timestamp": "2026-05-28T12:05:19.150455+00:00",
+    "elapsed_since_start_ms": 20715.31,
+    "details": {
+      "bytes": 590105
+    }
+  },
+  {
+    "agent_name": "image_agent_012",
+    "event_type": "parse_start",
+    "timestamp": "2026-05-28T12:05:19.150455+00:00",
+    "elapsed_since_start_ms": 20715.31,
+    "details": {}
+  },
+  {
+    "agent_name": "image_agent_012",
+    "event_type": "parse_end",
+    "timestamp": "2026-05-28T12:05:19.208649+00:00",
+    "elapsed_since_start_ms": 20773.51,
+    "details": {
+      "item_count": 202
+    }
+  },
+  {
+    "agent_name": "image_agent_012",
+    "event_type": "write_start",
+    "timestamp": "2026-05-28T12:05:19.208649+00:00",
+    "elapsed_since_start_ms": 20773.51,
+    "details": {}
+  },
+  {
+    "agent_name": "image_agent_012",
+    "event_type": "write_end",
+    "timestamp": "2026-05-28T12:05:19.212061+00:00",
+    "elapsed_since_start_ms": 20776.92,
+    "details": {}
+  },
+  {
+    "agent_name": "image_agent_012",
+    "event_type": "completed",
+    "timestamp": "2026-05-28T12:05:19.212061+00:00",
+    "elapsed_since_start_ms": 20776.92,
+    "details": {
+      "item_count": 202
+    }
+  }
+]

@@ -1,0 +1,1249 @@
+{
+  "summary": {
+    "total": 150,
+    "correct": 143,
+    "precision": 1.0,
+    "recall": 0.93,
+    "f1": 0.9637305699481865
+  },
+  "by_type": {
+    "Stealth Crawler": {
+      "total": 20,
+      "correct": 13,
+      "scores": [
+        0.75,
+        0.3962,
+        0.3542,
+        0.367,
+        0.75,
+        0.3625,
+        0.6,
+        0.75,
+        0.75,
+        0.3629,
+        0.75,
+        0.3841,
+        0.75,
+        0.75,
+        0.6,
+        0.6,
+        0.3718,
+        0.75,
+        0.6,
+        0.6
+      ]
+    },
+    "Human": {
+      "total": 50,
+      "correct": 50,
+      "scores": [
+        0.1043,
+        0.1298,
+        0.1136,
+        0.1267,
+        0.1827,
+        0.0641,
+        0.0614,
+        0.0803,
+        0.109,
+        0.08,
+        0.0733,
+        0.1589,
+        0.1065,
+        0.1363,
+        0.1189,
+        0.1416,
+        0.0883,
+        0.1236,
+        0.1358,
+        0.0974,
+        0.0996,
+        0.1061,
+        0.1658,
+        0.1257,
+        0.1438,
+        0.1412,
+        0.0988,
+        0.1121,
+        0.1754,
+        0.0975,
+        0.1188,
+        0.1216,
+        0.1326,
+        0.1435,
+        0.1314,
+        0.0885,
+        0.0771,
+        0.0801,
+        0.1321,
+        0.1258,
+        0.1119,
+        0.0837,
+        0.1005,
+        0.1477,
+        0.0876,
+        0.1017,
+        0.1083,
+        0.1617,
+        0.0895,
+        0.1333
+      ]
+    },
+    "Content Thief": {
+      "total": 20,
+      "correct": 20,
+      "scores": [
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.6,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.6,
+        0.75,
+        0.6,
+        0.75,
+        0.75,
+        0.75,
+        0.75
+      ]
+    },
+    "Form Spammer": {
+      "total": 20,
+      "correct": 20,
+      "scores": [
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75
+      ]
+    },
+    "Speed Scraper": {
+      "total": 20,
+      "correct": 20,
+      "scores": [
+        0.7502,
+        0.75,
+        0.7552,
+        0.75,
+        0.7716,
+        0.75,
+        0.75,
+        0.75,
+        0.7545,
+        0.75,
+        0.7504,
+        0.75,
+        0.7552,
+        0.75,
+        0.7689,
+        0.75,
+        0.75,
+        0.7732,
+        0.75,
+        0.75
+      ]
+    },
+    "DrissionPage": {
+      "total": 20,
+      "correct": 20,
+      "scores": [
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75
+      ]
+    }
+  },
+  "results": [
+    {
+      "sessionId": "stealth-006",
+      "type": "Stealth Crawler",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "human-014",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1043
+    },
+    {
+      "sessionId": "human-018",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1298
+    },
+    {
+      "sessionId": "human-000",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1136
+    },
+    {
+      "sessionId": "thief-008",
+      "type": "Content Thief",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "spam-019",
+      "type": "Form Spammer",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "speed-013",
+      "type": "Speed Scraper",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.7502
+    },
+    {
+      "sessionId": "stealth-016",
+      "type": "Stealth Crawler",
+      "expected": "bot",
+      "detected": false,
+      "score": 0.3962
+    },
+    {
+      "sessionId": "stealth-001",
+      "type": "Stealth Crawler",
+      "expected": "bot",
+      "detected": false,
+      "score": 0.3542
+    },
+    {
+      "sessionId": "thief-018",
+      "type": "Content Thief",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "human-026",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1267
+    },
+    {
+      "sessionId": "stealth-009",
+      "type": "Stealth Crawler",
+      "expected": "bot",
+      "detected": false,
+      "score": 0.367
+    },
+    {
+      "sessionId": "human-004",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1827
+    },
+    {
+      "sessionId": "human-035",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.0641
+    },
+    {
+      "sessionId": "speed-018",
+      "type": "Speed Scraper",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "stealth-004",
+      "type": "Stealth Crawler",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "stealth-019",
+      "type": "Stealth Crawler",
+      "expected": "bot",
+      "detected": false,
+      "score": 0.3625
+    },
+    {
+      "sessionId": "human-008",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.0614
+    },
+    {
+      "sessionId": "human-002",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.0803
+    },
+    {
+      "sessionId": "thief-007",
+      "type": "Content Thief",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "spam-007",
+      "type": "Form Spammer",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "human-006",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.109
+    },
+    {
+      "sessionId": "drission-010",
+      "type": "DrissionPage",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "thief-015",
+      "type": "Content Thief",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "thief-014",
+      "type": "Content Thief",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.6
+    },
+    {
+      "sessionId": "speed-017",
+      "type": "Speed Scraper",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.7552
+    },
+    {
+      "sessionId": "speed-004",
+      "type": "Speed Scraper",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "human-028",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.08
+    },
+    {
+      "sessionId": "thief-011",
+      "type": "Content Thief",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "speed-002",
+      "type": "Speed Scraper",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.7716
+    },
+    {
+      "sessionId": "human-041",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.0733
+    },
+    {
+      "sessionId": "spam-015",
+      "type": "Form Spammer",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "human-023",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1589
+    },
+    {
+      "sessionId": "thief-001",
+      "type": "Content Thief",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "human-047",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1065
+    },
+    {
+      "sessionId": "human-019",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1363
+    },
+    {
+      "sessionId": "human-010",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1189
+    },
+    {
+      "sessionId": "spam-012",
+      "type": "Form Spammer",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "human-031",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1416
+    },
+    {
+      "sessionId": "thief-009",
+      "type": "Content Thief",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "human-045",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.0883
+    },
+    {
+      "sessionId": "thief-003",
+      "type": "Content Thief",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "drission-004",
+      "type": "DrissionPage",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "thief-005",
+      "type": "Content Thief",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "drission-014",
+      "type": "DrissionPage",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "spam-003",
+      "type": "Form Spammer",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "stealth-002",
+      "type": "Stealth Crawler",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.6
+    },
+    {
+      "sessionId": "spam-004",
+      "type": "Form Spammer",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "thief-016",
+      "type": "Content Thief",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "human-012",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1236
+    },
+    {
+      "sessionId": "thief-000",
+      "type": "Content Thief",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "speed-016",
+      "type": "Speed Scraper",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "speed-003",
+      "type": "Speed Scraper",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "spam-009",
+      "type": "Form Spammer",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "spam-013",
+      "type": "Form Spammer",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "thief-017",
+      "type": "Content Thief",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "speed-009",
+      "type": "Speed Scraper",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "stealth-007",
+      "type": "Stealth Crawler",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "stealth-011",
+      "type": "Stealth Crawler",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "drission-009",
+      "type": "DrissionPage",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "human-030",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1358
+    },
+    {
+      "sessionId": "thief-004",
+      "type": "Content Thief",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.6
+    },
+    {
+      "sessionId": "thief-002",
+      "type": "Content Thief",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "human-016",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.0974
+    },
+    {
+      "sessionId": "speed-019",
+      "type": "Speed Scraper",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.7545
+    },
+    {
+      "sessionId": "drission-018",
+      "type": "DrissionPage",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "spam-006",
+      "type": "Form Spammer",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "drission-019",
+      "type": "DrissionPage",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "spam-014",
+      "type": "Form Spammer",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "speed-014",
+      "type": "Speed Scraper",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "drission-006",
+      "type": "DrissionPage",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "human-007",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.0996
+    },
+    {
+      "sessionId": "spam-016",
+      "type": "Form Spammer",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "human-043",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1061
+    },
+    {
+      "sessionId": "human-020",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1658
+    },
+    {
+      "sessionId": "stealth-014",
+      "type": "Stealth Crawler",
+      "expected": "bot",
+      "detected": false,
+      "score": 0.3629
+    },
+    {
+      "sessionId": "human-044",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1257
+    },
+    {
+      "sessionId": "drission-015",
+      "type": "DrissionPage",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "human-021",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1438
+    },
+    {
+      "sessionId": "human-005",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1412
+    },
+    {
+      "sessionId": "stealth-018",
+      "type": "Stealth Crawler",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "human-039",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.0988
+    },
+    {
+      "sessionId": "thief-006",
+      "type": "Content Thief",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.6
+    },
+    {
+      "sessionId": "spam-018",
+      "type": "Form Spammer",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "stealth-017",
+      "type": "Stealth Crawler",
+      "expected": "bot",
+      "detected": false,
+      "score": 0.3841
+    },
+    {
+      "sessionId": "thief-012",
+      "type": "Content Thief",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "human-013",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1121
+    },
+    {
+      "sessionId": "spam-005",
+      "type": "Form Spammer",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "human-040",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1754
+    },
+    {
+      "sessionId": "stealth-015",
+      "type": "Stealth Crawler",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "human-036",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.0975
+    },
+    {
+      "sessionId": "human-017",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1188
+    },
+    {
+      "sessionId": "spam-017",
+      "type": "Form Spammer",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "drission-002",
+      "type": "DrissionPage",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "stealth-000",
+      "type": "Stealth Crawler",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "drission-011",
+      "type": "DrissionPage",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "human-049",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1216
+    },
+    {
+      "sessionId": "stealth-010",
+      "type": "Stealth Crawler",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.6
+    },
+    {
+      "sessionId": "human-027",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1326
+    },
+    {
+      "sessionId": "speed-015",
+      "type": "Speed Scraper",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.7504
+    },
+    {
+      "sessionId": "human-001",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1435
+    },
+    {
+      "sessionId": "speed-001",
+      "type": "Speed Scraper",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "human-011",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1314
+    },
+    {
+      "sessionId": "speed-006",
+      "type": "Speed Scraper",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.7552
+    },
+    {
+      "sessionId": "spam-002",
+      "type": "Form Spammer",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "drission-013",
+      "type": "DrissionPage",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "human-009",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.0885
+    },
+    {
+      "sessionId": "human-033",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.0771
+    },
+    {
+      "sessionId": "drission-005",
+      "type": "DrissionPage",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "human-037",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.0801
+    },
+    {
+      "sessionId": "human-015",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1321
+    },
+    {
+      "sessionId": "human-038",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1258
+    },
+    {
+      "sessionId": "spam-011",
+      "type": "Form Spammer",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "spam-001",
+      "type": "Form Spammer",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "drission-003",
+      "type": "DrissionPage",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "drission-008",
+      "type": "DrissionPage",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "stealth-003",
+      "type": "Stealth Crawler",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.6
+    },
+    {
+      "sessionId": "human-022",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1119
+    },
+    {
+      "sessionId": "thief-019",
+      "type": "Content Thief",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "stealth-005",
+      "type": "Stealth Crawler",
+      "expected": "bot",
+      "detected": false,
+      "score": 0.3718
+    },
+    {
+      "sessionId": "human-042",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.0837
+    },
+    {
+      "sessionId": "drission-016",
+      "type": "DrissionPage",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "speed-011",
+      "type": "Speed Scraper",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "human-046",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1005
+    },
+    {
+      "sessionId": "human-025",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1477
+    },
+    {
+      "sessionId": "human-034",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.0876
+    },
+    {
+      "sessionId": "human-032",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1017
+    },
+    {
+      "sessionId": "stealth-012",
+      "type": "Stealth Crawler",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "drission-017",
+      "type": "DrissionPage",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "speed-010",
+      "type": "Speed Scraper",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.7689
+    },
+    {
+      "sessionId": "human-003",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1083
+    },
+    {
+      "sessionId": "speed-012",
+      "type": "Speed Scraper",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "thief-010",
+      "type": "Content Thief",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "spam-010",
+      "type": "Form Spammer",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "human-029",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1617
+    },
+    {
+      "sessionId": "stealth-008",
+      "type": "Stealth Crawler",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.6
+    },
+    {
+      "sessionId": "human-024",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.0895
+    },
+    {
+      "sessionId": "speed-000",
+      "type": "Speed Scraper",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "drission-007",
+      "type": "DrissionPage",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "speed-005",
+      "type": "Speed Scraper",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.7732
+    },
+    {
+      "sessionId": "spam-008",
+      "type": "Form Spammer",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "drission-001",
+      "type": "DrissionPage",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "speed-007",
+      "type": "Speed Scraper",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "drission-012",
+      "type": "DrissionPage",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "thief-013",
+      "type": "Content Thief",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "human-048",
+      "type": "Human",
+      "expected": "human",
+      "detected": false,
+      "score": 0.1333
+    },
+    {
+      "sessionId": "spam-000",
+      "type": "Form Spammer",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "stealth-013",
+      "type": "Stealth Crawler",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.6
+    },
+    {
+      "sessionId": "speed-008",
+      "type": "Speed Scraper",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    },
+    {
+      "sessionId": "drission-000",
+      "type": "DrissionPage",
+      "expected": "bot",
+      "detected": true,
+      "score": 0.75
+    }
+  ]
+}

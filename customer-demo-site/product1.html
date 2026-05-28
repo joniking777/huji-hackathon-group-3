@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopMax — נעלי ריצה Pro</title>
+    <script src="http://localhost:5000/sdk/tracker.js?v=3"
+            data-api-key="shopmax-demo-key"
+            data-endpoint="http://localhost:5000/api/sdk/track">
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f5f5; color: #333; }
+        header { background: #2c3e50; color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
+        header h1 { font-size: 24px; }
+        header nav a { color: #ecf0f1; text-decoration: none; margin-left: 20px; font-size: 14px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .product-page { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .product-image { background: #f0f0f0; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 120px; min-height: 400px; }
+        .product-details h2 { font-size: 28px; margin-bottom: 10px; }
+        .product-details .price { font-size: 32px; color: #27ae60; font-weight: bold; margin: 16px 0; }
+        .product-details p { line-height: 1.7; color: #555; margin-bottom: 16px; }
+        .product-details button { padding: 14px 32px; background: #3498db; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; width: 100%; }
+        .product-details button:hover { background: #2980b9; }
+        .specs { margin-top: 20px; }
+        .specs h3 { margin-bottom: 10px; }
+        .specs table { width: 100%; border-collapse: collapse; }
+        .specs td { padding: 8px 12px; border-bottom: 1px solid #eee; font-size: 14px; }
+        .specs td:first-child { font-weight: bold; color: #555; width: 40%; }
+        .reviews { margin-top: 30px; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .reviews h3 { margin-bottom: 16px; }
+        .review { padding: 16px 0; border-bottom: 1px solid #eee; }
+        .review .stars { color: #f39c12; }
+        .review .author { font-weight: bold; margin: 4px 0; }
+        .review p { color: #666; font-size: 14px; }
+        .other-products { margin-top: 30px; }
+        .other-products h3 { margin-bottom: 16px; }
+        .other-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .other-card { background: white; padding: 16px; border-radius: 8px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+        .other-card .emoji { font-size: 36px; margin-bottom: 8px; }
+        .other-card a { text-decoration: none; color: #3498db; font-size: 14px; }
+        footer { background: #2c3e50; color: #bdc3c7; padding: 20px; text-align: center; margin-top: 40px; }
+        .aisec-badge { position: fixed; bottom: 20px; left: 20px; background: rgba(0,0,0,0.8); color: #4ecdc4; padding: 8px 16px; border-radius: 20px; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🛒 ShopMax</h1>
+        <nav>
+            <a href="index.html">ראשי</a>
+            <a href="about.html">אודות</a>
+            <a href="product1.html">נעלי ריצה</a>
+            <a href="product2.html">אוזניות</a>
+            <a href="product3.html">שעון חכם</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="product-page">
+            <div class="product-image">👟</div>
+            <div class="product-details">
+                <h2>נעלי ריצה Pro</h2>
+                <div class="price">₪89.99</div>
+                <p>נעלי ריצה קלות משקל לאימונים יומיומיים. סוליה מתקדמת עם בולמי זעזועים, חלק עליון נושם, ותמיכה מושלמת לקשת כף הרגל.</p>
+                <p>מתאימות לריצה על אספלט, מסלולים, ואימוני כושר. זמינות במידות 38-46.</p>
+                <button onclick="alert('נוסף לסל!')">🛒 הוסף לסל</button>
+
+                <div class="specs">
+                    <h3>מפרט טכני</h3>
+                    <table>
+                        <tr><td>משקל</td><td>245 גרם</td></tr>
+                        <tr><td>חומר</td><td>רשת נושמת + EVA</td></tr>
+                        <tr><td>סוליה</td><td>גומי עמיד בשחיקה</td></tr>
+                        <tr><td>Drop</td><td>8 מ"מ</td></tr>
+                        <tr><td>מידות</td><td>38-46</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="reviews">
+            <h3>ביקורות לקוחות ⭐</h3>
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <div class="author">יוסי מ.</div>
+                <p>נעליים מעולות! קלות מאוד ונוחות לריצה ארוכה. כבר 3 חודשים איתן ועדיין כמו חדשות.</p>
+            </div>
+            <div class="review">
+                <div class="stars">★★★★☆</div>
+                <div class="author">שרה כ.</div>
+                <p>מאוד נוחות, אבל המידה קצת גדולה. מומלץ להזמין מידה קטנה יותר.</p>
+            </div>
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <div class="author">דוד א.</div>
+                <p>הכי טובות שהיו לי. הבולמי זעזועים עושים את ההבדל. רץ 10 ק"מ כל יום בלי בעיה.</p>
+            </div>
+        </div>
+
+        <div class="other-products">
+            <h3>מוצרים נוספים</h3>
+            <div class="other-grid">
+                <div class="other-card"><div class="emoji">🎧</div><a href="product2.html">אוזניות אלחוטיות</a></div>
+                <div class="other-card"><div class="emoji">⌚</div><a href="product3.html">שעון חכם X</a></div>
+                <div class="other-card"><div class="emoji">💻</div><a href="index.html">עוד מוצרים</a></div>
+            </div>
+        </div>
+    </div>
+
+    <footer><p>© 2026 ShopMax | מוגנים על ידי AISecutity</p></footer>
+    <div class="aisec-badge">🛡️ Protected by AISecutity</div>
+</body>
+</html>

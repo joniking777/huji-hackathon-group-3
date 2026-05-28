@@ -25,9 +25,22 @@ namespace AISecutity.Detection;
 /// </summary>
 public class AiDetectionEngine : IAiDetectionEngine
 {
-    private const double AiThreshold = 0.50; // v2.1: lowered to catch challenge bots (they score 0.33-0.44)
+    // Tiered thresholds — separate "monitor", "challenge", and "block" levels
+    private const double MonitorThreshold = 0.40;   // Log it, watch closely
+    private const double ChallengeThreshold = 0.60; // Show CAPTCHA
+    private const double BlockThreshold = 0.75;     // Hard block
+
+    // Threshold adjustments based on user history
+    private const double FirstVisitBonus = 0.10;    // First-timers get +0.10 threshold (more lenient)
+    private const double CleanHistoryBonus = 0.15;  // Users with clean history get +0.15
+    private const double VerifiedUserBonus = 0.20;  // Verified users get +0.20
 
     public DetectionResult Analyze(ActivitySession session)
+    {
+        return Analyze(session, null);
+    }
+
+    public DetectionResult Analyze(ActivitySession session, SessionContext? context)
     {
         var signals = new List<DetectionSignal>();
         var events = session.Events.OrderBy(e => e.Timestamp).ToList();
@@ -40,6 +53,8 @@ public class AiDetectionEngine : IAiDetectionEngine
                 UserId = session.UserId,
                 AiProbabilityScore = 0,
                 IsLikelyAiAgent = false,
+                RecommendedAction = "allow",
+                ThreatLevel = "none",
                 TotalEventsAnalyzed = events.Count,
                 Signals = signals
             };
@@ -47,46 +62,116 @@ public class AiDetectionEngine : IAiDetectionEngine
 
         // Run each detection heuristic
         signals.Add(AnalyzeTimingRegularity(events));
-        signals.Add(AnalyzeTimingJitter(events));          // NEW v3: catches DrissionPage
+        signals.Add(AnalyzeTimingJitter(events));
         signals.Add(AnalyzeActionSpeed(events));
         signals.Add(AnalyzeMouseBehavior(events));
         signals.Add(AnalyzeMouseSpeedProfile(events));
         signals.Add(AnalyzeKeyboardBehavior(events));
         signals.Add(AnalyzeNavigationPattern(events));
-        signals.Add(AnalyzeNavigationBehavior(events));    // NEW v3: catches Stealth Crawler
+        signals.Add(AnalyzeNavigationBehavior(events));
         signals.Add(AnalyzeApiTargeting(events));
         signals.Add(AnalyzeSessionRhythm(events));
 
-        // v2.1: Hybrid scoring — weighted average PLUS "any two strong signals" rule
-        // If two or more signals score above 0.6, that's enough to flag as bot
-        // This catches sophisticated bots that evade some signals but not all
+        // Weighted score calculation
         double totalWeight = signals.Sum(s => s.Weight);
         double weightedScore = signals.Sum(s => s.Score * s.Weight) / totalWeight;
 
-        // Count how many signals are firing strongly
+        // Hybrid boost: multiple strong signals firing together
         int strongSignals = signals.Count(s => s.Score >= 0.6);
         double maxSignal = signals.Max(s => s.Score);
         double secondMaxSignal = signals.OrderByDescending(s => s.Score).Skip(1).First().Score;
 
-        // Boost score if multiple signals agree the session is suspicious
         double combinedScore = weightedScore;
         if (strongSignals >= 3)
-            combinedScore = Math.Max(combinedScore, 0.75); // 3+ strong signals = very likely bot
+            combinedScore = Math.Max(combinedScore, 0.75);
         else if (strongSignals >= 2 && secondMaxSignal >= 0.6)
-            combinedScore = Math.Max(combinedScore, 0.60); // 2 strong signals = likely bot
+            combinedScore = Math.Max(combinedScore, 0.60);
 
-        // If the single strongest signal is very high, boost
         if (maxSignal >= 0.9)
             combinedScore = Math.Max(combinedScore, weightedScore + 0.1);
 
         combinedScore = Math.Min(1.0, combinedScore);
+
+        // === SESSION HISTORY ADJUSTMENT ===
+        // Adjust effective thresholds based on user history
+        double effectiveBlockThreshold = BlockThreshold;
+        double effectiveChallengeThreshold = ChallengeThreshold;
+        double effectiveMonitorThreshold = MonitorThreshold;
+        bool isReturning = false;
+
+        if (context != null)
+        {
+            isReturning = !context.IsFirstVisit;
+
+            if (context.IsVerifiedUser)
+            {
+                // Verified users (logged in, passed CAPTCHA before) get maximum leeway
+                effectiveBlockThreshold += VerifiedUserBonus;
+                effectiveChallengeThreshold += VerifiedUserBonus;
+                effectiveMonitorThreshold += VerifiedUserBonus;
+            }
+            else if (context.HasCleanHistory)
+            {
+                // Users with 3+ clean sessions get significant leeway
+                effectiveBlockThreshold += CleanHistoryBonus;
+                effectiveChallengeThreshold += CleanHistoryBonus;
+                effectiveMonitorThreshold += CleanHistoryBonus;
+            }
+            else if (context.IsFirstVisit)
+            {
+                // First-time visitors get slight leeway (benefit of the doubt)
+                effectiveBlockThreshold += FirstVisitBonus;
+                effectiveChallengeThreshold += FirstVisitBonus;
+            }
+
+            // If user has previous bot flags, LOWER the threshold (stricter)
+            if (context.PreviousBotFlags > 0)
+            {
+                double penalty = Math.Min(0.15, context.PreviousBotFlags * 0.05);
+                effectiveBlockThreshold -= penalty;
+                effectiveChallengeThreshold -= penalty;
+            }
+        }
+
+        // === DETERMINE ACTION TIER ===
+        string action;
+        string threatLevel;
+        bool isLikelyBot;
+
+        if (combinedScore >= effectiveBlockThreshold)
+        {
+            action = "block";
+            threatLevel = "critical";
+            isLikelyBot = true;
+        }
+        else if (combinedScore >= effectiveChallengeThreshold)
+        {
+            action = "challenge";
+            threatLevel = "high";
+            isLikelyBot = true;
+        }
+        else if (combinedScore >= effectiveMonitorThreshold)
+        {
+            action = "monitor";
+            threatLevel = "medium";
+            isLikelyBot = false; // Don't flag as bot yet, just watch
+        }
+        else
+        {
+            action = "allow";
+            threatLevel = combinedScore > 0.20 ? "low" : "none";
+            isLikelyBot = false;
+        }
 
         return new DetectionResult
         {
             SessionId = session.SessionId,
             UserId = session.UserId,
             AiProbabilityScore = Math.Round(combinedScore, 4),
-            IsLikelyAiAgent = combinedScore >= AiThreshold,
+            IsLikelyAiAgent = isLikelyBot,
+            RecommendedAction = action,
+            ThreatLevel = threatLevel,
+            IsReturningUser = isReturning,
             TotalEventsAnalyzed = events.Count,
             Signals = signals
         };

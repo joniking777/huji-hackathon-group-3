@@ -3,25 +3,25 @@
     "name": "1. Speed Scraper",
     "description": "Hammers pages every 50-150ms, hits /api/ endpoints",
     "detected": true,
-    "score": 0.8239,
+    "score": 0.8375,
     "signals": [
       {
         "signalName": "TimingRegularity",
         "weight": 0.15,
         "score": 0.75,
-        "description": "Coefficient of variation: 0.263. Lower = more robotic."
+        "description": "Coefficient of variation: 0.240. Lower = more robotic."
       },
       {
         "signalName": "TimingJitter",
         "weight": 0.15,
-        "score": 0.42,
-        "description": "Jitter ratio: 0.322 (lower=bot), Cluster: 0.33, Outliers: 0.00."
+        "score": 0.54,
+        "description": "Jitter ratio: 0.269 (lower=bot), Cluster: 0.53, Outliers: 0.00."
       },
       {
         "signalName": "ActionSpeed",
         "weight": 0.15,
         "score": 1,
-        "description": "0.0% under 50ms, 100.0% under 200ms, 100.0% under 500ms. Avg interval: 94ms."
+        "description": "0.0% under 50ms, 100.0% under 200ms, 100.0% under 500ms. Avg interval: 105ms."
       },
       {
         "signalName": "MouseBehavior",
@@ -67,37 +67,37 @@
       }
     ],
     "ban": {
-      "id": 12,
-      "banType": "temporary",
-      "penalty": "tarpit",
-      "expiresAt": "2026-05-29T16:18:04.8822228Z",
-      "reason": "AI bot detected with score 0.824",
+      "id": 17,
+      "banType": "permanent",
+      "penalty": "block",
+      "expiresAt": null,
+      "reason": "AI bot detected with score 0.838",
       "triggeredRule": "TimingRegularity=0.75, ActionSpeed=1.00, NavigationPattern=0.83, NavigationBehavior=0.90, ApiTargeting=1.00, SessionRhythm=0.95"
     }
   },
   {
     "name": "2. Stealth Crawler",
     "description": "Human timing but visits pages systematically in order",
-    "detected": true,
-    "score": 0.75,
+    "detected": false,
+    "score": 0.3955,
     "signals": [
       {
         "signalName": "TimingRegularity",
         "weight": 0.15,
-        "score": 0.6,
-        "description": "Coefficient of variation: 0.458. Lower = more robotic."
+        "score": 0.4,
+        "description": "Coefficient of variation: 0.511. Lower = more robotic."
       },
       {
         "signalName": "TimingJitter",
         "weight": 0.15,
-        "score": 0.22,
-        "description": "Jitter ratio: 0.591 (lower=bot), Cluster: 0.27, Outliers: 0.00."
+        "score": 0.2,
+        "description": "Jitter ratio: 0.409 (lower=bot), Cluster: 0.27, Outliers: 0.07."
       },
       {
         "signalName": "ActionSpeed",
         "weight": 0.15,
-        "score": 0,
-        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 1539ms."
+        "score": 0.1133,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 6.7% under 500ms. Avg interval: 1447ms."
       },
       {
         "signalName": "MouseBehavior",
@@ -109,7 +109,7 @@
         "signalName": "MouseSpeedProfile",
         "weight": 0.2,
         "score": 0.425,
-        "description": "Avg speed: 760px/s, Speed CV: 0.181, High-speed ratio: 0.06."
+        "description": "Avg speed: 770px/s, Speed CV: 0.142, High-speed ratio: 0.06."
       },
       {
         "signalName": "KeyboardBehavior",
@@ -138,18 +138,11 @@
       {
         "signalName": "SessionRhythm",
         "weight": 0.05,
-        "score": 0.95,
-        "description": "Pause ratio: 0.00, Idle gaps: 0, Pause regularity CV: 0.00."
+        "score": 0.5,
+        "description": "Pause ratio: 0.07, Idle gaps: 0, Pause regularity CV: 0.00."
       }
     ],
-    "ban": {
-      "id": 13,
-      "banType": "temporary",
-      "penalty": "tarpit",
-      "expiresAt": "2026-05-29T16:18:05.0148399Z",
-      "reason": "AI bot detected with score 0.750",
-      "triggeredRule": "TimingRegularity=0.60, NavigationBehavior=0.90, SessionRhythm=0.95"
-    }
+    "ban": null
   },
   {
     "name": "3. Form Spammer",
@@ -161,19 +154,19 @@
         "signalName": "TimingRegularity",
         "weight": 0.15,
         "score": 0.2,
-        "description": "Coefficient of variation: 0.859. Lower = more robotic."
+        "description": "Coefficient of variation: 0.830. Lower = more robotic."
       },
       {
         "signalName": "TimingJitter",
         "weight": 0.15,
         "score": 0.1,
-        "description": "Jitter ratio: 0.989 (lower=bot), Cluster: 0.17, Outliers: 0.17."
+        "description": "Jitter ratio: 0.972 (lower=bot), Cluster: 0.17, Outliers: 0.15."
       },
       {
         "signalName": "ActionSpeed",
         "weight": 0.15,
-        "score": 0.7979,
-        "description": "0.0% under 50ms, 63.8% under 200ms, 89.4% under 500ms. Avg interval: 218ms."
+        "score": 0.7766,
+        "description": "0.0% under 50ms, 59.6% under 200ms, 89.4% under 500ms. Avg interval: 219ms."
       },
       {
         "signalName": "MouseBehavior",
@@ -185,7 +178,7 @@
         "signalName": "MouseSpeedProfile",
         "weight": 0.2,
         "score": 0.865,
-        "description": "Avg speed: 4799px/s, Speed CV: 0.128, High-speed ratio: 1.00."
+        "description": "Avg speed: 4712px/s, Speed CV: 0.141, High-speed ratio: 1.00."
       },
       {
         "signalName": "KeyboardBehavior",
@@ -219,12 +212,12 @@
       }
     ],
     "ban": {
-      "id": 14,
-      "banType": "temporary",
-      "penalty": "tarpit",
-      "expiresAt": "2026-05-29T16:18:05.0506691Z",
+      "id": 18,
+      "banType": "permanent",
+      "penalty": "block",
+      "expiresAt": null,
       "reason": "AI bot detected with score 0.750",
-      "triggeredRule": "ActionSpeed=0.80, MouseBehavior=0.70, MouseSpeedProfile=0.86, KeyboardBehavior=1.00, ApiTargeting=0.85, SessionRhythm=0.95"
+      "triggeredRule": "ActionSpeed=0.78, MouseBehavior=0.70, MouseSpeedProfile=0.86, KeyboardBehavior=1.00, ApiTargeting=0.85, SessionRhythm=0.95"
     }
   },
   {
@@ -237,31 +230,31 @@
         "signalName": "TimingRegularity",
         "weight": 0.15,
         "score": 0.6,
-        "description": "Coefficient of variation: 0.360. Lower = more robotic."
+        "description": "Coefficient of variation: 0.410. Lower = more robotic."
       },
       {
         "signalName": "TimingJitter",
         "weight": 0.15,
-        "score": 0.32,
-        "description": "Jitter ratio: 0.429 (lower=bot), Cluster: 0.54, Outliers: 0.11."
+        "score": 0.2,
+        "description": "Jitter ratio: 0.494 (lower=bot), Cluster: 0.48, Outliers: 0.15."
       },
       {
         "signalName": "ActionSpeed",
         "weight": 0.15,
-        "score": 0.1343,
-        "description": "0.0% under 50ms, 0.0% under 200ms, 17.1% under 500ms. Avg interval: 925ms."
+        "score": 0.1364,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 18.2% under 500ms. Avg interval: 941ms."
       },
       {
         "signalName": "MouseBehavior",
         "weight": 0.1,
-        "score": 0.3778,
-        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.94."
+        "score": 0.3647,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.91."
       },
       {
         "signalName": "MouseSpeedProfile",
         "weight": 0.2,
         "score": 0.18,
-        "description": "Avg speed: 785px/s, Speed CV: 0.704, High-speed ratio: 0.17."
+        "description": "Avg speed: 808px/s, Speed CV: 0.697, High-speed ratio: 0.18."
       },
       {
         "signalName": "KeyboardBehavior",
@@ -272,20 +265,20 @@
       {
         "signalName": "NavigationPattern",
         "weight": 0.15,
-        "score": 0.0167,
-        "description": "API ratio: 0.00, Efficiency: 0.17, Browse-then-target: False, Seq API ratio: 0.00."
+        "score": 0.0176,
+        "description": "API ratio: 0.00, Efficiency: 0.18, Browse-then-target: False, Seq API ratio: 0.00."
       },
       {
         "signalName": "NavigationBehavior",
         "weight": 0.12,
         "score": 0.1,
-        "description": "Revisit ratio: 0.83 (low=bot), Sequential: 0.00, Same-page: 0.86."
+        "description": "Revisit ratio: 0.82 (low=bot), Sequential: 0.00, Same-page: 0.85."
       },
       {
         "signalName": "ApiTargeting",
         "weight": 0.15,
         "score": 0,
-        "description": "API hits: 0/36 (0.0%). Search pattern: False."
+        "description": "API hits: 0/34 (0.0%). Search pattern: False."
       },
       {
         "signalName": "SessionRhythm",
@@ -295,10 +288,10 @@
       }
     ],
     "ban": {
-      "id": 15,
-      "banType": "temporary",
-      "penalty": "tarpit",
-      "expiresAt": "2026-05-29T16:18:05.0859016Z",
+      "id": 19,
+      "banType": "permanent",
+      "penalty": "block",
+      "expiresAt": null,
       "reason": "AI bot detected with score 0.600",
       "triggeredRule": "TimingRegularity=0.60, SessionRhythm=0.95"
     }
@@ -313,19 +306,19 @@
         "signalName": "TimingRegularity",
         "weight": 0.15,
         "score": 1,
-        "description": "Coefficient of variation: 0.034. Lower = more robotic."
+        "description": "Coefficient of variation: 0.020. Lower = more robotic."
       },
       {
         "signalName": "TimingJitter",
         "weight": 0.15,
-        "score": 0.875,
-        "description": "Jitter ratio: 0.050 (lower=bot), Cluster: 1.00, Outliers: 0.00."
+        "score": 0.925,
+        "description": "Jitter ratio: 0.023 (lower=bot), Cluster: 1.00, Outliers: 0.00."
       },
       {
         "signalName": "ActionSpeed",
         "weight": 0.15,
         "score": 0,
-        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 6884ms."
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 6837ms."
       },
       {
         "signalName": "MouseBehavior",
@@ -337,7 +330,7 @@
         "signalName": "MouseSpeedProfile",
         "weight": 0.2,
         "score": 0.815,
-        "description": "Avg speed: 1137px/s, Speed CV: 0.179, High-speed ratio: 0.70."
+        "description": "Avg speed: 1168px/s, Speed CV: 0.183, High-speed ratio: 0.70."
       },
       {
         "signalName": "KeyboardBehavior",
@@ -371,79 +364,79 @@
       }
     ],
     "ban": {
-      "id": 16,
+      "id": 20,
       "banType": "permanent",
       "penalty": "block",
       "expiresAt": null,
       "reason": "AI bot detected with score 0.750",
-      "triggeredRule": "TimingRegularity=1.00, TimingJitter=0.88, MouseSpeedProfile=0.81"
+      "triggeredRule": "TimingRegularity=1.00, TimingJitter=0.93, MouseSpeedProfile=0.81"
     }
   },
   {
     "name": "6. Human (control)",
     "description": "Real human browsing pattern for comparison",
     "detected": false,
-    "score": 0.1483,
+    "score": 0.137,
     "signals": [
       {
         "signalName": "TimingRegularity",
         "weight": 0.15,
-        "score": 0.2,
-        "description": "Coefficient of variation: 0.882. Lower = more robotic."
+        "score": 0.4,
+        "description": "Coefficient of variation: 0.533. Lower = more robotic."
       },
       {
         "signalName": "TimingJitter",
         "weight": 0.15,
         "score": 0.1,
-        "description": "Jitter ratio: 1.361 (lower=bot), Cluster: 0.11, Outliers: 0.44."
+        "description": "Jitter ratio: 0.662 (lower=bot), Cluster: 0.25, Outliers: 0.17."
       },
       {
         "signalName": "ActionSpeed",
         "weight": 0.15,
-        "score": 0.0222,
-        "description": "0.0% under 50ms, 0.0% under 200ms, 11.1% under 500ms. Avg interval: 4936ms."
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 5244ms."
       },
       {
         "signalName": "MouseBehavior",
         "weight": 0.1,
-        "score": 0.0444,
-        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.11."
+        "score": 0.04,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.10."
       },
       {
         "signalName": "MouseSpeedProfile",
         "weight": 0.2,
-        "score": 0.2925,
-        "description": "Avg speed: 691px/s, Speed CV: 0.274, High-speed ratio: 0.00."
+        "score": 0.205,
+        "description": "Avg speed: 697px/s, Speed CV: 0.336, High-speed ratio: 0.10."
       },
       {
         "signalName": "KeyboardBehavior",
         "weight": 0.1,
-        "score": 0.5,
-        "description": "Insufficient keyboard data."
+        "score": 0.38,
+        "description": "Analyzed 3 keyboard events for consistency and error patterns."
       },
       {
         "signalName": "NavigationPattern",
         "weight": 0.15,
-        "score": 0.05,
-        "description": "API ratio: 0.00, Efficiency: 0.50, Browse-then-target: False, Seq API ratio: 0.00."
+        "score": 0.0385,
+        "description": "API ratio: 0.00, Efficiency: 0.38, Browse-then-target: False, Seq API ratio: 0.00."
       },
       {
         "signalName": "NavigationBehavior",
         "weight": 0.12,
         "score": 0.1,
-        "description": "Revisit ratio: 0.50 (low=bot), Sequential: 0.00, Same-page: 0.44."
+        "description": "Revisit ratio: 0.62 (low=bot), Sequential: 0.00, Same-page: 0.58."
       },
       {
         "signalName": "ApiTargeting",
         "weight": 0.15,
         "score": 0,
-        "description": "API hits: 0/10 (0.0%). Search pattern: False."
+        "description": "API hits: 0/13 (0.0%). Search pattern: False."
       },
       {
         "signalName": "SessionRhythm",
         "weight": 0.05,
-        "score": 0.3,
-        "description": "Pause ratio: 0.56, Idle gaps: 2, Pause regularity CV: 0.25."
+        "score": 0.1,
+        "description": "Pause ratio: 0.75, Idle gaps: 1, Pause regularity CV: 0.51."
       }
     ],
     "ban": null

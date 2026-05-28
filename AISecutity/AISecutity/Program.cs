@@ -35,12 +35,20 @@ builder.Services.AddAiBlocking(options =>
     };
 });
 
-// CORS for Angular demo site
+// CORS for Angular demo site + customer websites
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowDemoSite", policy =>
     {
         policy.WithOrigins("http://localhost:4200")
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+
+    // SDK endpoints allow any origin (customer websites)
+    options.AddPolicy("AllowSdk", policy =>
+    {
+        policy.AllowAnyOrigin()
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
@@ -62,6 +70,14 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors("AllowDemoSite");
+
+// Serve the SDK JavaScript tracker as a static file
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(
+        Path.Combine(builder.Environment.ContentRootPath, "SDK")),
+    RequestPath = "/sdk"
+});
 
 // Server-side request fingerprinting — catches bots at network level
 // even if they send spoofed telemetry

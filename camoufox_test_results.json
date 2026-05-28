@@ -1,0 +1,302 @@
+[
+  {
+    "idx": 0,
+    "detected": true,
+    "score": 0.55,
+    "events": 26
+  },
+  {
+    "idx": 1,
+    "detected": true,
+    "score": 0.55,
+    "events": 18
+  },
+  {
+    "idx": 2,
+    "detected": true,
+    "score": 0.55,
+    "events": 14
+  },
+  {
+    "idx": 3,
+    "detected": true,
+    "score": 0.55,
+    "events": 16
+  },
+  {
+    "idx": 4,
+    "detected": false,
+    "score": 0.0887,
+    "events": 13
+  },
+  {
+    "idx": 5,
+    "detected": false,
+    "score": 0.0921,
+    "events": 17
+  },
+  {
+    "idx": 6,
+    "detected": false,
+    "score": 0.0945,
+    "events": 18
+  },
+  {
+    "idx": 7,
+    "detected": false,
+    "score": 0.0974,
+    "events": 30
+  },
+  {
+    "idx": 8,
+    "detected": true,
+    "score": 0.65,
+    "events": 10
+  },
+  {
+    "idx": 9,
+    "detected": true,
+    "score": 0.55,
+    "events": 14
+  },
+  {
+    "idx": 10,
+    "detected": true,
+    "score": 0.55,
+    "events": 26
+  },
+  {
+    "idx": 11,
+    "detected": true,
+    "score": 0.55,
+    "events": 24
+  },
+  {
+    "idx": 12,
+    "detected": true,
+    "score": 0.55,
+    "events": 13
+  },
+  {
+    "idx": 13,
+    "detected": false,
+    "score": 0.0919,
+    "events": 16
+  },
+  {
+    "idx": 14,
+    "detected": true,
+    "score": 0.55,
+    "events": 10
+  },
+  {
+    "idx": 15,
+    "detected": true,
+    "score": 0.55,
+    "events": 24
+  },
+  {
+    "idx": 16,
+    "detected": false,
+    "score": 0.0968,
+    "events": 20
+  },
+  {
+    "idx": 17,
+    "detected": false,
+    "score": 0.086,
+    "events": 17
+  },
+  {
+    "idx": 18,
+    "detected": false,
+    "score": 0.0884,
+    "events": 24
+  },
+  {
+    "idx": 19,
+    "detected": true,
+    "score": 0.55,
+    "events": 16
+  },
+  {
+    "idx": 20,
+    "detected": true,
+    "score": 0.55,
+    "events": 15
+  },
+  {
+    "idx": 21,
+    "detected": false,
+    "score": 0.1014,
+    "events": 12
+  },
+  {
+    "idx": 22,
+    "detected": true,
+    "score": 0.55,
+    "events": 18
+  },
+  {
+    "idx": 23,
+    "detected": true,
+    "score": 0.55,
+    "events": 28
+  },
+  {
+    "idx": 24,
+    "detected": false,
+    "score": 0.0974,
+    "events": 15
+  },
+  {
+    "idx": 25,
+    "detected": true,
+    "score": 0.55,
+    "events": 18
+  },
+  {
+    "idx": 26,
+    "detected": true,
+    "score": 0.55,
+    "events": 26
+  },
+  {
+    "idx": 27,
+    "detected": true,
+    "score": 0.55,
+    "events": 11
+  },
+  {
+    "idx": 28,
+    "detected": true,
+    "score": 0.55,
+    "events": 18
+  },
+  {
+    "idx": 29,
+    "detected": false,
+    "score": 0.0982,
+    "events": 14
+  },
+  {
+    "idx": 30,
+    "detected": true,
+    "score": 0.55,
+    "events": 22
+  },
+  {
+    "idx": 31,
+    "detected": false,
+    "score": 0.1028,
+    "events": 16
+  },
+  {
+    "idx": 32,
+    "detected": true,
+    "score": 0.55,
+    "events": 20
+  },
+  {
+    "idx": 33,
+    "detected": true,
+    "score": 0.55,
+    "events": 24
+  },
+  {
+    "idx": 34,
+    "detected": true,
+    "score": 0.55,
+    "events": 11
+  },
+  {
+    "idx": 35,
+    "detected": true,
+    "score": 0.55,
+    "events": 20
+  },
+  {
+    "idx": 36,
+    "detected": false,
+    "score": 0.1027,
+    "events": 15
+  },
+  {
+    "idx": 37,
+    "detected": false,
+    "score": 0.1077,
+    "events": 11
+  },
+  {
+    "idx": 38,
+    "detected": true,
+    "score": 0.55,
+    "events": 17
+  },
+  {
+    "idx": 39,
+    "detected": false,
+    "score": 0.0832,
+    "events": 27
+  },
+  {
+    "idx": 40,
+    "detected": true,
+    "score": 0.55,
+    "events": 17
+  },
+  {
+    "idx": 41,
+    "detected": false,
+    "score": 0.094,
+    "events": 29
+  },
+  {
+    "idx": 42,
+    "detected": true,
+    "score": 0.55,
+    "events": 25
+  },
+  {
+    "idx": 43,
+    "detected": false,
+    "score": 0.0945,
+    "events": 27
+  },
+  {
+    "idx": 44,
+    "detected": true,
+    "score": 0.55,
+    "events": 26
+  },
+  {
+    "idx": 45,
+    "detected": true,
+    "score": 0.55,
+    "events": 25
+  },
+  {
+    "idx": 46,
+    "detected": true,
+    "score": 0.55,
+    "events": 16
+  },
+  {
+    "idx": 47,
+    "detected": true,
+    "score": 0.55,
+    "events": 15
+  },
+  {
+    "idx": 48,
+    "detected": true,
+    "score": 0.55,
+    "events": 18
+  },
+  {
+    "idx": 49,
+    "detected": false,
+    "score": 0.0882,
+    "events": 14
+  }
+]

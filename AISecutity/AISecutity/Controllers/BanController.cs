@@ -12,21 +12,66 @@ public class BanController : ControllerBase
 {
     private readonly BanService _banService;
     private readonly IAiDetectionEngine _engine;
+    private readonly MlDetectionClient _mlClient;
 
-    public BanController(BanService banService, IAiDetectionEngine engine)
+    public BanController(BanService banService, IAiDetectionEngine engine, MlDetectionClient mlClient)
     {
         _banService = banService;
         _engine = engine;
+        _mlClient = mlClient;
     }
 
     /// <summary>
     /// Analyze a session and ban the actor if detected as bot.
+    /// Uses ML model as fallback for uncertain cases.
     /// POST api/ban/analyze-and-ban
     /// </summary>
     [HttpPost("analyze-and-ban")]
     public async Task<ActionResult> AnalyzeAndBan([FromBody] ActivitySession session, [FromQuery] string ipAddress = "unknown")
     {
         var result = _engine.Analyze(session);
+
+        // If rule engine is uncertain (0.15-0.60), consult ML model
+        if (result.AiProbabilityScore >= 0.15 && result.AiProbabilityScore < 0.60)
+        {
+            var mlResult = await _mlClient.PredictAsync(session);
+            if (mlResult != null && mlResult.Confidence >= 0.80)
+            {
+                result.Signals.Add(new DetectionSignal
+                {
+                    SignalName = "ML_Model_v2",
+                    Weight = 0.25,
+                    Score = mlResult.BotProbability,
+                    Description = $"ML: {mlResult.Prediction} (confidence: {mlResult.Confidence:F2})"
+                });
+
+                // Blend scores: 60% rule engine + 40% ML
+                double newScore = result.AiProbabilityScore * 0.6 + mlResult.BotProbability * 0.4;
+
+                if (mlResult.Prediction == "bot" && mlResult.Confidence >= 0.90)
+                {
+                    newScore = Math.Max(newScore, 0.65);
+                    result.IsLikelyAiAgent = true;
+                    result.RecommendedAction = "challenge";
+                    result.ThreatLevel = "high";
+                }
+
+                result.AiProbabilityScore = Math.Round(Math.Min(1.0, newScore), 4);
+
+                if (result.AiProbabilityScore >= 0.75)
+                {
+                    result.IsLikelyAiAgent = true;
+                    result.RecommendedAction = "block";
+                    result.ThreatLevel = "critical";
+                }
+                else if (result.AiProbabilityScore >= 0.60)
+                {
+                    result.IsLikelyAiAgent = true;
+                    result.RecommendedAction = "challenge";
+                    result.ThreatLevel = "high";
+                }
+            }
+        }
 
         // Record the incident regardless
         await _banService.RecordIncident(result, ipAddress, session.UserAgent);

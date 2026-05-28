@@ -72,6 +72,7 @@ public class AiDetectionEngine : IAiDetectionEngine
         signals.Add(AnalyzeNavigationPattern(events));
         signals.Add(AnalyzeNavigationBehavior(events));
         signals.Add(AnalyzeScrollBehavior(events));        // NEW v3.2: reading focal point
+        signals.Add(AnalyzeHumanProof(events));            // NEW v4: catches Camoufox
         signals.Add(AnalyzeApiTargeting(events));
         signals.Add(AnalyzeSessionRhythm(events));
 
@@ -1005,6 +1006,78 @@ public class AiDetectionEngine : IAiDetectionEngine
             Weight = 0.08,
             Score = Math.Round(score, 4),
             Description = $"Analyzed {scrollEvents.Count} scroll events. Deltas: {deltas.Count}, Intervals: {scrollIntervals.Count}."
+        };
+    }
+
+    /// <summary>
+    /// <summary>
+    /// NEW v4: Human Proof — catches Camoufox and similar perfect-evasion bots.
+    /// 
+    /// Real humans ALWAYS leave "proof of humanity" in their sessions:
+    /// - They type something (search, form, comment)
+    /// - They revisit pages (back button, re-reading)
+    /// - They have idle gaps (distracted, thinking)
+    /// - They scroll up (re-reading something)
+    /// - They have typing errors
+    /// 
+    /// Camoufox-style bots avoid all detection signals but they also avoid
+    /// leaving human proof. Zero proof in 10+ events = suspicious.
+    /// </summary>
+    private DetectionSignal AnalyzeHumanProof(List<ActivityEvent> events)
+    {
+        if (events.Count < 8)
+            return new DetectionSignal { SignalName = "HumanProof", Weight = 0.12, Score = 0.5, Description = "Too few events." };
+
+        int proofPoints = 0;
+
+        // 1. Has keyboard events
+        if (events.Any(e => e.Keyboard != null)) proofPoints += 2;
+
+        // 2. Has revisits (same page appears again non-consecutively)
+        var endpoints = events.Select(e => e.Endpoint).Where(e => !string.IsNullOrEmpty(e)).ToList();
+        var seen = new HashSet<string>();
+        for (int i = 0; i < endpoints.Count; i++)
+        {
+            if (seen.Contains(endpoints[i]) && (i == 0 || endpoints[i] != endpoints[i-1]))
+            { proofPoints += 2; break; }
+            seen.Add(endpoints[i]);
+        }
+
+        // 3. Has idle gap > 8s
+        for (int i = 1; i < events.Count; i++)
+        {
+            if ((events[i].Timestamp - events[i-1].Timestamp).TotalMilliseconds > 8000)
+            { proofPoints += 1; break; }
+        }
+
+        // 4. Has scroll up (mouse Y decreases during scroll)
+        var scrolls = events.Where(e => e.EventType == "scroll" && e.Mouse != null).ToList();
+        for (int i = 1; i < scrolls.Count; i++)
+        {
+            if (scrolls[i].Mouse!.Y < scrolls[i-1].Mouse!.Y - 20)
+            { proofPoints += 1; break; }
+        }
+
+        // 5. Has typing errors
+        if (events.Any(e => e.Keyboard?.ErrorRate > 0.02)) proofPoints += 2;
+
+        // Score: 0 proof = very suspicious, 6+ = definitely human
+        double score = proofPoints switch
+        {
+            0 => 0.90,
+            1 => 0.75,
+            2 => 0.55,
+            3 => 0.35,
+            4 => 0.20,
+            _ => 0.05,
+        };
+
+        return new DetectionSignal
+        {
+            SignalName = "HumanProof",
+            Weight = 0.12,
+            Score = Math.Round(score, 4),
+            Description = $"Human proof points: {proofPoints}/8. {(proofPoints == 0 ? "No typing, no revisits, no idle gaps." : "")}"
         };
     }
 

@@ -75,6 +75,7 @@
         <div class="controls">
             <span class="live-dot"></span><span style="font-size:12px;color:#2ecc71">LIVE</span>
             <button class="refresh-btn" onclick="loadDashboard()">↻ Refresh</button>
+            <button class="refresh-btn" style="background:#e74c3c;color:white" onclick="resetDashboard()">🗑️ Clear All</button>
             <span class="api-key">API Key: shopmax-demo-key</span>
         </div>
     </div>
@@ -112,7 +113,7 @@
         </div>
 
         <!-- Sessions Table -->
-        <div class="section-title">Live Sessions</div>
+        <div class="section-title">Live Sessions <span style="font-size:12px;color:#666">(click a row for details)</span></div>
         <table class="sessions-table">
             <thead>
                 <tr>
@@ -128,6 +129,12 @@
                 <tr><td colspan="6" class="loading">Loading...</td></tr>
             </tbody>
         </table>
+
+        <!-- Detail Panel (hidden until click) -->
+        <div id="detail-panel" style="display:none; margin-top:20px; background:#1a2332; border:1px solid #4ecdc4; border-radius:10px; padding:24px;">
+            <h3 style="color:#4ecdc4; margin-bottom:16px;">📋 Session Details</h3>
+            <div id="detail-content"></div>
+        </div>
     </div>
 
     <script>
@@ -178,7 +185,7 @@
                     const actionClass = s.lastAction || 'pending';
                     const ua = (s.userAgent || '').substring(0, 40);
 
-                    return `<tr>
+                    return `<tr onclick="showDetail('${s.sessionId}')" style="cursor:pointer">
                         <td style="font-family:monospace;font-size:11px">${s.sessionId.substring(0, 25)}...</td>
                         <td style="font-size:11px;color:#888">${ua}...</td>
                         <td><span class="badge ${statusClass}">${statusText}</span></td>
@@ -269,6 +276,78 @@
         // Load on start and refresh every 5 seconds
         loadDashboard();
         setInterval(loadDashboard, 5000);
+
+        async function resetDashboard() {
+            if (!confirm('Clear all session data?')) return;
+            await fetch(`${API_BASE}/api/sdk/reset?apiKey=${API_KEY}`, { method: 'DELETE' });
+            loadDashboard();
+        }
+
+        async function showDetail(sessionId) {
+            const panel = document.getElementById('detail-panel');
+            const content = document.getElementById('detail-content');
+            panel.style.display = 'block';
+            content.innerHTML = '<p style="color:#888">Loading...</p>';
+
+            try {
+                const resp = await fetch(`${API_BASE}/api/sdk/session/${sessionId}?apiKey=${API_KEY}`);
+                const d = await resp.json();
+
+                let signalsHtml = '';
+                if (d.signals) {
+                    signalsHtml = '<h4 style="color:#aaa;margin:16px 0 8px">Detection Signals</h4><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">';
+                    d.signals.forEach(s => {
+                        const pct = (s.score * 100).toFixed(0);
+                        const color = s.score >= 0.6 ? '#e74c3c' : s.score >= 0.4 ? '#f39c12' : '#2ecc71';
+                        signalsHtml += `<div style="background:#0d1520;padding:10px;border-radius:6px">
+                            <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+                                <span style="font-size:12px">${s.signalName}</span>
+                                <span style="font-size:12px;color:${color};font-weight:bold">${pct}%</span>
+                            </div>
+                            <div style="height:6px;background:#2a3a4a;border-radius:3px;overflow:hidden">
+                                <div style="height:100%;width:${pct}%;background:${color};border-radius:3px"></div>
+                            </div>
+                            <div style="font-size:10px;color:#666;margin-top:4px">${s.description || ''}</div>
+                        </div>`;
+                    });
+                    signalsHtml += '</div>';
+                }
+
+                let eventsHtml = '';
+                if (d.events && d.events.length > 0) {
+                    eventsHtml = '<h4 style="color:#aaa;margin:16px 0 8px">Recent Events (first 20)</h4><div style="max-height:200px;overflow-y:auto;background:#0d1520;border-radius:6px;padding:10px;font-family:monospace;font-size:11px">';
+                    d.events.slice(0, 20).forEach(e => {
+                        const time = new Date(e.timestamp).toLocaleTimeString();
+                        eventsHtml += `<div style="padding:3px 0;border-bottom:1px solid #1a2332">
+                            <span style="color:#666">${time}</span>
+                            <span style="color:#4ecdc4;margin:0 8px">${e.eventType}</span>
+                            <span style="color:#888">${e.endpoint || ''}</span>
+                            ${e.mouseSpeed ? `<span style="color:#f39c12;margin-left:8px">🖱️${e.mouseSpeed}px/s</span>` : ''}
+                        </div>`;
+                    });
+                    eventsHtml += '</div>';
+                }
+
+                content.innerHTML = `
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+                        <div>
+                            <p><strong style="color:#888">Session ID:</strong> <span style="font-family:monospace;font-size:11px">${d.sessionId}</span></p>
+                            <p><strong style="color:#888">User Agent:</strong> <span style="font-size:12px">${d.userAgent || 'N/A'}</span></p>
+                            <p><strong style="color:#888">URL:</strong> ${d.url || 'N/A'}</p>
+                        </div>
+                        <div>
+                            <p><strong style="color:#888">Score:</strong> <span style="font-size:20px;font-weight:bold;color:${d.lastScore >= 0.6 ? '#e74c3c' : '#2ecc71'}">${(d.lastScore*100).toFixed(0)}%</span></p>
+                            <p><strong style="color:#888">Verdict:</strong> <span class="badge ${d.isBot ? 'bot' : 'human'}">${d.isBot ? '🤖 BOT' : '✅ HUMAN'}</span></p>
+                            <p><strong style="color:#888">Events:</strong> ${d.eventCount} | <strong style="color:#888">Duration:</strong> ${d.duration?.toFixed(1) || 0}s</p>
+                        </div>
+                    </div>
+                    ${signalsHtml}
+                    ${eventsHtml}
+                `;
+            } catch (e) {
+                content.innerHTML = '<p style="color:#e74c3c">Failed to load session details</p>';
+            }
+        }
     </script>
 </body>
 </html>

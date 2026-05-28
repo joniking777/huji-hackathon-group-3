@@ -1,0 +1,352 @@
+[
+  {
+    "sessionId": "challenge-bot-0000",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0001",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0002",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0003",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0004",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0005",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0006",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0007",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0008",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0009",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0010",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0011",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0012",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0013",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0014",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0015",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0016",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0017",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0018",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0019",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0020",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0021",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0022",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0023",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0024",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0025",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0026",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0027",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0028",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0029",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0030",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0031",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0032",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0033",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0034",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0035",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0036",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0037",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0038",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0039",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0040",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0041",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0042",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0043",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0044",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0045",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0046",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0047",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0048",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  },
+  {
+    "sessionId": "challenge-bot-0049",
+    "prediction": "bot",
+    "bot_probability": 1.0,
+    "confidence": 1.0,
+    "ground_truth": "challenge_bot"
+  }
+]

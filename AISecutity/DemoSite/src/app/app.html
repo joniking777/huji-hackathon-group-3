@@ -1,4 +1,34 @@
 <div class="ynet-wrapper">
+  <!-- Live Activity Tracker Banner -->
+  <div class="live-tracker-banner" [class.bot-detected]="liveVerdict?.isBot" [class.human-detected]="liveVerdict && !liveVerdict.isBot">
+    <div class="tracker-inner">
+      <div class="tracker-status">
+        <span class="tracker-icon">{{ isTracking ? '🔴' : '⚪' }}</span>
+        <span class="tracker-label">ניטור פעילות שלך בזמן אמת</span>
+      </div>
+      <div class="tracker-stats">
+        <span class="tracker-events">📊 {{ liveEventCount }} אירועים נרשמו</span>
+        @if (liveVerdict) {
+          <span class="tracker-score" [class.danger]="liveVerdict.isBot" [class.safe]="!liveVerdict.isBot">
+            {{ liveVerdict.isBot ? '🤖 חשוד כבוט' : '✅ נראה אנושי' }}
+            | ציון: {{ (liveVerdict.score * 100).toFixed(0) }}%
+          </span>
+        } @else {
+          <span class="tracker-score waiting">⏳ ממתין לנתונים (צריך 5+ אירועים)...</span>
+        }
+      </div>
+      @if (liveVerdict && liveVerdict.signals.length > 0) {
+        <div class="tracker-signals">
+          @for (signal of liveVerdict.signals; track signal.signalName) {
+            <span class="mini-signal" [class.hot]="signal.score > 0.5">
+              {{ signal.signalName }}: {{ (signal.score * 100).toFixed(0) }}%
+            </span>
+          }
+        </div>
+      }
+    </div>
+  </div>
+
   <!-- Top Red Bar -->
   <header class="top-bar">
     <div class="top-bar-inner">

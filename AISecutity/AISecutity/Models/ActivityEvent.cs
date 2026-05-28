@@ -14,6 +14,7 @@ public class ActivityEvent
     public int? DurationMs { get; set; } // time spent on action
     public MouseData? Mouse { get; set; }
     public KeyboardData? Keyboard { get; set; }
+    public ScrollData? Scroll { get; set; }
     public Dictionary<string, object>? Metadata { get; set; }
 }
 
@@ -30,4 +31,12 @@ public class KeyboardData
     public double? InterKeyDelayMs { get; set; } // time between keystrokes
     public int? BurstLength { get; set; } // how many keys in rapid succession
     public double? ErrorRate { get; set; } // typos / corrections
+}
+
+public class ScrollData
+{
+    public int ScrollY { get; set; } // current scroll position (px from top)
+    public int DeltaY { get; set; } // how much was scrolled in this event (px)
+    public int ViewportHeight { get; set; } // browser viewport height
+    public int PageHeight { get; set; } // total page height
 }

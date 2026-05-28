@@ -18,6 +18,7 @@ builder.Services.AddDbContext<SecurityDbContext>(options =>
 builder.Services.AddSingleton<IAiDetectionEngine, AiDetectionEngine>();
 builder.Services.AddSingleton<ActivityManager>();
 builder.Services.AddScoped<BanService>();
+builder.Services.AddHttpClient<MlDetectionClient>();
 
 // Register AI blocking middleware with options
 builder.Services.AddAiBlocking(options =>
@@ -61,6 +62,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors("AllowDemoSite");
+
+// Rate limiting — block IPs that exceed 60 req/min
+app.UseRateLimiting();
 
 // AI agent blocking — place before auth and controllers
 app.UseAiBlocking();

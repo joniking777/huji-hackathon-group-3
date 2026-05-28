@@ -1,0 +1,67 @@
+{
+  "model_type": "GradientBoostingClassifier",
+  "n_estimators": 200,
+  "train_samples": 840,
+  "test_samples": 210,
+  "accuracy": 1.0,
+  "classification_report": {
+    "Human": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 80.0
+    },
+    "Bot": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 130.0
+    },
+    "accuracy": 1.0,
+    "macro avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 210.0
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 210.0
+    }
+  },
+  "feature_importance": {
+    "api_ratio": 0.9849964277208755,
+    "session_duration": 0.004844032653872191,
+    "num_events": 0.003552468623455319,
+    "avg_error_rate": 0.00281395048572939,
+    "avg_burst_length": 0.0015298056948072505,
+    "avg_key_delay": 0.0011946718678104739,
+    "high_speed_ratio": 0.0010686429534450123,
+    "avg_mouse_speed": 3.148389697339268e-15,
+    "min_interval": 6.993548314740361e-16,
+    "cv_mouse_speed": 3.5446462515519315e-16,
+    "max_interval": 3.1633879835300905e-16,
+    "cv_interval": 2.224211145059805e-16,
+    "std_mouse_speed": 1.5470951517307817e-16,
+    "mean_interval": 1.4312201340190566e-16,
+    "std_interval": 6.681962356096884e-17,
+    "unique_ratio": 2.841229247846815e-18,
+    "nav_ratio": 0.0,
+    "idle_gaps": 0.0,
+    "pause_ratio": 0.0,
+    "click_ratio": 0.0,
+    "api_call_ratio": 0.0,
+    "scroll_ratio": 0.0,
+    "curve_ratio": 0.0,
+    "pct_under_200ms": 0.0,
+    "pct_under_500ms": 0.0
+  },
+  "confusion_matrix": {
+    "tn": 80,
+    "fp": 0,
+    "fn": 0,
+    "tp": 130
+  }
+}

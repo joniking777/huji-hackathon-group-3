@@ -1,0 +1,62 @@
+{
+  "detected": true,
+  "aiProbabilityScore": 0.6,
+  "ban": {
+    "id": 3,
+    "banType": "temporary",
+    "penalty": "tarpit",
+    "expiresAt": "2026-05-28T21:23:38.9898237Z",
+    "reason": "AI bot detected with score 0.600",
+    "triggeredRule": "TimingRegularity=0.60, MouseSpeedProfile=0.86"
+  },
+  "signals": [
+    {
+      "signalName": "TimingRegularity",
+      "weight": 0.15,
+      "score": 0.6,
+      "description": "Coefficient of variation: 0.456. Lower = more robotic."
+    },
+    {
+      "signalName": "ActionSpeed",
+      "weight": 0.15,
+      "score": 0,
+      "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 9102ms."
+    },
+    {
+      "signalName": "MouseBehavior",
+      "weight": 0.1,
+      "score": 0.28,
+      "description": "Linear movement ratio: 0.00, No-curve ratio: 0.70."
+    },
+    {
+      "signalName": "MouseSpeedProfile",
+      "weight": 0.2,
+      "score": 0.865,
+      "description": "Avg speed: 1274px/s, Speed CV: 0.138, High-speed ratio: 1.00."
+    },
+    {
+      "signalName": "KeyboardBehavior",
+      "weight": 0.1,
+      "score": 0.5,
+      "description": "Insufficient keyboard data."
+    },
+    {
+      "signalName": "NavigationPattern",
+      "weight": 0.15,
+      "score": 0.04,
+      "description": "API ratio: 0.00, Efficiency: 0.40, Browse-then-target: False, Seq API ratio: 0.00."
+    },
+    {
+      "signalName": "ApiTargeting",
+      "weight": 0.15,
+      "score": 0,
+      "description": "API hits: 0/10 (0.0%). Search pattern: False."
+    },
+    {
+      "signalName": "SessionRhythm",
+      "weight": 0.05,
+      "score": 0.3,
+      "description": "Pause ratio: 1.00, Idle gaps: 2, Pause regularity CV: 0.00."
+    }
+  ]
+}

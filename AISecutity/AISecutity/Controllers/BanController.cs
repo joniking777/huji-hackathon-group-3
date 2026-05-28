@@ -31,44 +31,50 @@ public class BanController : ControllerBase
     {
         var result = _engine.Analyze(session);
 
-        // If rule engine is uncertain (0.05-0.60), consult ML model
-        if (result.AiProbabilityScore >= 0.05 && result.AiProbabilityScore < 0.60)
+        // ALWAYS consult ML model for a second opinion (not just uncertain cases)
+        // If the rule engine already blocked it (score > 0.60), ML confirms
+        // If the rule engine is uncertain, ML decides
+        // If both are uncertain, escalate to "monitor" instead of allowing
+        var mlResult = await _mlClient.PredictAsync(session);
+        if (mlResult != null)
         {
-            var mlResult = await _mlClient.PredictAsync(session);
-            if (mlResult != null && mlResult.Confidence >= 0.80)
+            result.Signals.Add(new DetectionSignal
             {
-                result.Signals.Add(new DetectionSignal
-                {
-                    SignalName = "ML_Model_v2",
-                    Weight = 0.35,
-                    Score = mlResult.BotProbability,
-                    Description = $"ML: {mlResult.Prediction} (confidence: {mlResult.Confidence:F2})"
-                });
+                SignalName = "ML_Model_v2",
+                Weight = 0.35,
+                Score = mlResult.BotProbability,
+                Description = $"ML: {mlResult.Prediction} (confidence: {mlResult.Confidence:F2})"
+            });
 
-                // Blend scores: 60% rule engine + 40% ML
+            if (result.AiProbabilityScore < 0.55) // Rule engine didn't block — let ML weigh in
+            {
+                // Blend: 50% rules + 50% ML
                 double newScore = result.AiProbabilityScore * 0.5 + mlResult.BotProbability * 0.5;
 
+                // ML is confident it's a bot — escalate
                 if (mlResult.Prediction == "bot" && mlResult.Confidence >= 0.90)
                 {
                     newScore = Math.Max(newScore, 0.65);
                     result.IsLikelyAiAgent = true;
-                    result.RecommendedAction = "challenge";
+                    result.RecommendedAction = "block";
                     result.ThreatLevel = "high";
+                }
+                // ML is somewhat confident — at least monitor
+                else if (mlResult.Prediction == "bot" && mlResult.Confidence >= 0.70)
+                {
+                    newScore = Math.Max(newScore, 0.40);
+                    result.RecommendedAction = "monitor";
+                    result.ThreatLevel = "medium";
                 }
 
                 result.AiProbabilityScore = Math.Round(Math.Min(1.0, newScore), 4);
 
-                if (result.AiProbabilityScore >= 0.75)
+                // Update action based on final blended score
+                if (result.AiProbabilityScore >= 0.55)
                 {
                     result.IsLikelyAiAgent = true;
-                    result.RecommendedAction = "block";
-                    result.ThreatLevel = "critical";
-                }
-                else if (result.AiProbabilityScore >= 0.60)
-                {
-                    result.IsLikelyAiAgent = true;
-                    result.RecommendedAction = "challenge";
-                    result.ThreatLevel = "high";
+                    result.RecommendedAction = result.AiProbabilityScore >= 0.75 ? "block" : "challenge";
+                    result.ThreatLevel = result.AiProbabilityScore >= 0.75 ? "critical" : "high";
                 }
             }
         }

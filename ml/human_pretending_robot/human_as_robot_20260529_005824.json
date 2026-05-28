@@ -1,0 +1,172 @@
+[
+  {
+    "sessionId": "sess-1780004547723-ebo9dg8uz",
+    "userId": "uriya-pretending-robot",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "ipAddress": "192.168.1.1",
+    "events": [
+      {
+        "timestamp": "2026-05-28T21:54:22.816Z",
+        "eventType": "mousemove",
+        "endpoint": "/product3.html",
+        "durationMs": 368288,
+        "mouseSpeed": 2,
+        "mouseX": 97,
+        "mouseY": 1046,
+        "hasCurve": true,
+        "keyDelay": null,
+        "keyErrors": null
+      },
+      {
+        "timestamp": "2026-05-28T21:57:25.076Z",
+        "eventType": "mousemove",
+        "endpoint": "/index.html",
+        "durationMs": 1745,
+        "mouseSpeed": 118,
+        "mouseX": 1396,
+        "mouseY": 372,
+        "hasCurve": true,
+        "keyDelay": null,
+        "keyErrors": null
+      },
+      {
+        "timestamp": "2026-05-28T21:57:25.076Z",
+        "eventType": "click",
+        "endpoint": "/index.html",
+        "durationMs": 0,
+        "mouseSpeed": 500,
+        "mouseX": 1396,
+        "mouseY": 372,
+        "hasCurve": true,
+        "keyDelay": null,
+        "keyErrors": null
+      },
+      {
+        "timestamp": "2026-05-28T21:57:27.314Z",
+        "eventType": "mousemove",
+        "endpoint": "/index.html",
+        "durationMs": 2238,
+        "mouseSpeed": 137,
+        "mouseX": 1142,
+        "mouseY": 543,
+        "hasCurve": true,
+        "keyDelay": null,
+        "keyErrors": null
+      },
+      {
+        "timestamp": "2026-05-28T21:57:30.853Z",
+        "eventType": "mousemove",
+        "endpoint": "/index.html",
+        "durationMs": 3539,
+        "mouseSpeed": 25,
+        "mouseX": 1143,
+        "mouseY": 630,
+        "hasCurve": false,
+        "keyDelay": null,
+        "keyErrors": null
+      },
+      {
+        "timestamp": "2026-05-28T21:57:31.226Z",
+        "eventType": "mousemove",
+        "endpoint": "/index.html",
+        "durationMs": 373,
+        "mouseSpeed": 143,
+        "mouseX": 1192,
+        "mouseY": 651,
+        "hasCurve": true,
+        "keyDelay": null,
+        "keyErrors": null
+      },
+      {
+        "timestamp": "2026-05-28T21:57:31.436Z",
+        "eventType": "mousemove",
+        "endpoint": "/index.html",
+        "durationMs": 210,
+        "mouseSpeed": 890,
+        "mouseX": 1378,
+        "mouseY": 632,
+        "hasCurve": false,
+        "keyDelay": null,
+        "keyErrors": null
+      },
+      {
+        "timestamp": "2026-05-28T21:57:32.092Z",
+        "eventType": "click",
+        "endpoint": "/index.html",
+        "durationMs": 656,
+        "mouseSpeed": 500,
+        "mouseX": 1423,
+        "mouseY": 635,
+        "hasCurve": true,
+        "keyDelay": null,
+        "keyErrors": null
+      },
+      {
+        "timestamp": "2026-05-28T21:57:32.912Z",
+        "eventType": "click",
+        "endpoint": "/index.html",
+        "durationMs": 820,
+        "mouseSpeed": 500,
+        "mouseX": 1423,
+        "mouseY": 635,
+        "hasCurve": true,
+        "keyDelay": null,
+        "keyErrors": null
+      },
+      {
+        "timestamp": "2026-05-28T21:58:00.163Z",
+        "eventType": "mousemove",
+        "endpoint": "/index.html",
+        "durationMs": 12691,
+        "mouseSpeed": 54,
+        "mouseX": 1293,
+        "mouseY": 291,
+        "hasCurve": true,
+        "keyDelay": null,
+        "keyErrors": null
+      },
+      {
+        "timestamp": "2026-05-28T21:58:00.378Z",
+        "eventType": "mousemove",
+        "endpoint": "/index.html",
+        "durationMs": 215,
+        "mouseSpeed": 1132,
+        "mouseX": 1153,
+        "mouseY": 92,
+        "hasCurve": true,
+        "keyDelay": null,
+        "keyErrors": null
+      },
+      {
+        "timestamp": "2026-05-28T21:58:08.792Z",
+        "eventType": "mousemove",
+        "endpoint": "/index.html",
+        "durationMs": 8414,
+        "mouseSpeed": 50,
+        "mouseX": 732,
+        "mouseY": 39,
+        "hasCurve": true,
+        "keyDelay": null,
+        "keyErrors": null
+      },
+      {
+        "timestamp": "2026-05-28T21:58:09.02Z",
+        "eventType": "mousemove",
+        "endpoint": "/index.html",
+        "durationMs": 228,
+        "mouseSpeed": 1200,
+        "mouseX": 420,
+        "mouseY": 66,
+        "hasCurve": true,
+        "keyDelay": null,
+        "keyErrors": null
+      }
+    ],
+    "label": "human_pretending_robot",
+    "source": "real_browsing_acting_as_bot",
+    "collected_at": "2026-05-29T00:58:24.150300",
+    "score": 0.2043,
+    "eventCount": 13,
+    "isBot": false
+  }
+]

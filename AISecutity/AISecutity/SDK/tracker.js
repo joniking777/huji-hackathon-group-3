@@ -149,17 +149,13 @@
       events: events.splice(0, events.length),
     };
 
-    // Use sendBeacon for reliability (survives page unload)
-    if (navigator.sendBeacon) {
-      navigator.sendBeacon(ENDPOINT, JSON.stringify(payload));
-    } else {
-      fetch(ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-        keepalive: true,
-      }).catch(function() {});
-    }
+    // Use fetch with proper Content-Type
+    fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+      keepalive: true,
+    }).catch(function() {});
   }, BATCH_INTERVAL);
 
   // Also send on page unload
@@ -172,9 +168,9 @@
       url: window.location.href,
       events: events,
     };
-    if (navigator.sendBeacon) {
-      navigator.sendBeacon(ENDPOINT, JSON.stringify(payload));
-    }
+    // sendBeacon with blob to set content-type
+    var blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+    navigator.sendBeacon(ENDPOINT, blob);
   });
 
   console.log('[AISecutity] Tracker initialized. Session:', SESSION_ID);

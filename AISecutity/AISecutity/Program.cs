@@ -63,6 +63,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors("AllowDemoSite");
 
+// Server-side request fingerprinting — catches bots at network level
+// even if they send spoofed telemetry
+app.UseRequestFingerprinting();
+
 // Rate limiting — block IPs that exceed 60 req/min
 app.UseRateLimiting();
 

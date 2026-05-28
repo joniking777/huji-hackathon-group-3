@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DetectionService } from './services/detection.service';
+import { ActivityTrackerService, LiveVerdict } from './services/activity-tracker.service';
 import { DetectionResult } from './models/detection.models';
 
 @Component({
@@ -19,7 +20,15 @@ export class App implements OnInit {
   avgScore = '0';
   topSignals: { name: string; avgScore: number }[] = [];
 
-  constructor(private detectionService: DetectionService) {}
+  // Live tracking
+  liveVerdict: LiveVerdict | null = null;
+  liveEventCount = 0;
+  isTracking = false;
+
+  constructor(
+    private detectionService: DetectionService,
+    private activityTracker: ActivityTrackerService,
+  ) {}
 
   ngOnInit(): void {
     this.currentDate = new Date().toLocaleDateString('he-IL', {
@@ -33,6 +42,22 @@ export class App implements OnInit {
     this.detectionService.results$.subscribe((results) => {
       this.results = results;
       this.updateStats();
+    });
+
+    // Start tracking immediately
+    this.startTracking();
+  }
+
+  startTracking(): void {
+    this.isTracking = true;
+    this.activityTracker.startTracking();
+
+    this.activityTracker.verdict$.subscribe((verdict) => {
+      this.liveVerdict = verdict;
+    });
+
+    this.activityTracker.eventCount$.subscribe((count) => {
+      this.liveEventCount = count;
     });
   }
 

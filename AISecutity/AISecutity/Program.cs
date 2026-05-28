@@ -62,6 +62,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors("AllowDemoSite");
 
+// Rate limiting — block IPs that exceed 60 req/min
+app.UseRateLimiting();
+
 // AI agent blocking — place before auth and controllers
 app.UseAiBlocking();
 

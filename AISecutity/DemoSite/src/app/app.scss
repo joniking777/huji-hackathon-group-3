@@ -522,3 +522,108 @@
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   background: rgba(0, 0, 0, 0.5);
 }
+
+
+// === LIVE ACTIVITY TRACKER BANNER ===
+.live-tracker-banner {
+  background: rgba(20, 20, 40, 0.95);
+  border-bottom: 3px solid #444;
+  padding: 12px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  transition: border-color 0.3s, background 0.3s;
+
+  &.bot-detected {
+    border-bottom-color: #ff3333;
+    background: rgba(60, 10, 10, 0.95);
+  }
+
+  &.human-detected {
+    border-bottom-color: #33cc66;
+    background: rgba(10, 40, 20, 0.95);
+  }
+}
+
+.tracker-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.tracker-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .tracker-icon {
+    font-size: 12px;
+    animation: pulse 1.5s infinite;
+  }
+
+  .tracker-label {
+    color: #ccc;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+.tracker-stats {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  .tracker-events {
+    color: #aaa;
+    font-size: 13px;
+  }
+
+  .tracker-score {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 4px;
+
+    &.danger {
+      color: #ff4444;
+      background: rgba(255, 50, 50, 0.15);
+    }
+
+    &.safe {
+      color: #44dd77;
+      background: rgba(50, 200, 100, 0.15);
+    }
+
+    &.waiting {
+      color: #888;
+    }
+  }
+}
+
+.tracker-signals {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+
+  .mini-signal {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #999;
+
+    &.hot {
+      background: rgba(255, 100, 50, 0.2);
+      color: #ff8855;
+    }
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}

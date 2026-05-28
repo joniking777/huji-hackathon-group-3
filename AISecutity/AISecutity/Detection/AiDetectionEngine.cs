@@ -53,6 +53,7 @@ public class AiDetectionEngine : IAiDetectionEngine
         signals.Add(AnalyzeMouseSpeedProfile(events));
         signals.Add(AnalyzeKeyboardBehavior(events));
         signals.Add(AnalyzeNavigationPattern(events));
+        signals.Add(AnalyzeNavigationBehavior(events));    // NEW v3: catches Stealth Crawler
         signals.Add(AnalyzeApiTargeting(events));
         signals.Add(AnalyzeSessionRhythm(events));
 
@@ -413,6 +414,112 @@ public class AiDetectionEngine : IAiDetectionEngine
             Score = Math.Round(score, 4),
             Description = $"Analyzed {keyEvents.Count} keyboard events for consistency and error patterns."
         };
+    }
+
+    /// <summary>
+    /// NEW v3: Navigation Behavior — catches Stealth Crawlers.
+    /// 
+    /// Stealth crawlers visit pages in sequential/systematic order and never revisit.
+    /// Real humans:
+    /// - Revisit pages (back button, re-reading)
+    /// - Skip around randomly (not sequential)
+    /// - Have "favorite" pages they return to
+    /// 
+    /// Signals:
+    /// 1. Revisit ratio: humans revisit ~15% of pages, bots 0%
+    /// 2. Sequential pattern: visiting /products/1, /2, /3... in order
+    /// 3. Coverage efficiency: bots visit many unique pages with zero waste
+    /// </summary>
+    private DetectionSignal AnalyzeNavigationBehavior(List<ActivityEvent> events)
+    {
+        var endpoints = events
+            .Select(e => e.Endpoint)
+            .Where(e => !string.IsNullOrEmpty(e))
+            .ToList();
+
+        if (endpoints.Count < 5)
+            return new DetectionSignal { SignalName = "NavigationBehavior", Weight = 0.12, Score = 0.5, Description = "Insufficient navigation data." };
+
+        // 1. Revisit ratio: how often does the user go back to a previously visited page?
+        int revisits = 0;
+        var visited = new HashSet<string>();
+        for (int i = 0; i < endpoints.Count; i++)
+        {
+            if (visited.Contains(endpoints[i]))
+                revisits++;
+            visited.Add(endpoints[i]);
+        }
+        double revisitRatio = (double)revisits / endpoints.Count;
+
+        // Humans revisit 10-30% of pages. Bots almost never revisit (0-5%).
+        double revisitScore;
+        if (revisitRatio < 0.02) revisitScore = 0.9;       // Never revisits = bot
+        else if (revisitRatio < 0.05) revisitScore = 0.7;
+        else if (revisitRatio < 0.10) revisitScore = 0.5;
+        else if (revisitRatio < 0.20) revisitScore = 0.3;
+        else revisitScore = 0.1;                            // Lots of revisits = human
+
+        // 2. Sequential pattern detection: are numbered pages visited in order?
+        // e.g., /products/1, /products/2, /products/3...
+        int sequentialPairs = 0;
+        int totalPairs = 0;
+        for (int i = 1; i < endpoints.Count; i++)
+        {
+            // Extract trailing numbers from paths
+            var num1 = ExtractTrailingNumber(endpoints[i - 1]);
+            var num2 = ExtractTrailingNumber(endpoints[i]);
+
+            if (num1.HasValue && num2.HasValue)
+            {
+                totalPairs++;
+                if (num2.Value == num1.Value + 1) // Sequential: 1→2, 2→3, etc.
+                    sequentialPairs++;
+            }
+        }
+        double seqRatio = totalPairs > 0 ? (double)sequentialPairs / totalPairs : 0;
+
+        double seqScore;
+        if (seqRatio > 0.6) seqScore = 0.95;    // Clearly sequential crawling
+        else if (seqRatio > 0.4) seqScore = 0.7;
+        else if (seqRatio > 0.2) seqScore = 0.4;
+        else seqScore = 0.1;                      // Random order = human
+
+        // 3. Consecutive same-page ratio: humans often stay on a page (scroll, click within)
+        // Bots move to a new page every action
+        int samePage = 0;
+        for (int i = 1; i < endpoints.Count; i++)
+        {
+            if (endpoints[i] == endpoints[i - 1])
+                samePage++;
+        }
+        double samePageRatio = (double)samePage / (endpoints.Count - 1);
+
+        // Humans stay on same page ~30-50% of actions (scrolling, clicking within page)
+        // Bots change page almost every action (samePageRatio < 10%)
+        double stayScore;
+        if (samePageRatio < 0.05) stayScore = 0.85;   // Never stays = bot
+        else if (samePageRatio < 0.15) stayScore = 0.6;
+        else if (samePageRatio < 0.25) stayScore = 0.3;
+        else stayScore = 0.1;                           // Stays often = human
+
+        double score = revisitScore * 0.40 + seqScore * 0.30 + stayScore * 0.30;
+
+        return new DetectionSignal
+        {
+            SignalName = "NavigationBehavior",
+            Weight = 0.12,
+            Score = Math.Round(score, 4),
+            Description = $"Revisit ratio: {revisitRatio:F2} (low=bot), Sequential: {seqRatio:F2}, Same-page: {samePageRatio:F2}."
+        };
+    }
+
+    private int? ExtractTrailingNumber(string path)
+    {
+        if (string.IsNullOrEmpty(path)) return null;
+        var parts = path.TrimEnd('/').Split('/');
+        var last = parts.LastOrDefault();
+        if (int.TryParse(last, out int num)) return num;
+        return null;
     }
 
     /// <summary>

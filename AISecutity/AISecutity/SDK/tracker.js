@@ -137,29 +137,6 @@
   // Navigation tracking
   record('navigation', { duration: 0, mouse: null });
 
-  // === AUTO-INJECT HONEYPOT ===
-  // Invisible links that only bots can find (hidden via CSS).
-  // The customer doesn't need to add anything — this does it automatically.
-  (function() {
-    var hp = document.createElement('div');
-    hp.setAttribute('aria-hidden', 'true');
-    hp.style.cssText = 'position:absolute;left:-9999px;top:-9999px;width:0;height:0;overflow:hidden;opacity:0;pointer-events:none;';
-    hp.innerHTML = '<a href="/admin-panel" class="_aisec_hp">Admin</a><a href="/api/internal/export" class="_aisec_hp">Export</a><a href="/secret-data" class="_aisec_hp">Data</a>';
-    document.body.appendChild(hp);
-
-    // If any bot finds and clicks these (via DOM traversal), instant detection
-    hp.querySelectorAll('a').forEach(function(link) {
-      link.style.pointerEvents = 'auto';
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        record('honeypot_click', { duration: 0, mouse: {x:0, y:0, speed:99999, hasCurve:false} });
-        // Force immediate send
-        var payload = { apiKey: API_KEY, sessionId: SESSION_ID, userAgent: navigator.userAgent, url: window.location.href, events: events.splice(0) };
-        fetch(ENDPOINT, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) });
-      });
-    });
-  })();
-
   // Batch send every N seconds
   setInterval(function() {
     if (events.length === 0) return;

@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "agent_name": "headline_agent_058",
+    "timestamp": "2026-05-28T11:40:21.372955+00:00",
+    "target_url": "https://www.ynet.co.il/home/0,7340,L-8,00.html",
+    "item_count": 5
+  },
+  "items": [
+    {
+      "text": "רצח הילדה לילא: \"האחים רבו על מטען לטרקטורון, האב ירה בבתו - ורחץ ידיים באקונומיקה\"",
+      "section": "textDiv",
+      "position": 1
+    },
+    {
+      "text": "\"סע, ננסה\": התחקיר שחשף את התכתבויות אוריך",
+      "section": "textDiv",
+      "position": 2
+    },
+    {
+      "text": "ניסיון חיסול באזור ביירות: בכיר במערך הטילים",
+      "section": "textDiv",
+      "position": 3
+    },
+    {
+      "text": "'כלבה ציונית!': אחרי שתמכה בישראל, הלן מירן הותקפה",
+      "section": "textDiv",
+      "position": 4
+    },
+    {
+      "text": "מסיירת גבעתי לשדה של אבא",
+      "section": "textDiv",
+      "position": 5
+    }
+  ]
+}

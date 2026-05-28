@@ -1,0 +1,454 @@
+{
+  "metadata": {
+    "agent_name": "metadata_agent_156",
+    "timestamp": "2026-05-28T11:41:34.707310+00:00",
+    "target_url": "https://www.ynet.co.il/home/0,7340,L-8,00.html",
+    "item_count": 111
+  },
+  "items": [
+    {
+      "type": "page_title",
+      "value": "ynet - חדשות, כלכלה, ספורט ובריאות - דיווחים שוטפים מהארץ ומהעולם"
+    },
+    {
+      "type": "meta_description",
+      "value": "אתר החדשות המוביל בישראל מבית ידיעות אחרונות. סיקור מלא של חדשות מישראל והעולם, ספורט, כלכלה, תרבות, אוכל, מדע וטבע, כל מה שקורה וכל מה שמעניין ב ynet"
+    },
+    {
+      "type": "og_type",
+      "value": "website"
+    },
+    {
+      "type": "og_url",
+      "value": "https://www.ynet.co.il/home/0,7340,L-8,00.html"
+    },
+    {
+      "type": "og_title",
+      "value": "ynet - חדשות, כלכלה, ספורט ובריאות - דיווחים שוטפים מהארץ ומהעולם"
+    },
+    {
+      "type": "og_description",
+      "value": "אתר החדשות המוביל בישראל מבית ידיעות אחרונות. סיקור מלא של חדשות מישראל והעולם, ספורט, כלכלה, תרבות, אוכל, מדע וטבע, כל מה שקורה וכל מה שמעניין ב ynet"
+    },
+    {
+      "type": "og_image",
+      "value": "https://www.ynet.co.il/images/og/logo/www.ynet.co.il_new.png"
+    },
+    {
+      "type": "og_site_name",
+      "value": "ynet"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T04:02:35.695Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T05:54:27.210Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T06:06:49.906Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T03:58:55.933Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T07:35:50.480Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T10:16:01.022Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T03:42:58.978Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T10:35:11.822Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T10:36:37.934Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T08:48:52.016Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T09:52:37.053Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T07:25:59.115Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T03:58:15.441Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T07:29:10.035Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T07:40:34.204Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T03:57:26.902Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T04:39:08.811Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T03:57:50.361Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T07:00:20.590Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T03:55:47.798Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T08:00:38.266Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T08:40:41.837Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T04:48:36.127Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T04:05:15.298Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T04:50:11.239Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T07:24:10.256Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T07:01:15.850Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T10:23:41.340Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T07:38:41.478Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-25T15:46:44.313Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T04:00:00.000Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-27T06:19:44.549Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T08:48:52.016Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T04:26:04.064Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-27T04:14:31.399Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-27T07:21:46.930Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-27T04:32:02.963Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T06:13:19.238Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T05:06:25.174Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T07:57:18.360Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T08:23:13.952Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-27T08:16:48.085Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T05:32:38.981Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T11:24:15.962Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T07:11:48.308Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T07:26:21.233Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T05:54:27.210Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T05:51:46.331Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T05:33:58.244Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T05:53:07.338Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T03:58:29.225Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-27T11:50:12.643Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-27T09:14:55.347Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T06:24:13.831Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T04:25:45.193Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T04:30:12.715Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-27T04:37:18.426Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-27T19:44:17.009Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T07:26:43.568Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-27T12:40:02.106Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-26T12:06:23.967Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-27T06:21:39.014Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-27T16:02:13.790Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-27T08:43:26.488Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-26T12:54:32.711Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-26T08:51:24.374Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T07:27:19.761Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T09:25:02.422Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-27T04:00:00.662Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-27T15:43:47.543Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-27T06:18:43.883Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-25T05:34:00.107Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-20T05:45:10.368Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T04:38:36.365Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-25T03:40:40.279Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-21T08:21:25.803Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T07:24:10.256Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-27T08:58:08.958Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-27T06:01:55.908Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T10:23:41.340Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T04:56:14.575Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-27T04:57:44.321Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T04:50:11.239Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-27T06:36:37.229Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-25T23:35:01.248Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T07:01:15.850Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-27T07:23:04.864Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-26T08:04:03.834Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T07:32:41.872Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T08:05:19.936Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T08:11:55.850Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-27T07:32:00.843Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T06:13:35.381Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T06:13:03.512Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-28T04:12:00.000Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-27T04:18:00.000Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-27T07:46:05.897Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-03-05T11:17:59.832Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-03-05T14:20:26.670Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-07T06:50:50.812Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-05-06T22:28:01.098Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2026-01-14T16:37:39.593Z"
+    },
+    {
+      "type": "timestamp",
+      "value": "2024-07-04T10:12:57.412Z"
+    }
+  ]
+}

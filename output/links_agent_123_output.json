@@ -1,0 +1,1900 @@
+{
+  "metadata": {
+    "agent_name": "links_agent_123",
+    "timestamp": "2026-05-28T11:41:14.139996+00:00",
+    "target_url": "https://www.ynet.co.il/home/0,7340,L-8,00.html",
+    "item_count": 378
+  },
+  "items": [
+    {
+      "url": "https://www.ynet.co.il/news/category/184",
+      "anchor_text": "מבזקים",
+      "parent_section": "rightSideLinks"
+    },
+    {
+      "url": "https://www.ynet.co.il/redmail",
+      "anchor_text": "דווחו לנו",
+      "parent_section": "rightSideLinks"
+    },
+    {
+      "url": "https://www.ynet.co.il/home/0,7340,L-201,00.html",
+      "anchor_text": "",
+      "parent_section": "headerWeatherSelect"
+    },
+    {
+      "url": "https://www.ynet.co.il/home/0,7340,L-8,00.html",
+      "anchor_text": "",
+      "parent_section": "logo"
+    },
+    {
+      "url": "https://www.ynet.co.il/home/0,7340,L-8,00.html",
+      "anchor_text": "ראשי",
+      "parent_section": "navList"
+    },
+    {
+      "url": "https://www.ynet.co.il/plus",
+      "anchor_text": "ידיעות+",
+      "parent_section": "navList"
+    },
+    {
+      "url": "https://www.ynet.co.il/news",
+      "anchor_text": "חדשות",
+      "parent_section": "navList"
+    },
+    {
+      "url": "https://www.ynet.co.il/radio",
+      "anchor_text": "פודקאסטים",
+      "parent_section": "navList"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy",
+      "anchor_text": "כלכלה",
+      "parent_section": "navList"
+    },
+    {
+      "url": "https://www.ynet.co.il/sport",
+      "anchor_text": "ספורט",
+      "parent_section": "navList"
+    },
+    {
+      "url": "https://www.ynet.co.il/entertainment",
+      "anchor_text": "תרבות",
+      "parent_section": "navList"
+    },
+    {
+      "url": "https://pplus.ynet.co.il/homepage",
+      "anchor_text": "רכילות",
+      "parent_section": "navList"
+    },
+    {
+      "url": "https://www.ynet.co.il/health",
+      "anchor_text": "בריאות",
+      "parent_section": "navList"
+    },
+    {
+      "url": "https://www.ynet.co.il/wheels",
+      "anchor_text": "רכב",
+      "parent_section": "navList"
+    },
+    {
+      "url": "https://www.ynet.co.il/digital",
+      "anchor_text": "דיגיטל",
+      "parent_section": "navList"
+    },
+    {
+      "url": "https://www.ynet.co.il/laisha",
+      "anchor_text": "לאשה",
+      "parent_section": "navList"
+    },
+    {
+      "url": "https://www.ynet.co.il/food",
+      "anchor_text": "אוכל",
+      "parent_section": "navList"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/category/8315",
+      "anchor_text": "נדל\"ן",
+      "parent_section": "navList"
+    },
+    {
+      "url": "https://www.energya.co.il/",
+      "anchor_text": "אנרגיה",
+      "parent_section": "navList"
+    },
+    {
+      "url": "https://www.ynet.co.il/plus",
+      "anchor_text": "ידיעות+",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.yedioth.co.il/?externalurl=true",
+      "anchor_text": "ידיעות מנויים",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/247",
+      "anchor_text": "24/7 כל הכתבות",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/category/184",
+      "anchor_text": "מבזקים",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/news",
+      "anchor_text": "חדשות",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/category/194",
+      "anchor_text": "דעות",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy",
+      "anchor_text": "כלכלה",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/sport",
+      "anchor_text": "ספורט",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://weather.ynet.co.il/",
+      "anchor_text": "מזג אוויר",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/radio",
+      "anchor_text": "פודקאסטים",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/entertainment",
+      "anchor_text": "תרבות",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://pplus.ynet.co.il/homepage",
+      "anchor_text": "רכילות Pplus",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/health",
+      "anchor_text": "בריאות",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/wheels",
+      "anchor_text": "רכב",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/digital",
+      "anchor_text": "דיגיטל",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/category/5363",
+      "anchor_text": "צרכנות",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/category/8315",
+      "anchor_text": "נדל\"ן",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/vacation",
+      "anchor_text": "חופש",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/food",
+      "anchor_text": "אוכל",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/dating",
+      "anchor_text": "יחסים",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/laisha",
+      "anchor_text": "לאשה",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/judaism",
+      "anchor_text": "יהדות",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/wellness",
+      "anchor_text": "וולנס",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://projects.ynet.co.il/product/ynet-creative-studio2",
+      "anchor_text": "פרויקטים מיוחדים",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/environment-science",
+      "anchor_text": "סביבה ומדע",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/activism",
+      "anchor_text": "מעורבות",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/fashion",
+      "anchor_text": "אופנה",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/architecture",
+      "anchor_text": "עיצוב ואדריכלות",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/weather",
+      "anchor_text": "מזג אוויר",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/category/40552",
+      "anchor_text": "שיתופי פעולה",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://z.ynet.co.il/mshort/commerce/2018/musafimspecial",
+      "anchor_text": "מוספים",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.alljobs.co.il/?utm_source=ynet&utm_medium=cooperation&utm_campaign=Banana",
+      "anchor_text": "Alljobs דרושים",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/activism/category/36572",
+      "anchor_text": "ועידות וכנסים",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/capital",
+      "anchor_text": "קפיטל",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/activism/israel2048",
+      "anchor_text": "ישראל 2048",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.energya.co.il/",
+      "anchor_text": "אנרגיה",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynetnews.com/category/3083",
+      "anchor_text": "ynet Global",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.calcalist.co.il/home/0,7340,L-8,00.html",
+      "anchor_text": "כלכליסט",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.vesty.co.il/",
+      "anchor_text": "vesty",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.mynet.co.il/",
+      "anchor_text": "mynet",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/games",
+      "anchor_text": "משחקים",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://getpackage.com/?utm_source=ynet&utm_medium=website&utm_campaign=menu",
+      "anchor_text": "GetPackage",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/article/rkskixybt",
+      "anchor_text": "צור קשר",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/article/h1oypwysn",
+      "anchor_text": "מדיניות פרטיות",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/article/bkswwa3sn",
+      "anchor_text": "תנאי שימוש",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://www.ynet.co.il/home/0,7340,L-4080,00.html",
+      "anchor_text": "מפת האתר",
+      "parent_section": "group"
+    },
+    {
+      "url": "https://twitter.com/ynetalerts?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor",
+      "anchor_text": "",
+      "parent_section": "mediaLinks"
+    },
+    {
+      "url": "https://www.facebook.com/ynetnews/",
+      "anchor_text": "",
+      "parent_section": "mediaLinks"
+    },
+    {
+      "url": "https://www.instagram.com/ynetgram/",
+      "anchor_text": "",
+      "parent_section": "mediaLinks"
+    },
+    {
+      "url": "https://www.youtube.com/channel/UCpSSzrovhI4fA2PQNItecUA",
+      "anchor_text": "",
+      "parent_section": "mediaLinks"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/category/184",
+      "anchor_text": "לכל המבזקים",
+      "parent_section": "TickerSliderComponenta"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/b1ko5osxfl#autoplay",
+      "anchor_text": "רצח הילדה לילא: \"האחים רבו על מטען לטרקטורון, האב ירה בבתו - ורחץ ידיים באקונומיקה\"לילא בת ה-9, תלמידת כיתה ג', נורתה למוות ככל הנראה במהלך ויכוח בין אביה ואחיו - שאיבדו שליטה אחרי ריב בין ילדיהם. לפי החשד, אביה הוא שירה ואף ניסה לטשטש ראיות אחריו. ראש מועצת ערערה לאולפן ynet: \"הילדות רועדות, הן ראו את אחותן נרצחת\". האב הכחיש את המיוחס לו, מעצרו הוארך. 7 שוחררואלכסנדרה לוקש, יאיר קראוס",
+      "parent_section": "textDiv"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/b1ko5osxfl#autoplay",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.energya.co.il/",
+      "anchor_text": "",
+      "parent_section": "multiArticleTab"
+    },
+    {
+      "url": "https://www.energya.co.il/",
+      "anchor_text": "אנרגיה",
+      "parent_section": "multiArticleTab"
+    },
+    {
+      "url": "https://www.energya.co.il/",
+      "anchor_text": "אנרגיה",
+      "parent_section": "multiArticleTab"
+    },
+    {
+      "url": "https://www.energya.co.il/%d7%92%d7%96/%d7%a1%d7%a7%d7%a8-%d7%9e%d7%97%d7%99%d7%a8%d7%99-%d7%94%d7%92%d7%96-%d7%94%d7%91%d7%99%d7%aa%d7%99-%d7%91%d7%aa%d7%9c-%d7%90%d7%91%d7%99%d7%91-%d7%9e%d7%99-%d7%a2%d7%95%d7%a7%d7%a5-%d7%90%d7%aa%d7%9b%d7%9d-%d7%91%d7%9e%d7%90%d7%95%d7%aa-%d7%a9%d7%a7%d7%9c-%d7%91%d7%a9%d7%a0%d7%94/",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.energya.co.il/%d7%92%d7%96/%d7%a1%d7%a7%d7%a8-%d7%9e%d7%97%d7%99%d7%a8%d7%99-%d7%94%d7%92%d7%96-%d7%94%d7%91%d7%99%d7%aa%d7%99-%d7%91%d7%aa%d7%9c-%d7%90%d7%91%d7%99%d7%91-%d7%9e%d7%99-%d7%a2%d7%95%d7%a7%d7%a5-%d7%90%d7%aa%d7%9b%d7%9d-%d7%91%d7%9e%d7%90%d7%95%d7%aa-%d7%a9%d7%a7%d7%9c-%d7%91%d7%a9%d7%a0%d7%94/",
+      "anchor_text": "סקר מחירי הגז הביתי בתל אביב: מי עוקץ אתכם במאות שקלים בשנה?",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.energya.co.il/%d7%97%d7%93%d7%a9%d7%95%d7%aa-%d7%94%d7%90%d7%a0%d7%a8%d7%92%d7%99%d7%94/%d7%94%d7%aa%d7%95%d7%9b%d7%a0%d7%99%d7%aa-%d7%94%d7%90%d7%a1%d7%98%d7%a8%d7%98%d7%92%d7%99%d7%aa-%d7%94%d7%9c%d7%90%d7%95%d7%9e%d7%99%d7%aa-%d7%9c%d7%9e%d7%a9%d7%a7-%d7%94%d7%90%d7%a0%d7%a8%d7%92%d7%99%d7%94/",
+      "anchor_text": "תוכנית של משרד האנרגיה: להגדיל פי ארבע את ייצור החשמל הסולארי",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.energya.co.il/%d7%92%d7%96/406/",
+      "anchor_text": "מאגר לווייתן יספק גז בכמות ענקית לתחנות הכוח החדשות של דליה אנרגיה",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/uy9zx5qm4",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/uy9zx5qm4",
+      "anchor_text": "\"סע, ננסה\": התחקיר שחשף את התכתבויות אוריך\"צא החוצה, עופר גולן רוצה ועידה, אני אתה והוא, עכשיו, על הבילד\". זו הפרשה שבגינה הוגש היום כתב אישום נגד יונתן אוריךנטעאל בנדל",
+      "parent_section": "textDiv"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/rj1flosxze#autoplay",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/rj1flosxze#autoplay",
+      "anchor_text": "ניסיון חיסול באזור ביירות: בכיר במערך הטיליםבתקיפה בא-שויפאת ניסה צה\"ל לחסל את עלי אלחיסני, מפקד מערך הטילים של המיליציה שהקימו משמרות המהפכהיוסי יהושוע, ליאור בן ארי, אלישע בן קימון",
+      "parent_section": "textDiv"
+    },
+    {
+      "url": "https://www.ynet.co.il/entertainment/article/rjdv3cbgze",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/entertainment/article/rjdv3cbgze",
+      "anchor_text": "'כלבה ציונית!': אחרי שתמכה בישראל, הלן מירן הותקפהבסרטון שפורסם ברשתות, נראית זוכת האוסקר כשהיא צועדת עם בעלה ברחוב לפני שאדם הטיח בה קללות על רקע עמדותיהynet",
+      "parent_section": "textDiv"
+    },
+    {
+      "url": "https://www.ynet.co.il/activism/article/rk56irvxme#autoplay",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/activism/article/rk56irvxme#autoplay",
+      "anchor_text": "מסיירת גבעתי לשדה של אבאהצעיר שנלחם על עתיד החקלאות הישראלית מספר איך העסק המשפחתי ניצל מקריסהבשיתוף לקט ישראל",
+      "parent_section": "textDiv"
+    },
+    {
+      "url": "https://www.ynet.co.il/health/article/bkde7mexge#autoplay",
+      "anchor_text": "",
+      "parent_section": "MediaCarousel"
+    },
+    {
+      "url": "https://www.ynet.co.il/health/article/bkde7mexge#autoplay",
+      "anchor_text": "תקועים בלי התמחות ושוקלים להגר: למדו רפואה ועובדים כשליחים",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://pplus.ynet.co.il/royals/article/ryatz8bgme",
+      "anchor_text": "",
+      "parent_section": "MediaCarousel"
+    },
+    {
+      "url": "https://pplus.ynet.co.il/royals/article/ryatz8bgme",
+      "anchor_text": "בצל פרשת אפשטיין: \"הנסיכה הנורבגית מטה מאריט חולה מאוד. מצבה החמיר\"",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.calcalist.co.il/local_news/car/article/r12e15nlfx",
+      "anchor_text": "",
+      "parent_section": "MediaCarousel"
+    },
+    {
+      "url": "https://www.calcalist.co.il/local_news/car/article/r12e15nlfx",
+      "anchor_text": "נשמע מוכר? מחקר בגרמניה מסביר מדוע ערך הרכבים הסיניים צונח במהירות",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/sport/worldsoccer/article/byujcrrgfg",
+      "anchor_text": "",
+      "parent_section": "MediaCarousel"
+    },
+    {
+      "url": "https://www.ynet.co.il/sport/worldsoccer/article/byujcrrgfg",
+      "anchor_text": "חדש ב-ynet: הורידו את לוח משחקי המונדיאל לטלפון שלכם",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/environment-science/article/rkkwvpexzx#autoplay",
+      "anchor_text": "",
+      "parent_section": "MediaCarousel"
+    },
+    {
+      "url": "https://www.ynet.co.il/environment-science/article/rkkwvpexzx#autoplay",
+      "anchor_text": "מדוע אירופה מתחממת מהר יותר משאר העולם?",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/news",
+      "anchor_text": "חדשות",
+      "parent_section": "multiArticleTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/news",
+      "anchor_text": "עוד בחדשות",
+      "parent_section": "multiArticleTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/rk11fmwsezx#autoplay",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/rk11fmwsezx#autoplay",
+      "anchor_text": "\"אז יש רחפנים, לא לדאוג\": האופטימיות של רותם  ז\"ל, וקרב הגבורה שבו נפצע אחיה",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/hjotophlml#autoplay",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/hjotophlml#autoplay",
+      "anchor_text": "לעג ל-AOC, שהתעטפה בחיג'אב לחג הקורבן: \"לא התלוננת על דיכוי נשים?\"",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/home/0,7340,L-201,00.html",
+      "anchor_text": "",
+      "parent_section": "headerWeatherSelect"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/by0t100hlge",
+      "anchor_text": "יונתן אוריך מואשם במסירת ידיעה סודית בכוונה לפגוע בביטחון המדינה",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/skyd0tbefx#autoplay",
+      "anchor_text": "החשודים נתפסו רגע לפני חיסולים - ומאגר נשק משמעותי נחשף | תיעוד",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/120andone/article/sj32cqmxgl#autoplay",
+      "anchor_text": "חן אריאלי: \"אני אישה, פוליטיקאית, שמנה, ואני מרגישה חד-משמעית שזה אישיו\"",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/h1kbvqhefg",
+      "anchor_text": "\"ניצל את התלות הנפשית\": אישום נגד הרב בפרשה שמזעזעת את ברסלב",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/rj76b5sxfe",
+      "anchor_text": "כתב אישום: אנס את בתו הקטנה - ושלח תיעוד",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/health/article/rylyfiblml#autoplay",
+      "anchor_text": "נדבקת באבולה? תישאר באפריקה: ממשל טראמפ מסרב להחזיר חולים הביתה",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/b1cacfhxme#autoplay",
+      "anchor_text": "חשד לפיגוע דקירה ברכבת בשווייץ: תקף נוסעים בסכין וצעק \"אללהו אכבר\"",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/sjqfvdslzx#autoplay",
+      "anchor_text": "הלוויין חשף: איראן משקמת \"כמות עצומה של טילים\" - במהירות",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://x.com/ynetalerts?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor",
+      "anchor_text": "",
+      "parent_section": "mediaLinks"
+    },
+    {
+      "url": "https://www.tiktok.com/@ynet?_t=ZS-8xJKlzfsTRA&_r=1",
+      "anchor_text": "",
+      "parent_section": "mediaLinks"
+    },
+    {
+      "url": "https://www.instagram.com/ynetgram?igsh=MXNtcW1pMm4wYXN0cA",
+      "anchor_text": "",
+      "parent_section": "mediaLinks"
+    },
+    {
+      "url": "https://www.facebook.com/share/1AZhPaESvx/",
+      "anchor_text": "",
+      "parent_section": "mediaLinks"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/category/194",
+      "anchor_text": "דעות וטורים",
+      "parent_section": "componentaTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/category/194",
+      "anchor_text": "עוד בדעות",
+      "parent_section": "componentaTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/yokra14783450",
+      "anchor_text": "",
+      "parent_section": "MediaCarousel"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/yokra14783450",
+      "anchor_text": "העצורים  לא רצים לגולני",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/yokra14783943",
+      "anchor_text": "",
+      "parent_section": "MediaCarousel"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/yokra14783943",
+      "anchor_text": "הקליע שהרג את הילדות",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/yokra14783728",
+      "anchor_text": "",
+      "parent_section": "MediaCarousel"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/yokra14783728",
+      "anchor_text": "מוציאים גימל לגוש",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/yokra14783916",
+      "anchor_text": "",
+      "parent_section": "MediaCarousel"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/yokra14783916",
+      "anchor_text": "דרוש לימוד אמיתי של מדעי החברה",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/yokra14783469",
+      "anchor_text": "",
+      "parent_section": "MediaCarousel"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/yokra14783469",
+      "anchor_text": "להיגמל מההרואין הפוליטי",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/yokra14783614",
+      "anchor_text": "",
+      "parent_section": "MediaCarousel"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/yokra14783614",
+      "anchor_text": "מצב בלתי אפשרי",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/gal-hed",
+      "anchor_text": "הנצחת חללי צה\"ל וכוחות הביטחון במלחמת חרבות ברזל",
+      "parent_section": "TabComponenta"
+    },
+    {
+      "url": "https://www.ynet.co.il/home/0,7340,L-8,00.html",
+      "anchor_text": "",
+      "parent_section": "bottomLogos"
+    },
+    {
+      "url": "https://yadlabanim.org/",
+      "anchor_text": "",
+      "parent_section": "bottomLogos"
+    },
+    {
+      "url": "https://www.fidf.org/",
+      "anchor_text": "",
+      "parent_section": "bottomLogos"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy",
+      "anchor_text": "כלכלה וצרכנות",
+      "parent_section": "multiArticleTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy",
+      "anchor_text": "עוד בכלכלה וצרכנות",
+      "parent_section": "multiArticleTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/article/hkoizfrezl",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/article/hkoizfrezl",
+      "anchor_text": "מנכ\"ל וויקס מאשר את פיטורי הענק בחברה: \"לא הייתה לנו ברירה\"",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/article/yokra14781826",
+      "anchor_text": "מיום שני: כל עסקה מעל 5,000 שקל תחויב באישור מראש",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/article/s1upnvrxfl",
+      "anchor_text": "הרוויח כמיליון דולר על \"סודות גוגל\" ונעצר: הסתבכות מהנדס התוכנה של ענקית הטק",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/article/sjcj100sxfg",
+      "anchor_text": "המותג גלידות שטראוס ייעלם: יהפוך למגנום",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/article/by5mjknlgx",
+      "anchor_text": "מדריך להייטקיסט המפוטר: נפילה משכר מפנק לדמי אבטלה צנועים והבירוקרטיה",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/article/ry0088bsegl",
+      "anchor_text": "מטא משיקה מנויי פרימיום עבור ווטסאפ, אינסטגרם ופייסבוק",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/article/hy6s6vvege",
+      "anchor_text": "בתחילת השבוע צפויה ירידה משמעותית במחיר הדלק",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/sport",
+      "anchor_text": "ספורט",
+      "parent_section": "multiArticleTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/sport",
+      "anchor_text": "עוד בספורט",
+      "parent_section": "multiArticleTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/sport/worldsoccer/article/byujcrrgfg",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/sport/worldsoccer/article/byujcrrgfg",
+      "anchor_text": "חדש ב-ynet: הורידו את לוח משחקי המונדיאל ליומן האישי בטלפון",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/sport/worldsoccer/article/r1grsp4xzx",
+      "anchor_text": "המוח של פפ, האגרסיביות של קלופ: זה המאמן הטוב בעולם כיום",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/sport/israelisoccer/article/b146iebgme",
+      "anchor_text": "שחקני מכבי ת\"א במסר להנהלה: השאירו את קני מילר",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/sport/israelibasketball/article/bjxkhoslfx",
+      "anchor_text": "אלייז'ה בראיינט לא נרשם לדרבי: החשש בהפועל ת\"א - לא יהיה כשיר לפלייאוף",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/sport/israelisoccer/article/hywz1fhlze",
+      "anchor_text": "הלם בבני יהודה: שחקן הנוער לשעבר מת בעקבות פגיעה באימון בניגריה",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/sport/worldsoccer/article/nzfew86oa",
+      "anchor_text": "דיווח: עסקת הענק של ברצלונה, \"תושלם בשעות הקרובות\"",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/sport/article/sk3gvjvxgx",
+      "anchor_text": "עונת הפורמולה 1 הולכת בכיוון של אלוף צעיר | תוכן גולשים",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.calcalist.co.il/home/0,7340,L-8,00.html",
+      "anchor_text": "",
+      "parent_section": "promoTab"
+    },
+    {
+      "url": "https://www.linkedin.com/company/calcalist",
+      "anchor_text": "",
+      "parent_section": "digitalLinksArea"
+    },
+    {
+      "url": "https://twitter.com/calcalist",
+      "anchor_text": "",
+      "parent_section": "digitalLinksArea"
+    },
+    {
+      "url": "https://www.instagram.com/calcalist/",
+      "anchor_text": "",
+      "parent_section": "digitalLinksArea"
+    },
+    {
+      "url": "https://www.facebook.com/calcalistonline",
+      "anchor_text": "",
+      "parent_section": "digitalLinksArea"
+    },
+    {
+      "url": "https://www.calcalist.co.il/real-estate/article/rkc1lyrggl",
+      "anchor_text": "שדה דב: כמעט מחצית מהדירות שדמרי מכרה ברבעון הראשון הן לבעל השליטהארבע מתוך תשע דירות שנמכרו בפרויקט שדה דב נרכשו על ידי בעל השליטה יגאל דמרי וקרוביו - ומה המחיר למ\"ר?אמיתי גזיתלכתבה המלאה",
+      "parent_section": "articlePromoSlot"
+    },
+    {
+      "url": "https://www.one.co.il/",
+      "anchor_text": "",
+      "parent_section": "promoTab"
+    },
+    {
+      "url": "https://twitter.com/one_co_il",
+      "anchor_text": "",
+      "parent_section": "digitalLinksArea"
+    },
+    {
+      "url": "https://www.instagram.com/one.co.il",
+      "anchor_text": "",
+      "parent_section": "digitalLinksArea"
+    },
+    {
+      "url": "https://www.facebook.com/ONEcoil",
+      "anchor_text": "",
+      "parent_section": "digitalLinksArea"
+    },
+    {
+      "url": "https://www.one.co.il/Article/523998.html?externalurl=true",
+      "anchor_text": "\"לקחתי הפסקה, ר\"ג/גבעתיים? יש אתגר ואנרגיות\"מבנה הבעלות, למה המסייעים לא נחשפים, הפרידה מהפועל פ\"ת: אחרי שנתיים בחוץ, אבי יחיאל שובר שתיקהתומר חבזלכתבה המלאה",
+      "parent_section": "articlePromoSlot"
+    },
+    {
+      "url": "https://www.ynet.co.il/wellness/article/bklpmc4emg",
+      "anchor_text": "",
+      "parent_section": "MediaCarousel"
+    },
+    {
+      "url": "https://www.ynet.co.il/wellness/article/bklpmc4emg",
+      "anchor_text": "סוכר לבן, חום, דבש או ממתיק מלאכותי: מה המתוק הבריא ביותר?",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/wellness/article/bklpmc4emg",
+      "anchor_text": "איתן גפן|",
+      "parent_section": "slotTextArea"
+    },
+    {
+      "url": "https://www.ynet.co.il/vacation/israeltrips/article/rj3l4wbxzl#autoplay",
+      "anchor_text": "",
+      "parent_section": "MediaCarousel"
+    },
+    {
+      "url": "https://www.ynet.co.il/vacation/israeltrips/article/rj3l4wbxzl#autoplay",
+      "anchor_text": "זה הרגיש כמו מקום סודי\": האגם הנסתר שהפתיע אותנו",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/vacation/israeltrips/article/rj3l4wbxzl#autoplay",
+      "anchor_text": "אסף קמר|",
+      "parent_section": "slotTextArea"
+    },
+    {
+      "url": "https://www.ynet.co.il/fashion/article/bymxvprgme",
+      "anchor_text": "",
+      "parent_section": "MediaCarousel"
+    },
+    {
+      "url": "https://www.ynet.co.il/fashion/article/bymxvprgme",
+      "anchor_text": "רזון קיצוני מעורר סערה: \"אסור שההרואין שיק יחזור\"",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/fashion/article/bymxvprgme",
+      "anchor_text": "איתי יעקב|",
+      "parent_section": "slotTextArea"
+    },
+    {
+      "url": "https://www.ynet.co.il/food/article/hytfwksefe",
+      "anchor_text": "",
+      "parent_section": "MediaCarousel"
+    },
+    {
+      "url": "https://www.ynet.co.il/food/article/hytfwksefe",
+      "anchor_text": "הביס המושלם: ההמבורגרים הכי טעימים בארץ",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/food/article/hytfwksefe",
+      "anchor_text": "תיקי גולן|",
+      "parent_section": "slotTextArea"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/article/ymsnhh6ws#autoplay",
+      "anchor_text": "",
+      "parent_section": "MediaCarousel"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/article/ymsnhh6ws#autoplay",
+      "anchor_text": "המשפיענית שרוצה להביא תחושת בית מלון לכל בית",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/article/hyefurkkme",
+      "anchor_text": "",
+      "parent_section": "MediaCarousel"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/article/hyefurkkme",
+      "anchor_text": "\"הצורך לא ייעלם, אבל אופי התפקיד ישתנה\"",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://p.ynet.co.il/TipRofeh?externalurl=true",
+      "anchor_text": "",
+      "parent_section": "MediaCarousel"
+    },
+    {
+      "url": "https://p.ynet.co.il/TipRofeh?externalurl=true",
+      "anchor_text": "פרויקט מיוחד: אתם שואלים, הרופא עונה",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/activism/article/rk56irvxme#autoplay",
+      "anchor_text": "",
+      "parent_section": "MediaCarousel"
+    },
+    {
+      "url": "https://www.ynet.co.il/activism/article/rk56irvxme#autoplay",
+      "anchor_text": "מסיירת גבעתי לשדה של אבא",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/activism/article/h1vioo6r11e#autoplay",
+      "anchor_text": "",
+      "parent_section": "MediaCarousel"
+    },
+    {
+      "url": "https://www.ynet.co.il/activism/article/h1vioo6r11e#autoplay",
+      "anchor_text": "ממשבר אישי לעסק מצליח בעולם הביוטי",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/plus",
+      "anchor_text": "",
+      "parent_section": "details-and-sub-items"
+    },
+    {
+      "url": "https://www.ynet.co.il/entertainment/article/iaeto5lyg",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/entertainment/article/iaeto5lyg",
+      "anchor_text": "רק למנויי ידיעות+ספר בהמשכים: נ\"ב, אני שונאת אותך - החלק האחרוןלורן קונולי",
+      "parent_section": "slotView"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/article/yokra14772729",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/article/yokra14772729",
+      "anchor_text": "ממון\"אין כרגע בעולם הטכנולוגי פתרונות קסם לרחפנים\"נווית זומר",
+      "parent_section": "slotView"
+    },
+    {
+      "url": "https://www.ynet.co.il/entertainment/article/yokra14774112",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/entertainment/article/yokra14774112",
+      "anchor_text": "7 ימיםהצ׳אט התחיל לספר לי סיפורים ששמע ממנישלמה ארצי",
+      "parent_section": "slotView"
+    },
+    {
+      "url": "https://www.ynet.co.il/plus/newspaper",
+      "anchor_text": "לקריאת העיתון הדיגיטלי כל יום >",
+      "parent_section": "newspaper-area"
+    },
+    {
+      "url": "https://www.ynet.co.il/plus/newspaper",
+      "anchor_text": "",
+      "parent_section": "newspaper-area"
+    },
+    {
+      "url": "https://www.ynet.co.il/sport/article/yokra14774682",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/sport/article/yokra14774682",
+      "anchor_text": "אסף יסעורהאלוף האולימפי והצעת הנישואים המפתיעהסמדר שיר",
+      "parent_section": "slotView"
+    },
+    {
+      "url": "https://www.ynet.co.il/laisha/plus/article/rkbuerbgzl",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/laisha/plus/article/rkbuerbgzl",
+      "anchor_text": "חודש המודעות\"בעתיד הקרוב תרופות יוכלו לבלום את הטרשת הנפוצה\"נגה שביט־רז",
+      "parent_section": "slotView"
+    },
+    {
+      "url": "https://www.ynet.co.il/health",
+      "anchor_text": "בריאות וכושר",
+      "parent_section": "multiArticleTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/health",
+      "anchor_text": "עוד בבריאות וכושר",
+      "parent_section": "multiArticleTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/health/article/bkde7mexge#autoplay",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/health/article/bkde7mexge#autoplay",
+      "anchor_text": "תקועים בלי התמחות ושוקלים להגר: למדו רפואה ועובדים כשליחים",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/health/article/rylyfiblml#autoplay",
+      "anchor_text": "נדבקת באבולה? תישאר באפריקה: ממשל טראמפ מסרב להחזיר חולים הביתה",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/health/article/b1ycda11kgl#autoplay",
+      "anchor_text": "הנגיף הבא כבר קיים. מה שחסר זה הרגע שבו הוא יפגוש אותנו",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/health/article/ry3ctw7ezx",
+      "anchor_text": "שני שלישים מחולי האלצהיימר הם נשים: כעת מתבררת הסיבה המפתיעה",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/health/article/ryaxynglme",
+      "anchor_text": "כדור שינה חדש בישראל - עד כמה הוא באמת עוזר?",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/health/article/bkrifdbgge#autoplay",
+      "anchor_text": "להציל חיים בקניה - במקום בניו יורק: סטודנט ישראלי לרפואה חישב מסלול מחדש",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/entertainment",
+      "anchor_text": "תרבות ובידור",
+      "parent_section": "multiArticleTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/entertainment",
+      "anchor_text": "עוד בתרבות ובידור",
+      "parent_section": "multiArticleTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/entertainment/article/rjdv3cbgze",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/entertainment/article/rjdv3cbgze",
+      "anchor_text": "\"כלבה ציונית!\": אחרי שהביעה תמיכה בישראל - הלן מירן הותקפה ברחוב",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/entertainment/article/bj187urlgl",
+      "anchor_text": "לאחר שהזריק לו את מנת הקטמין הקטלנית: עוזרו של מתיו פרי נשלח לכלא",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/entertainment/article/sywnebekge",
+      "anchor_text": "ניקולס קייג' הוא ספיידרמן בסגנון פילם נואר - וזה מספיק כדי לתת לסדרה הזו צ'אנס",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/entertainment/article/ryblmuhggl",
+      "anchor_text": "עיתונאית ynet ו\"ידיעות אחרונות\" ליהיא גורדון תקבל את פרס הנראות הגאה",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/entertainment/article/hycyuusxgx",
+      "anchor_text": "50 רקדנים, אקסטזה ודם על הבמה: אירוע המחול שהשאיר את הקהל בלי אוויר",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/entertainment/article/b1fx47vxze",
+      "anchor_text": "ליאת אחירון סוגרת מעגל - וחוזרת למחזמר ״קטנטנות״",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/radio",
+      "anchor_text": "Be.po – פודקאסטים",
+      "parent_section": "componentaTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/radio",
+      "anchor_text": "פרקים נוספים",
+      "parent_section": "componentaTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/radio/hakoteret/article/omnyb45600bddf2e",
+      "anchor_text": "האיום האסטרטגי על אסדות הגז של ישראל",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/radio/hakoteret/article/omnyb45600bddf2e",
+      "anchor_text": "",
+      "parent_section": "audio-play-button-wrapper"
+    },
+    {
+      "url": "https://www.ynet.co.il/radio/avramosh/article/gh7ew2jpv#autoplay",
+      "anchor_text": "מסע ומתן",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/radio/avramosh/article/gh7ew2jpv#autoplay",
+      "anchor_text": "",
+      "parent_section": "audio-play-button-wrapper"
+    },
+    {
+      "url": "https://www.ynet.co.il/radio/poshort/article/omnyb45800872329",
+      "anchor_text": "פרשת בהעלותך",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/radio/poshort/article/omnyb45800872329",
+      "anchor_text": "",
+      "parent_section": "audio-play-button-wrapper"
+    },
+    {
+      "url": "https://www.ynet.co.il/radio/mitpashtim/article/omnyb45600ab5fea#autoplay",
+      "anchor_text": "״להיות מאושרת זה מורכב מידי בשבילי״ הסיפור של רוני",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/radio/mitpashtim/article/omnyb45600ab5fea#autoplay",
+      "anchor_text": "",
+      "parent_section": "audio-play-button-wrapper"
+    },
+    {
+      "url": "https://www.ynet.co.il/radio/article/omnyb450006d22ed#autoplay",
+      "anchor_text": "אולי תלכו לטיפול?",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/radio/article/omnyb450006d22ed#autoplay",
+      "anchor_text": "",
+      "parent_section": "audio-play-button-wrapper"
+    },
+    {
+      "url": "https://www.ynet.co.il/radio/article/omnyb450007105b7#autoplay",
+      "anchor_text": "השבוע עם הסוכן הבריטי שעזר לצה״ל ושילם בחייו",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/radio/article/omnyb450007105b7#autoplay",
+      "anchor_text": "",
+      "parent_section": "audio-play-button-wrapper"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/magazine",
+      "anchor_text": "",
+      "parent_section": "OpinionTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/hjm3fxjyfg#autoplay",
+      "anchor_text": "פרטים חדשיםאמילי, גלי וזיו חושפים: השיחות עם אז א-דין - והמאבק על שכונת הדור הצעירבכיר חמאס החזיק בהם בשבי, דיבר עברית שוטפת, הציג להם לפטופ עם תמונות חטופים, ניסה לשחק להם בתודעה ובעיקר התגאה בכך שהפך את ה\"הפי פלייס\" שלהם לגיא הריגה. עכשיו, כשחיסולו של האיש ששלח את המחבלים לכפר עזה סוגר עבורם מעגל אחד, שורדי השבי חוזרים לשיחות איתו בשבי ומסרבים לתת לטרקטורים למחוק את שכונת הדור הצעיר שממנה נחטפו",
+      "parent_section": "opinionsSlotItem"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/hjm3fxjyfg#autoplay",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/hytl3b00yzl#autoplay",
+      "anchor_text": "עשרות הופללואשתו, ילדיו, השוטרים והעבריינים נדהמו: הסוד של החשוד שנתפס עם M-16 בחצרהוא היה עבריין לשעבר, שהפך ל\"ילד\" של מפעיל הסוכנים בימ\"ר צפון. סיפורו של המבצע המסווג שהפיל עשרות סוחרי נשק וסמים, המשבר שכמעט חשף את \"הנוצה\" - וההלם של האישה שגילתה שבעלה הוא בעצם סוכן משטרתי: \"לא חשדה לרגע. קשה לתאר את הפרצופים של העצורים כשהוא נכנס פתאום לחדר\"",
+      "parent_section": "opinionsSlotItem"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/hytl3b00yzl#autoplay",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/rjjkhxjyfe#autoplay",
+      "anchor_text": "משבר ענק - ומאבקאיפא\"ק מסירה את הכפפות לקראת בחירות האמצע בארה\"בישראל כבר לא נהנית מתמיכה מקיר לקיר בבית הנבחרים, דמוקרטים רבים מסרבים לקבל מאיפא\"ק תרומות, בקרב הרפובליקנים צריך לבלום את הסחף - והשדולה יוצאת למלחמת חורמה כדי להדיח פוליטיקאים סוררים משני צידי המתרס. סכומי העתק, הנתונים שמדאיגים את ישראל וקרבות הפריימריז היקרים בהיסטוריה",
+      "parent_section": "opinionsSlotItem"
+    },
+    {
+      "url": "https://www.ynet.co.il/news/article/rjjkhxjyfe#autoplay",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://pplus.ynet.co.il/homepage",
+      "anchor_text": "Pplus רכילות",
+      "parent_section": "multiArticleTab"
+    },
+    {
+      "url": "https://pplus.ynet.co.il/homepage",
+      "anchor_text": "עוד ב-Pplus רכילות",
+      "parent_section": "multiArticleTab"
+    },
+    {
+      "url": "https://pplus.ynet.co.il/royals/article/skm114kvlzg",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://pplus.ynet.co.il/royals/article/skm114kvlzg",
+      "anchor_text": "תמורת 40,615 ש\"ח בחודש: חיי הפאר בפנימייה של הנסיך ג'ורג'",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://pplus.ynet.co.il/royals/article/skm114kvlzg",
+      "anchor_text": "בריכות שחייה, מגרשי קריקט, גולף וסקווש, ואפילו גידול דבורים - הם רק חלק קטן מההטבות המפנקות שמציע בית הספר היוקרתי למברוק, שם לומד הנסיך ג'ורג'. \"עם פעילויות בישול ואפייה, ערבי סרטים, מדורות ועוד - אנו מבטיחים שלא יהיה אפילו רגע משעמם\", מבטיח בית הספר",
+      "parent_section": "slotSubTitle"
+    },
+    {
+      "url": "https://pplus.ynet.co.il/richul/article/hksqpdrgze",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://pplus.ynet.co.il/richul/article/hksqpdrgze",
+      "anchor_text": "מחותנות לעתיד? האימהות של קים קרדשיאן ולואיס המילטון נפגשו",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://pplus.ynet.co.il/richul/article/hjqjtvbezg",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://pplus.ynet.co.il/richul/article/hjqjtvbezg",
+      "anchor_text": "גייל קינג: \"הפריע לי מאוד שאופרה סירבה להכחיש שאנחנו זוג\"",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://pplus.ynet.co.il/rechilut/article/sk4fdvrxzg",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://pplus.ynet.co.il/rechilut/article/sk4fdvrxzg",
+      "anchor_text": "\"קיבלתי טיפול\": נעם בתן נפצע בטיול באיטליה",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://pplus.ynet.co.il/royals/article/ryatz8bgme",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://pplus.ynet.co.il/royals/article/ryatz8bgme",
+      "anchor_text": "בצל פרשת אפשטיין: \"הנסיכה הנורבגית חולה מאוד. מצבה החמיר\"",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/laisha",
+      "anchor_text": "",
+      "parent_section": "componentaTab"
+    },
+    {
+      "url": "https://www.instagram.com/laishamag/?utm_source=ynet&utm_medium=referral&utm_campaign=social-inks&utm_content=laisha",
+      "anchor_text": "",
+      "parent_section": "digitalLinksArea"
+    },
+    {
+      "url": "https://www.facebook.com/LaishaMagazine?utm_source=ynet&utm_medium=referral&utm_campaign=social-inks&utm_content=laisha",
+      "anchor_text": "",
+      "parent_section": "digitalLinksArea"
+    },
+    {
+      "url": "https://www.ynet.co.il/laisha",
+      "anchor_text": "עוד בלאשה",
+      "parent_section": "tabLeftSide"
+    },
+    {
+      "url": "https://www.ynet.co.il/laisha/article/r1nskzokgl",
+      "anchor_text": "",
+      "parent_section": "MediaCarousel"
+    },
+    {
+      "url": "https://www.ynet.co.il/laisha/article/r1nskzokgl",
+      "anchor_text": "\"לא רציתי ספר זיכרון\": הדרך המיוחדת שבה הנציחה אם התצפיתנית את בתה",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/laisha/article/r1nskzokgl",
+      "anchor_text": "התצפיתנית שירה שוחט ז\"ל נפלה ב־7 באוקטובר, אמה ביקשה להנציח אותה בספר מהנה, ולא באלבום זיכרון עצוב. היא פנתה לסופרת הדס ליבוביץ' (סדרת \"ליבי\") וכך נולד \"העיניים הגדולות שלי רואות\" שהגיבורה שלו, שירה, רואה את מה שחשוב באמת",
+      "parent_section": "slotSubTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/laisha/article/hkdqwsyxge",
+      "anchor_text": "",
+      "parent_section": "MediaCarousel"
+    },
+    {
+      "url": "https://www.ynet.co.il/laisha/article/hkdqwsyxge",
+      "anchor_text": "ההרגל הקטן שעושים לפני השינה - והורס את חיי המין",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/laisha/article/hkdqwsyxge",
+      "anchor_text": "עוד הודעה, עוד גלילה, עוד כמה דקות במסך, ובינתיים האינטימיות נדחקת הצידה.  כך הסלולרי משפיע על החשק המיני, ואיך אפשר להחזיר את החיבור",
+      "parent_section": "slotSubTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/laisha/article/bkfix0qjfe",
+      "anchor_text": "",
+      "parent_section": "MediaCarousel"
+    },
+    {
+      "url": "https://www.ynet.co.il/laisha/article/bkfix0qjfe",
+      "anchor_text": "מאפינס תפוחים וטחינה בגרסה חלבית או פרווה",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/laisha/article/bkfix0qjfe",
+      "anchor_text": "מנה אישית - שיכולה להיות חלבית או פרווה - ליום קצת יותר מוצלח",
+      "parent_section": "slotSubTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/category/8315",
+      "anchor_text": "נדל\"ן",
+      "parent_section": "componentaTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/category/8315",
+      "anchor_text": "עוד בנדל\"ן",
+      "parent_section": "componentaTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/article/s1g1sceege",
+      "anchor_text": "כשהדייר לא חותם על ליווי בנקאי: הסרבנות בפינוי בינוי",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/article/hkzu00ivxgl",
+      "anchor_text": "צו פתיחת הליכים נגד יזמית תמ\"א בבת-ים",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/article/rket7veefg",
+      "anchor_text": "חשש: כ-2,500 מרפסות בבני ברק מסכנות חיים",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/environment-science",
+      "anchor_text": "סביבה, מדע ובעלי חיים",
+      "parent_section": "multiArticleTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/environment-science",
+      "anchor_text": "עוד בסביבה, מדע ובעלי חיים",
+      "parent_section": "multiArticleTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/environment-science/article/rkkwvpexzx#autoplay",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/environment-science/article/rkkwvpexzx#autoplay",
+      "anchor_text": "היבשת \"בוערת\": מדוע אירופה מתחממת מהר יותר משאר העולם?",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/environment-science/article/bjjoo8hlze",
+      "anchor_text": "החוש המגנטי של השלשולים",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/environment-science/article/sk00bsullze",
+      "anchor_text": "\"רק\" 80 מעלות צלזיוס: כוכב לכת דמוי שבתאי התגלה במרחק 330 שנות אור",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/environment-science/article/r1i11gmlfx",
+      "anchor_text": "מהיר יותר ממהירות האור? כך תיעדו חוקרים בטכניון תופעה חריגה",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/environment-science/article/byoj7xvezg#autoplay",
+      "anchor_text": "אימה בנסיעה: נהגת גילתה נחש על שמשת הרכב באמצע נסיעה | צפו",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/environment-science/article/s1r11dtnezx",
+      "anchor_text": "שר הפנים התערב: דונלד טראמפ (התאו) לא יישחט",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/wheels",
+      "anchor_text": "רכב",
+      "parent_section": "multiArticleTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/wheels",
+      "anchor_text": "עוד ברכב",
+      "parent_section": "multiArticleTab"
+    },
+    {
+      "url": "https://icar.co.il/news/sjctrpnxmg",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://icar.co.il/news/sjctrpnxmg",
+      "anchor_text": "יש יורשת לג'ולייטה: אלפא רומיאו תציג משפחתית קומפקטית",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://icar.co.il/news/r1nnz8elzg",
+      "anchor_text": "ל-MG יש סוללה מתקדמת, אבל לא ברור מה יצא לנו מזה",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://icar.co.il/news/rypm1pelgx",
+      "anchor_text": "הפרארי החשמלית הוצגה - והמניה קרסה",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://icar.co.il/test_drive/bkvgucflge",
+      "anchor_text": "פורשה קאיין EV (נהיגה ראשונה) – לצאת מהסחרור, עם המון כוח",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://icar.co.il/news/hy6u4dxgzl",
+      "anchor_text": "יותר כוח, פחות משקל: לוטוס משדרגת את האמירה",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/digital",
+      "anchor_text": "דיגיטל",
+      "parent_section": "multiArticleTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/digital",
+      "anchor_text": "עוד בדיגיטל",
+      "parent_section": "multiArticleTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/digital/technology/article/s1hslrexzx",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/digital/technology/article/s1hslrexzx",
+      "anchor_text": "המודל של אנת'רופיק שמפחיד את עולם הסייבר: \"אנחנו לא ערוכים למה שמגיע\"",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/digital/technews/article/skjqak4xml",
+      "anchor_text": "הוליווד מתחילה להיכנע ל-AI - וחברה ישראלית נמצאת במרכז המהפכה",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/digital/technews/article/hyg447nlzg",
+      "anchor_text": "הוותיקן שוב מנסה לרסן מהפכה טכנולוגית - הפעם זו הבינה המלאכותית",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/digital/technews/article/r1d911wxefg#autoplay",
+      "anchor_text": "פער טכנולוגי מתמשך ותרבות ארגונית רשלנית: מחדל הסייבר של הממשלה נחשף",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/digital/technews/article/s1e1i0fxgg",
+      "anchor_text": "האינטרנט מת, יחי הסוכן: המהלך הכי מסוכן של גוגל יצא לדרך",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.energya.co.il/",
+      "anchor_text": "energya.co.il",
+      "parent_section": "componentaTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/games",
+      "anchor_text": "עוד משחקים",
+      "parent_section": "componentaTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/judaism",
+      "anchor_text": "יהדות",
+      "parent_section": "multiArticleTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/judaism",
+      "anchor_text": "עוד ביהדות",
+      "parent_section": "multiArticleTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/judaism/article/rylpcsbefx#autoplay",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/judaism/article/rylpcsbefx#autoplay",
+      "anchor_text": "יהודים הותקפו בסנטה מוניקה, החשוד צעק \"רצח עם\" ושיסה בהם כלב | תיעוד",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/judaism/article/rkk6kdhlgx#autoplay",
+      "anchor_text": "הרב יצחק יוסף: \"לא לפחד מהיועמ\"שית ומהמפכ\"ל שנוסעים בשבת ואוכלים נבלות\"",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/judaism/article/hj7d1tbgze",
+      "anchor_text": "הראשון מחוץ לישראל: יד ושם יקים מרכז חינוכי במינכן",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/judaism/discourse/article/bk301147efe",
+      "anchor_text": "המסמכים שמסעירים את גרמניה: \"סבתי אמרה שלא היה לנו קשר לנאצים. שקר גס\"",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/judaism/article/hytmtyeefx",
+      "anchor_text": "מצעד הגאווה ברומא הדיר ארגוני להט\"ב יהודיים, כי \"לא גינו את 'רצח העם' בעזה\"",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/activism/category/36572",
+      "anchor_text": "עוד בוועידות וכנסים",
+      "parent_section": "componentaTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/activism/article/r1wvybnxgg",
+      "anchor_text": "",
+      "parent_section": "MediaCarousel"
+    },
+    {
+      "url": "https://www.ynet.co.il/activism/article/r1wvybnxgg",
+      "anchor_text": "מדינה בפוסט טראומה: הוועידה הלאומית לחיזוק החוסן בחברה הישראלית",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/activism/article/bkqy3uzxfx",
+      "anchor_text": "",
+      "parent_section": "MediaCarousel"
+    },
+    {
+      "url": "https://www.ynet.co.il/activism/article/bkqy3uzxfx",
+      "anchor_text": "המלחמה הבאה כבר נכתבת: הטכנולוגיות שישנו את שדה הקרב",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/activism/article/rj11bwackfe",
+      "anchor_text": "",
+      "parent_section": "MediaCarousel"
+    },
+    {
+      "url": "https://www.ynet.co.il/activism/article/rj11bwackfe",
+      "anchor_text": "\"זה לא רק מאבק אישי, אלא מאבק של מדינה שלמה\"",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/dating",
+      "anchor_text": "יחסים",
+      "parent_section": "multiArticleTopTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/dating",
+      "anchor_text": "עוד ביחסים",
+      "parent_section": "multiArticleTopTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/dating/article/bkjgcc11lfl",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/dating/article/bkjgcc11lfl",
+      "anchor_text": "למה אנחנו נשארים בזוגיות שלא באמת מתאימה לנו?",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/dating/singles/article/hyhp3ullml",
+      "anchor_text": "רווקת השבוע: \"התחלתי עם בחור בבר והוא פשוט צחק לי בפנים\"",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/dating/sexappeal/article/kbwyg86ai",
+      "anchor_text": "מה הופך סקס למסעיר ובלתי נשכח?",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/vacation",
+      "anchor_text": "חופש",
+      "parent_section": "multiArticleTopTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/vacation",
+      "anchor_text": "עוד בחופש",
+      "parent_section": "multiArticleTopTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/vacation/israeltrips/article/rj3l4wbxzl#autoplay",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/vacation/israeltrips/article/rj3l4wbxzl#autoplay",
+      "anchor_text": "\"זה הרגיש כמו מקום סודי\": האגם הנסתר שהפתיע אותנו",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/vacation/flights/article/rj00duqelgl",
+      "anchor_text": "ביקשה מי ברז במלון יוקרה – והגיעה עד לבית המשפט העליון",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/vacation/worldtrips/article/hks711pbgzl#autoplay",
+      "anchor_text": "כולל מסאז': אוטובוס הלילה שהדהים את המטייל הישראלי | צפו",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/food",
+      "anchor_text": "אוכל",
+      "parent_section": "multiArticleTopTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/food",
+      "anchor_text": "עוד באוכל",
+      "parent_section": "multiArticleTopTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/food/article/hytfwksefe",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/food/article/hytfwksefe",
+      "anchor_text": "הביס המושלם: ההמבורגרים הכי טעימים בארץ",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/food/article/yokra14779100",
+      "anchor_text": "הקציצות הכי טעימות שיש",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/food/foodnews/article/yokra14781958",
+      "anchor_text": "תערוכות, הופעות, בר ואוכל: הפרויקט החדש של איל שני",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/wellness",
+      "anchor_text": "וולנס",
+      "parent_section": "multiArticleTopTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/wellness",
+      "anchor_text": "עוד בוולנס",
+      "parent_section": "multiArticleTopTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/wellness/article/bklpmc4emg",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/wellness/article/bklpmc4emg",
+      "anchor_text": "סוכר לבן, חום, דבש או ממתיק מלאכותי: מה המתוק הבריא ביותר?",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/wellness/article/hkjykgi1ge",
+      "anchor_text": "מעודד פעילות או סתם מלחיץ? כך משפיע השעון החכם על המוטיבציה שלנו",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/wellness/article/by1ewfskgl",
+      "anchor_text": "הסוד הבריאותי המפתיע של האבטיח",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/fashion",
+      "anchor_text": "אופנה",
+      "parent_section": "multiArticleTopTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/fashion",
+      "anchor_text": "עוד באופנה",
+      "parent_section": "multiArticleTopTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/fashion/article/bymxvprgme",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/fashion/article/bymxvprgme",
+      "anchor_text": "\"אסור שההרואין שיק יחזור\": דיסקוורד מציגים רזון קיצוני והרשת לא נשארת אדישה",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/fashion/article/sjtk00m4eze",
+      "anchor_text": "עם חולצת בטן ומכנסיים שקופים: איוונקה טראמפ לובשת עיצוב של שני שמר הישראלית",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/fashion/article/bkam2hzxzx",
+      "anchor_text": "דניאל כהן מעצבת קולקציה ראשונה לקום איל פו: \"למצוא את הסוד שיש בחושניות\"",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/activism",
+      "anchor_text": "מעורבות",
+      "parent_section": "multiArticleTopTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/activism",
+      "anchor_text": "עוד במעורבות",
+      "parent_section": "multiArticleTopTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/activism/article/yokra14783284",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/activism/article/yokra14783284",
+      "anchor_text": "הסיפוק והקשיים של משפחות האומנה בישראל: \"לא ילדתי אותו, אבל הוא ילד שלי\"",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/activism/article/hkpr11usgzg",
+      "anchor_text": "\"מסע אדר לים\": 4 אבות שכולים ייסעו בחיפושיות מקיסריה לאילת",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/activism/article/hyuunceefl",
+      "anchor_text": "כ-100 נכי צה\"ל שנפצעו ב\"חרבות ברזל\" בתהליכי קבלה לאוניברסיטת תל אביב",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/category/10610",
+      "anchor_text": "פסק דין",
+      "parent_section": "multiArticleTopTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/category/10610",
+      "anchor_text": "עוד בפסק דין",
+      "parent_section": "multiArticleTopTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/article/skdl6gnlgg",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/article/skdl6gnlgg",
+      "anchor_text": "אחרי עשור: סרבנית גט תקבל 44 מיליון ש' ושתי דירות",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/article/skejmdvgfl",
+      "anchor_text": "ניצחון ליזמית: לא תשלם היטל השבחה של 14 מיליון ש'",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/article/ryb8ywexge",
+      "anchor_text": "מתי אפשר להתנגד לצ'ק שהוגש להוצאה לפועל?",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/architecture",
+      "anchor_text": "עיצוב ואדריכלות",
+      "parent_section": "multiArticleTopTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/architecture",
+      "anchor_text": "עוד בעיצוב ואדריכלות",
+      "parent_section": "multiArticleTopTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/architecture/article/by9rbdzlmg",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/architecture/article/by9rbdzlmg",
+      "anchor_text": "בית הפועלים של בן־גוריון הפך למלון טרנדי בסגנון \"מד מן\"",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/architecture/article/hyaath11jmg",
+      "anchor_text": "אפילו התקרה צבעונית: עיצוב דירה תל אביבית לאמנית פנסיונרית",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/architecture/article/skau00z4gzl",
+      "anchor_text": "מקאנטרי בבני ברק ועד המדבריום: הוכרזו הזוכים ב\"אוסקר של האדריכלות\"",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://z.ynet.co.il/mshort/commerce/2018/musafimspecial",
+      "anchor_text": "מוספים מיוחדים",
+      "parent_section": "multiArticleTopTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/article/bkbhq1ptbx",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/article/bkbhq1ptbx",
+      "anchor_text": "עכשיו במוסף יום האישה: עוצרות לצורך התחדשות",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/localjerusalem/article/bylogmvkbx",
+      "anchor_text": "עכשיו במוסף ירושלים מקומי: ירושלים עולה לגובה",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/digital/article/byjgajfcbe",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/digital/article/byjgajfcbe",
+      "anchor_text": "זה כלי ה-AI החינמי הכי מטורף שיש כרגע - כך תתחילו לעבוד איתו",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/wellness/article/ryr0060b0bx",
+      "anchor_text": "לחם מחמצת זה הלחם הכי בריא? לא ממש",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://ypages.yit.co.il/NewspaperThumbnails/Thumbs/luach",
+      "anchor_text": "לוח דרושים",
+      "parent_section": "multiArticleTab"
+    },
+    {
+      "url": "https://ypages.yit.co.il/NewspaperThumbnails/Thumbs/luach",
+      "anchor_text": "לוח דרושים",
+      "parent_section": "multiArticleTab"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/article/hjjkbshszx",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/article/hjjkbshszx",
+      "anchor_text": "דרוש/ה תקציביאי/ת למשרד פרסום בחיפה",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/economy/article/by9wlrrrzx",
+      "anchor_text": "דרוש/ה עובד/ת כללי למחלקת הפרסום לחברת פרשלי",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/health/article/hkcow6aua",
+      "anchor_text": "",
+      "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/health/article/hkcow6aua",
+      "anchor_text": "\"עשיתי את הבדיקה – והטכנאית היתה המומה\"",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "https://www.ynet.co.il/vacation/article/rktnifqxc",
+      "anchor_text": "לחצות במסע ג'יפים את מזרח אפריקה",
+      "parent_section": "slotTitle"
+    },
+    {
+      "url": "http://www.acum.org.il/",
+      "anchor_text": "",
+      "parent_section": "iconsWrapper"
+    },
+    {
+      "url": "http://www.tali-rights.co.il/",
+      "anchor_text": "",
+      "parent_section": "iconsWrapper"
+    },
+    {
+      "url": "https://yit.co.il/#utm_source=ynet.co.il&utm_medium=referral&utm_campaign=footer2",
+      "anchor_text": "",
+      "parent_section": "iconsWrapper"
+    }
+  ]
+}

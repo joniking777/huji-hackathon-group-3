@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AISecutity — Bot vs Human Comparison + Live Demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #0f1923; color: #e0e0e0; min-height: 100vh; }
+
+        .header { background: #1a2332; padding: 20px 30px; border-bottom: 1px solid #2a3a4a; display: flex; justify-content: space-between; align-items: center; }
+        .header h1 { font-size: 22px; color: #4ecdc4; }
+        .header a { color: #4ecdc4; text-decoration: none; font-size: 13px; }
+
+        .content { max-width: 1400px; margin: 0 auto; padding: 30px; }
+
+        /* Live Demo Section */
+        .demo-section { background: #1a2332; border: 2px solid #4ecdc4; border-radius: 12px; padding: 30px; margin-bottom: 30px; text-align: center; }
+        .demo-section h2 { color: #4ecdc4; margin-bottom: 10px; }
+        .demo-section p { color: #888; margin-bottom: 20px; }
+        .demo-btn { padding: 14px 32px; font-size: 16px; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; margin: 0 8px; transition: transform 0.2s; }
+        .demo-btn:hover { transform: scale(1.05); }
+        .demo-btn.attack { background: #e74c3c; color: white; }
+        .demo-btn.human { background: #2ecc71; color: white; }
+        .demo-status { margin-top: 20px; padding: 16px; background: #0d1520; border-radius: 8px; font-family: monospace; font-size: 13px; text-align: left; max-height: 200px; overflow-y: auto; display: none; }
+
+        /* Comparison Section */
+        .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .compare-card { background: #1a2332; border-radius: 12px; padding: 24px; border: 2px solid #2a3a4a; }
+        .compare-card.bot { border-color: #e74c3c; }
+        .compare-card.human { border-color: #2ecc71; }
+        .compare-card h3 { margin-bottom: 16px; font-size: 18px; }
+        .compare-card.bot h3 { color: #e74c3c; }
+        .compare-card.human h3 { color: #2ecc71; }
+
+        .signal-row { display: flex; align-items: center; margin-bottom: 10px; gap: 10px; }
+        .signal-name { width: 160px; font-size: 12px; color: #aaa; }
+        .signal-bar { flex: 1; height: 20px; background: #0d1520; border-radius: 4px; overflow: hidden; position: relative; }
+        .signal-fill { height: 100%; border-radius: 4px; transition: width 0.5s; }
+        .signal-fill.bot { background: linear-gradient(90deg, #e74c3c, #c0392b); }
+        .signal-fill.human { background: linear-gradient(90deg, #2ecc71, #27ae60); }
+        .signal-value { width: 40px; text-align: right; font-size: 12px; font-weight: bold; }
+
+        .score-big { font-size: 48px; font-weight: bold; text-align: center; margin: 20px 0; }
+        .score-big.bot { color: #e74c3c; }
+        .score-big.human { color: #2ecc71; }
+
+        .meta-info { font-size: 12px; color: #666; margin-bottom: 16px; padding: 10px; background: #0d1520; border-radius: 6px; }
+        .meta-info span { display: block; margin: 3px 0; }
+
+        .section-title { font-size: 18px; color: #4ecdc4; margin: 30px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #2a3a4a; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🛡️ AISecutity — Live Demo & Comparison</h1>
+        <a href="dashboard.html">← Back to Dashboard</a>
+    </div>
+
+    <div class="content">
+        <!-- LIVE DEMO SECTION -->
+        <div class="demo-section">
+            <h2>⚡ Live Attack Demo</h2>
+            <p>Click the button to launch a bot attack in real-time. Watch it get detected and banned.</p>
+            <button class="demo-btn attack" onclick="launchAttack()">🤖 Launch Bot Attack</button>
+            <button class="demo-btn human" onclick="simulateHuman()">👤 Simulate Human</button>
+            <div class="demo-status" id="demo-status"></div>
+        </div>
+
+        <!-- COMPARISON SECTION -->
+        <div class="section-title">Bot vs Human — Side by Side</div>
+        <div class="compare-grid">
+            <!-- Bot Side -->
+            <div class="compare-card bot">
+                <h3>🤖 Bot Session (Speed Scraper)</h3>
+                <div class="score-big bot" id="bot-score">—</div>
+                <div class="meta-info" id="bot-meta">Loading...</div>
+                <div id="bot-signals"></div>
+            </div>
+
+            <!-- Human Side -->
+            <div class="compare-card human">
+                <h3>👤 Human Session</h3>
+                <div class="score-big human" id="human-score">—</div>
+                <div class="meta-info" id="human-meta">Loading...</div>
+                <div id="human-signals"></div>
+            </div>
+        </div>
+
+        <!-- Radar Chart -->
+        <div class="section-title">Signal Comparison (Radar)</div>
+        <div style="background:#1a2332;border-radius:12px;padding:24px;max-width:600px;margin:0 auto;">
+            <canvas id="radarChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:5000';
+
+        // === LIVE DEMO ===
+        async function launchAttack() {
+            const status = document.getElementById('demo-status');
+            status.style.display = 'block';
+            status.innerHTML = '<span style="color:#f39c12">⏳ Launching bot attack...</span>\n';
+
+            // Generate bot events
+            const now = new Date();
+            const events = [];
+            for (let i = 0; i < 15; i++) {
+                const t = new Date(now.getTime() + i * 100); // 100ms intervals (bot-fast)
+                events.push({
+                    sessionId: 'live-attack-' + Date.now(),
+                    userId: 'live-bot',
+                    timestamp: t.toISOString(),
+                    eventType: i % 3 === 0 ? 'api_call' : 'navigation',
+                    endpoint: ['/api/products', '/api/prices', '/products/1', '/api/search'][i % 4],
+                    durationMs: 30 + Math.random() * 50,
+                    mouse: {x: 100 + i*80, y: 200, speed: 5000 + Math.random()*3000, hasCurve: false},
+                    keyboard: null
+                });
+            }
+
+            const session = {
+                sessionId: 'live-attack-' + Date.now(),
+                userId: 'live-bot',
+                userAgent: 'python-requests/2.31.0 (Live Demo Attack)',
+                ipAddress: '10.0.0.' + Math.floor(Math.random()*254+1),
+                events: events
+            };
+
+            status.innerHTML += '<span style="color:#aaa">📡 Sending 15 events to detection engine...</span>\n';
+
+            try {
+                const resp = await fetch(`${API_BASE}/api/ban/analyze-and-ban?ipAddress=${session.ipAddress}`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(session)
+                });
+                const result = await resp.json();
+
+                if (result.detected) {
+                    status.innerHTML += `<span style="color:#e74c3c">🚨 BOT DETECTED! Score: ${(result.aiProbabilityScore*100).toFixed(0)}%</span>\n`;
+                    status.innerHTML += `<span style="color:#e74c3c">🔒 BANNED: ${result.ban.banType} / ${result.ban.penalty}</span>\n`;
+                    status.innerHTML += `<span style="color:#888">Triggered: ${result.ban.triggeredRule}</span>\n`;
+                } else {
+                    status.innerHTML += `<span style="color:#2ecc71">✅ Not detected (score: ${(result.aiProbabilityScore*100).toFixed(0)}%)</span>\n`;
+                }
+
+                // Also register in SDK dashboard
+                await fetch(`${API_BASE}/api/sdk/track`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({apiKey:'shopmax-demo-key', sessionId:session.sessionId, userAgent:session.userAgent, url:'live-demo', events:events})
+                });
+                status.innerHTML += `<span style="color:#888">📊 Added to dashboard</span>\n`;
+            } catch(e) {
+                status.innerHTML += `<span style="color:#e74c3c">❌ Error: ${e.message}</span>\n`;
+            }
+        }
+
+        async function simulateHuman() {
+            const status = document.getElementById('demo-status');
+            status.style.display = 'block';
+            status.innerHTML = '<span style="color:#2ecc71">👤 Simulating human session...</span>\n';
+
+            const now = new Date();
+            const events = [];
+            let offset = 0;
+            const pages = ['/home', '/products', '/products', '/products/3', '/blog', '/home'];
+
+            for (let i = 0; i < pages.length; i++) {
+                offset += 2000 + Math.random() * 5000; // 2-7s between actions (human)
+                if (Math.random() < 0.2) offset += 8000; // occasional long pause
+                const t = new Date(now.getTime() + offset);
+                events.push({
+                    sessionId: 'live-human-' + Date.now(),
+                    userId: 'live-human',
+                    timestamp: t.toISOString(),
+                    eventType: ['click','scroll','navigation','scroll','keypress','click'][i],
+                    endpoint: pages[i],
+                    durationMs: 1000 + Math.random() * 4000,
+                    mouse: {x: 200+Math.random()*1200, y: 150+Math.random()*700, speed: 400+Math.random()*500, hasCurve: true},
+                    keyboard: i === 4 ? {interKeyDelayMs: 130+Math.random()*60, burstLength: 4, errorRate: 0.07} : null
+                });
+            }
+
+            const session = {
+                sessionId: 'live-human-' + Date.now(),
+                userId: 'live-human',
+                userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/125.0 (Live Demo Human)',
+                ipAddress: '192.168.1.' + Math.floor(Math.random()*254+1),
+                events: events
+            };
+
+            try {
+                const resp = await fetch(`${API_BASE}/api/ban/analyze-and-ban?ipAddress=${session.ipAddress}`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(session)
+                });
+                const result = await resp.json();
+
+                if (!result.detected) {
+                    status.innerHTML += `<span style="color:#2ecc71">✅ Correctly identified as HUMAN (score: ${(result.aiProbabilityScore*100).toFixed(0)}%)</span>\n`;
+                } else {
+                    status.innerHTML += `<span style="color:#f39c12">⚠️ False positive (score: ${(result.aiProbabilityScore*100).toFixed(0)}%)</span>\n`;
+                }
+
+                await fetch(`${API_BASE}/api/sdk/track`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({apiKey:'shopmax-demo-key', sessionId:session.sessionId, userAgent:session.userAgent, url:'live-demo', events:events})
+                });
+                status.innerHTML += `<span style="color:#888">📊 Added to dashboard</span>\n`;
+            } catch(e) {
+                status.innerHTML += `<span style="color:#e74c3c">❌ Error: ${e.message}</span>\n`;
+            }
+        }
+
+        // === COMPARISON ===
+        async function loadComparison() {
+            // Bot session
+            const botEvents = [];
+            const now = new Date();
+            for (let i = 0; i < 12; i++) {
+                botEvents.push({
+                    sessionId:'compare-bot', userId:'bot',
+                    timestamp: new Date(now.getTime() + i*120).toISOString(),
+                    eventType: 'api_call', endpoint: '/api/products/' + i,
+                    durationMs: 30, mouse:{x:100+i*100,y:200,speed:6000,hasCurve:false}, keyboard:null
+                });
+            }
+
+            const botSession = {sessionId:'compare-bot',userId:'bot',userAgent:'python-requests/2.31',ipAddress:'10.0.0.1',events:botEvents};
+            const botResp = await fetch(`${API_BASE}/api/detection/analyze`, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(botSession)});
+            const botResult = await botResp.json();
+
+            // Human session
+            const humanEvents = [];
+            let offset = 0;
+            const hPages = ['/home','/products','/products','/products/3','/products/3','/cart','/home','/blog'];
+            for (let i = 0; i < hPages.length; i++) {
+                offset += 2000 + Math.random()*6000;
+                if (Math.random()<0.15) offset += 10000;
+                humanEvents.push({
+                    sessionId:'compare-human', userId:'human',
+                    timestamp: new Date(now.getTime() + offset).toISOString(),
+                    eventType: ['click','scroll','navigation','scroll','keypress','click','navigation','scroll'][i],
+                    endpoint: hPages[i], durationMs: 1000+Math.random()*5000,
+                    mouse:{x:200+Math.random()*1400,y:150+Math.random()*700,speed:400+Math.random()*600,hasCurve:true},
+                    keyboard: i===4 ? {interKeyDelayMs:140+Math.random()*50,burstLength:4,errorRate:0.08} : null
+                });
+            }
+
+            const humanSession = {sessionId:'compare-human',userId:'human',userAgent:'Chrome/125',ipAddress:'192.168.1.50',events:humanEvents};
+            const humanResp = await fetch(`${API_BASE}/api/detection/analyze`, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(humanSession)});
+            const humanResult = await humanResp.json();
+
+            // Display scores
+            document.getElementById('bot-score').textContent = (botResult.aiProbabilityScore*100).toFixed(0) + '%';
+            document.getElementById('human-score').textContent = (humanResult.aiProbabilityScore*100).toFixed(0) + '%';
+
+            // Meta info
+            document.getElementById('bot-meta').innerHTML = `<span>UA: python-requests/2.31</span><span>Events: 12 | Duration: 1.4s</span><span>Action: ${botResult.recommendedAction?.toUpperCase() || 'BLOCK'}</span>`;
+            document.getElementById('human-meta').innerHTML = `<span>UA: Chrome/125</span><span>Events: 8 | Duration: ~30s</span><span>Action: ${humanResult.recommendedAction?.toUpperCase() || 'ALLOW'}</span>`;
+
+            // Signal bars
+            renderSignals('bot-signals', botResult.signals, 'bot');
+            renderSignals('human-signals', humanResult.signals, 'human');
+
+            // Radar chart
+            renderRadar(botResult.signals, humanResult.signals);
+        }
+
+        function renderSignals(containerId, signals, type) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = signals.map(s => {
+                const pct = (s.score * 100).toFixed(0);
+                return `<div class="signal-row">
+                    <span class="signal-name">${s.signalName}</span>
+                    <div class="signal-bar"><div class="signal-fill ${type}" style="width:${pct}%"></div></div>
+                    <span class="signal-value">${pct}%</span>
+                </div>`;
+            }).join('');
+        }
+
+        function renderRadar(botSignals, humanSignals) {
+            const labels = botSignals.map(s => s.signalName.replace('Timing','T.').replace('Navigation','Nav.').replace('Behavior',''));
+            const ctx = document.getElementById('radarChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        { label: '🤖 Bot', data: botSignals.map(s=>s.score), borderColor:'#e74c3c', backgroundColor:'rgba(231,76,60,0.1)', borderWidth:2 },
+                        { label: '👤 Human', data: humanSignals.map(s=>s.score), borderColor:'#2ecc71', backgroundColor:'rgba(46,204,113,0.1)', borderWidth:2 }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    scales: { r: { beginAtZero:true, max:1, ticks:{color:'#888',stepSize:0.25}, grid:{color:'#2a3a4a'}, pointLabels:{color:'#aaa',font:{size:10}} } },
+                    plugins: { legend:{labels:{color:'#aaa'}} }
+                }
+            });
+        }
+
+        loadComparison();
+    </script>
+</body>
+</html>

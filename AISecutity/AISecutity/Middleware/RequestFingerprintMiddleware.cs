@@ -36,7 +36,7 @@ public class RequestFingerprintMiddleware
         var path = context.Request.Path.Value ?? "";
 
         // Skip fingerprinting for SDK and dashboard endpoints (they're API calls from JS)
-        if (path.StartsWith("/api/sdk") || path.StartsWith("/sdk/") || path.StartsWith("/api/fingerprint"))
+        if (path.StartsWith("/api/sdk") || path.StartsWith("/sdk/") || path.StartsWith("/api/fingerprint") || path.StartsWith("/api/detection"))
         {
             await _next(context);
             return;

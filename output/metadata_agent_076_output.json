@@ -1,7 +1,7 @@
 {
   "metadata": {
     "agent_name": "metadata_agent_076",
-    "timestamp": "2026-05-28T12:05:58.962822+00:00",
+    "timestamp": "2026-05-28T12:20:35.049196+00:00",
     "target_url": "https://www.ynet.co.il/home/0,7340,L-8,00.html",
     "item_count": 111
   },
@@ -168,6 +168,10 @@
     },
     {
       "type": "timestamp",
+      "value": "2026-05-28T11:59:46.595Z"
+    },
+    {
+      "type": "timestamp",
       "value": "2026-05-28T08:48:52.016Z"
     },
     {
@@ -181,10 +185,6 @@
     {
       "type": "timestamp",
       "value": "2026-05-27T07:21:46.930Z"
-    },
-    {
-      "type": "timestamp",
-      "value": "2026-05-27T04:32:02.963Z"
     },
     {
       "type": "timestamp",
@@ -288,6 +288,10 @@
     },
     {
       "type": "timestamp",
+      "value": "2026-05-27T11:08:41.098Z"
+    },
+    {
+      "type": "timestamp",
       "value": "2026-05-27T16:02:13.790Z"
     },
     {
@@ -297,10 +301,6 @@
     {
       "type": "timestamp",
       "value": "2026-05-26T12:54:32.711Z"
-    },
-    {
-      "type": "timestamp",
-      "value": "2026-05-26T08:51:24.374Z"
     },
     {
       "type": "timestamp",

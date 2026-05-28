@@ -3,17 +3,17 @@
   "succeeded": 1000,
   "failed": 0,
   "total_events": 10000,
-  "total_duration_ms": 74161.17,
+  "total_duration_ms": 75005.46,
   "peak_concurrency": 50,
   "agent_duration_stats_ms": {
-    "min": 1024.17,
-    "max": 74125.75,
-    "avg": 37036.66
+    "min": 967.29,
+    "max": 74969.89,
+    "avg": 37446.38
   },
   "semaphore_wait_stats_ms": {
     "min": 0.0,
-    "max": 70308.02,
-    "avg": 33859.54
+    "max": 71287.16,
+    "avg": 34171.95
   },
   "total_items_extracted": 174000,
   "by_type": {
@@ -21,25 +21,25 @@
       "count": 250,
       "succeeded": 250,
       "total_items": 1250,
-      "avg_duration_ms": 10269.17
+      "avg_duration_ms": 10383.24
     },
     "image_agent": {
       "count": 250,
       "succeeded": 250,
       "total_items": 50500,
-      "avg_duration_ms": 28080.57
+      "avg_duration_ms": 28284.24
     },
     "links_agent": {
       "count": 250,
       "succeeded": 250,
       "total_items": 94500,
-      "avg_duration_ms": 45469.83
+      "avg_duration_ms": 46044.59
     },
     "metadata_agent": {
       "count": 250,
       "succeeded": 250,
       "total_items": 27750,
-      "avg_duration_ms": 64327.07
+      "avg_duration_ms": 65073.47
     }
   }
 }

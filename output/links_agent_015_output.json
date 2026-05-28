@@ -1,7 +1,7 @@
 {
   "metadata": {
     "agent_name": "links_agent_015",
-    "timestamp": "2026-05-28T12:05:35.596182+00:00",
+    "timestamp": "2026-05-28T12:20:11.115286+00:00",
     "target_url": "https://www.ynet.co.il/home/0,7340,L-8,00.html",
     "item_count": 378
   },
@@ -1027,6 +1027,11 @@
       "parent_section": "slotTitle"
     },
     {
+      "url": "https://www.ynet.co.il/health/article/hkanbdsxzx",
+      "anchor_text": "זינוק בסרטן המעי הגס בצעירים: בדיקות חדשות יחליפו קולונוסקופיה?",
+      "parent_section": "slotTitle"
+    },
+    {
       "url": "https://www.ynet.co.il/health/article/rylyfiblml#autoplay",
       "anchor_text": "נדבקת באבולה? תישאר באפריקה: ממשל טראמפ מסרב להחזיר חולים הביתה",
       "parent_section": "slotTitle"
@@ -1044,11 +1049,6 @@
     {
       "url": "https://www.ynet.co.il/health/article/ryaxynglme",
       "anchor_text": "כדור שינה חדש בישראל - עד כמה הוא באמת עוזר?",
-      "parent_section": "slotTitle"
-    },
-    {
-      "url": "https://www.ynet.co.il/health/article/bkrifdbgge#autoplay",
-      "anchor_text": "להציל חיים בקניה - במקום בניו יורק: סטודנט ישראלי לרפואה חישב מסלול מחדש",
       "parent_section": "slotTitle"
     },
     {
@@ -1452,9 +1452,14 @@
       "parent_section": "multiArticleTab"
     },
     {
-      "url": "https://www.ynet.co.il/digital/technology/article/s1hslrexzx",
+      "url": "https://www.ynet.co.il/digital/reviews/article/rjtrshbemg",
       "anchor_text": "",
       "parent_section": "mediaItems"
+    },
+    {
+      "url": "https://www.ynet.co.il/digital/reviews/article/rjtrshbemg",
+      "anchor_text": "סוללה יעילה, מארז מגושם וסאונד עמוס בבסים: אנקר הולכת על כל הקופה",
+      "parent_section": "slotTitle"
     },
     {
       "url": "https://www.ynet.co.il/digital/technology/article/s1hslrexzx",
@@ -1474,11 +1479,6 @@
     {
       "url": "https://www.ynet.co.il/digital/technews/article/r1d911wxefg#autoplay",
       "anchor_text": "פער טכנולוגי מתמשך ותרבות ארגונית רשלנית: מחדל הסייבר של הממשלה נחשף",
-      "parent_section": "slotTitle"
-    },
-    {
-      "url": "https://www.ynet.co.il/digital/technews/article/s1e1i0fxgg",
-      "anchor_text": "האינטרנט מת, יחי הסוכן: המהלך הכי מסוכן של גוגל יצא לדרך",
       "parent_section": "slotTitle"
     },
     {

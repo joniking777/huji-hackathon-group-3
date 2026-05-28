@@ -116,15 +116,19 @@
                 const now = new Date();
                 const events = [];
                 for (let i = 0; i < 12; i++) {
-                    events.push({
+                    const evt = {
                         sessionId: 'demo', userId: bot.name,
                         timestamp: new Date(now.getTime() + i * bot.interval).toISOString(),
                         eventType: bot.endpoints[0].startsWith('/api') ? 'api_call' : 'navigation',
                         endpoint: bot.endpoints[i % bot.endpoints.length],
-                        durationMs: 30 + Math.random() * 50,
-                        mouse: bot.speed > 2000 ? {x:100+i*80, y:200, speed:bot.speed, hasCurve:false} : {x:200+Math.random()*800, y:150+Math.random()*600, speed:bot.speed, hasCurve:true},
-                        keyboard: null
-                    });
+                        durationMs: Math.floor(30 + Math.random() * 50),
+                    };
+                    if (bot.speed > 2000) {
+                        evt.mouse = {x:100+i*80, y:200, speed:bot.speed, hasCurve:false};
+                    } else {
+                        evt.mouse = {x:Math.floor(200+Math.random()*800), y:Math.floor(150+Math.random()*600), speed:bot.speed, hasCurve:true};
+                    }
+                    events.push(evt);
                 }
 
                 const session = {
@@ -232,7 +236,7 @@
                     sessionId:'compare-bot', userId:'bot',
                     timestamp: new Date(now.getTime() + i*120).toISOString(),
                     eventType: 'api_call', endpoint: '/api/products/' + i,
-                    durationMs: 30, mouse:{x:100+i*100,y:200,speed:6000,hasCurve:false}, keyboard:null
+                    durationMs: 30, mouse:{x:100+i*100,y:200,speed:6000,hasCurve:false}
                 });
             }
 
@@ -251,9 +255,9 @@
                     sessionId:'compare-human', userId:'human',
                     timestamp: new Date(now.getTime() + offset).toISOString(),
                     eventType: ['click','scroll','navigation','scroll','keypress','click','navigation','scroll'][i],
-                    endpoint: hPages[i], durationMs: 1000+Math.random()*5000,
-                    mouse:{x:200+Math.random()*1400,y:150+Math.random()*700,speed:400+Math.random()*600,hasCurve:true},
-                    keyboard: i===4 ? {interKeyDelayMs:140+Math.random()*50,burstLength:4,errorRate:0.08} : null
+                    endpoint: hPages[i], durationMs: Math.floor(1000+Math.random()*5000),
+                    mouse:{x:Math.floor(200+Math.random()*1400),y:Math.floor(150+Math.random()*700),speed:Math.floor(400+Math.random()*600),hasCurve:true},
+                    keyboard: i===4 ? {interKeyDelayMs:140+Math.random()*50,burstLength:4,errorRate:0.08} : undefined
                 });
             }
 

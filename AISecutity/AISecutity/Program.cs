@@ -74,22 +74,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors("AllowDemoSite");
 
-// Also apply CORS globally for SDK/detection calls from any origin
-app.Use(async (context, next) =>
-{
-    context.Response.Headers["Access-Control-Allow-Origin"] = "*";
-    context.Response.Headers["Access-Control-Allow-Methods"] = "GET, POST, DELETE, OPTIONS";
-    context.Response.Headers["Access-Control-Allow-Headers"] = "Content-Type";
-
-    if (context.Request.Method == "OPTIONS")
-    {
-        context.Response.StatusCode = 200;
-        return;
-    }
-
-    await next();
-});
-
 // Serve the SDK JavaScript tracker as a static file
 app.UseStaticFiles(new StaticFileOptions
 {

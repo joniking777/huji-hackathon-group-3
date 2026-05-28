@@ -47,12 +47,13 @@ public class AiDetectionEngine : IAiDetectionEngine
 
         // Run each detection heuristic
         signals.Add(AnalyzeTimingRegularity(events));
+        signals.Add(AnalyzeTimingJitter(events));          // NEW v3: catches DrissionPage
         signals.Add(AnalyzeActionSpeed(events));
         signals.Add(AnalyzeMouseBehavior(events));
-        signals.Add(AnalyzeMouseSpeedProfile(events));    // NEW v2
+        signals.Add(AnalyzeMouseSpeedProfile(events));
         signals.Add(AnalyzeKeyboardBehavior(events));
         signals.Add(AnalyzeNavigationPattern(events));
-        signals.Add(AnalyzeApiTargeting(events));          // NEW v2
+        signals.Add(AnalyzeApiTargeting(events));
         signals.Add(AnalyzeSessionRhythm(events));
 
         // v2.1: Hybrid scoring — weighted average PLUS "any two strong signals" rule
@@ -129,6 +130,93 @@ public class AiDetectionEngine : IAiDetectionEngine
             Weight = 0.15,
             Score = score,
             Description = $"Coefficient of variation: {cv:F3}. Lower = more robotic."
+        };
+    }
+
+    /// <summary>
+    /// NEW v3: Timing Jitter Analysis — specifically catches DrissionPage and similar tools.
+    /// 
+    /// DrissionPage signature: page loads take ~6000ms ± 200ms (very tight cluster).
+    /// The "jitter" between consecutive intervals is suspiciously low.
+    /// 
+    /// Real humans have HIGH jitter — the difference between one action and the next
+    /// varies wildly (sometimes 1s, sometimes 8s, sometimes 20s).
+    /// 
+    /// Bots (especially browser automation) have LOW jitter because:
+    /// - Page load times are consistent (network + render = fixed cost)
+    /// - Sleep/wait commands produce uniform delays
+    /// - No human hesitation, distraction, or reading time
+    /// 
+    /// We measure:
+    /// 1. Inter-interval jitter (difference between consecutive intervals)
+    /// 2. Clustering (do intervals cluster around a single value?)
+    /// 3. Absence of outliers (humans always have some very long/short gaps)
+    /// </summary>
+    private DetectionSignal AnalyzeTimingJitter(List<ActivityEvent> events)
+    {
+        var intervals = new List<double>();
+        for (int i = 1; i < events.Count; i++)
+        {
+            var gap = (events[i].Timestamp - events[i - 1].Timestamp).TotalMilliseconds;
+            intervals.Add(gap);
+        }
+
+        if (intervals.Count < 4)
+            return new DetectionSignal { SignalName = "TimingJitter", Weight = 0.15, Score = 0.5, Description = "Insufficient data for jitter analysis." };
+
+        // 1. Inter-interval jitter: how much does each gap differ from the previous gap?
+        // Low jitter = bot (each action takes roughly the same time as the last)
+        var jitters = new List<double>();
+        for (int i = 1; i < intervals.Count; i++)
+        {
+            jitters.Add(Math.Abs(intervals[i] - intervals[i - 1]));
+        }
+
+        double meanInterval = intervals.Average();
+        double meanJitter = jitters.Average();
+
+        // Normalize jitter relative to mean interval
+        // Humans: jitter/mean > 0.5 (highly variable)
+        // DrissionPage: jitter/mean < 0.1 (almost identical intervals)
+        double jitterRatio = meanInterval > 0 ? meanJitter / meanInterval : 0;
+
+        // 2. Clustering: what % of intervals fall within ±15% of the median?
+        double median = intervals.OrderBy(x => x).ElementAt(intervals.Count / 2);
+        double clusterBand = median * 0.15; // ±15%
+        int clustered = intervals.Count(i => Math.Abs(i - median) < clusterBand);
+        double clusterRatio = (double)clustered / intervals.Count;
+
+        // 3. Outlier absence: humans always have at least some intervals that are
+        // 3x longer or 3x shorter than the median
+        int outliers = intervals.Count(i => i > median * 3 || i < median / 3);
+        double outlierRatio = (double)outliers / intervals.Count;
+        bool hasNoOutliers = outlierRatio < 0.05;
+
+        // Score calculation
+        double jitterScore;
+        if (jitterRatio < 0.05) jitterScore = 1.0;       // Almost zero jitter = definitely bot
+        else if (jitterRatio < 0.10) jitterScore = 0.9;   // DrissionPage lands here
+        else if (jitterRatio < 0.20) jitterScore = 0.7;
+        else if (jitterRatio < 0.35) jitterScore = 0.5;
+        else if (jitterRatio < 0.50) jitterScore = 0.3;
+        else jitterScore = 0.1;                            // High jitter = human
+
+        double clusterScore;
+        if (clusterRatio > 0.85) clusterScore = 0.95;     // >85% of intervals in tight cluster
+        else if (clusterRatio > 0.70) clusterScore = 0.75;
+        else if (clusterRatio > 0.50) clusterScore = 0.5;
+        else clusterScore = 0.1;
+
+        double outlierScore = hasNoOutliers ? 0.7 : 0.1;
+
+        double score = jitterScore * 0.50 + clusterScore * 0.30 + outlierScore * 0.20;
+
+        return new DetectionSignal
+        {
+            SignalName = "TimingJitter",
+            Weight = 0.15,
+            Score = Math.Round(score, 4),
+            Description = $"Jitter ratio: {jitterRatio:F3} (lower=bot), Cluster: {clusterRatio:F2}, Outliers: {outlierRatio:F2}."
         };
     }
 

@@ -81,15 +81,15 @@ public class AiDetectionEngine : IAiDetectionEngine
         double weightedScore = signals.Sum(s => s.Score * s.Weight) / totalWeight;
 
         // Hybrid boost: multiple strong signals firing together
-        int strongSignals = signals.Count(s => s.Score >= 0.6);
+        int strongSignals = signals.Count(s => s.Score >= 0.55);  // 0.55 threshold catches Camoufox
         double maxSignal = signals.Max(s => s.Score);
         double secondMaxSignal = signals.OrderByDescending(s => s.Score).Skip(1).First().Score;
 
         double combinedScore = weightedScore;
         if (strongSignals >= 3)
-            combinedScore += 0.25;  // Strong boost for 3+ signals
-        else if (strongSignals >= 2 && secondMaxSignal >= 0.6)
-            combinedScore += 0.20;  // Catches Camoufox (2 signals)
+            combinedScore = Math.Max(combinedScore + 0.20, 0.65);
+        else if (strongSignals >= 2 && secondMaxSignal >= 0.55)   // Lowered from 0.6 to catch Camoufox
+            combinedScore = Math.Max(combinedScore + 0.15, 0.55);
 
         if (maxSignal >= 0.9)
             combinedScore += 0.05;

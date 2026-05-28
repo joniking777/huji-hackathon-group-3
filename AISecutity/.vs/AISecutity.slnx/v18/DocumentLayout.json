@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jonat\\source\\repos\\AISecutity\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{73405A6A-DFB4-4631-B93B-DC88947EA24A}|AISecutity\\AISecutity.csproj|c:\\users\\jonat\\source\\repos\\aisecutity\\aisecutity\\activitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73405A6A-DFB4-4631-B93B-DC88947EA24A}|AISecutity\\AISecutity.csproj|solutionrelative:aisecutity\\activitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73405A6A-DFB4-4631-B93B-DC88947EA24A}|AISecutity\\AISecutity.csproj|c:\\users\\jonat\\source\\repos\\aisecutity\\aisecutity\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73405A6A-DFB4-4631-B93B-DC88947EA24A}|AISecutity\\AISecutity.csproj|solutionrelative:aisecutity\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ActivityManager.cs",
+              "DocumentMoniker": "C:\\Users\\jonat\\source\\repos\\AISecutity\\AISecutity\\ActivityManager.cs",
+              "RelativeDocumentMoniker": "AISecutity\\ActivityManager.cs",
+              "ToolTip": "C:\\Users\\jonat\\source\\repos\\AISecutity\\AISecutity\\ActivityManager.cs",
+              "RelativeToolTip": "AISecutity\\ActivityManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-28T08:28:30.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jonat\\source\\repos\\AISecutity\\AISecutity\\Program.cs",
+              "RelativeDocumentMoniker": "AISecutity\\Program.cs",
+              "ToolTip": "C:\\Users\\jonat\\source\\repos\\AISecutity\\AISecutity\\Program.cs",
+              "RelativeToolTip": "AISecutity\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-28T08:27:24.726Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

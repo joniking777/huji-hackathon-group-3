@@ -71,6 +71,7 @@ public class AiDetectionEngine : IAiDetectionEngine
         signals.Add(AnalyzeKeyboardBehavior(events));
         signals.Add(AnalyzeNavigationPattern(events));
         signals.Add(AnalyzeNavigationBehavior(events));
+        signals.Add(AnalyzeScrollBehavior(events));        // NEW v3.2: reading focal point
         signals.Add(AnalyzeApiTargeting(events));
         signals.Add(AnalyzeSessionRhythm(events));
 
@@ -859,6 +860,151 @@ public class AiDetectionEngine : IAiDetectionEngine
             Weight = 0.15,
             Score = Math.Round(score, 4),
             Description = $"API ratio: {apiRatio:F2}, Efficiency: {efficiencyRatio:F2}, Browse-then-target: {hasBrowseThenTarget}, Seq API ratio: {seqRatio:F2}."
+        };
+    }
+
+    /// <summary>
+    /// NEW v3.2: Scroll Behavior / Reading Focal Point Analysis.
+    /// 
+    /// Humans read content at a natural "focal point" — typically 30-40% from the
+    /// top of the viewport. They scroll in small increments to keep text in this zone.
+    /// 
+    /// Key human patterns:
+    /// 1. Small scroll deltas (50-150px per scroll = 2-5 lines of text)
+    /// 2. Scroll frequency matches reading speed (every 3-8 seconds)
+    /// 3. Mouse Y position stays near the reading zone during scrolling
+    /// 4. Variable scroll amounts (faster through boring content, slower through interesting)
+    /// 
+    /// Bot patterns:
+    /// 1. Large uniform jumps (viewport height or fixed increments)
+    /// 2. Constant scroll intervals (no reading speed correlation)
+    /// 3. Mouse position doesn't correlate with scroll behavior
+    /// 4. Scrolls entire page in 3-5 steps then leaves
+    /// </summary>
+    private DetectionSignal AnalyzeScrollBehavior(List<ActivityEvent> events)
+    {
+        var scrollEvents = events.Where(e => e.EventType == "scroll").ToList();
+
+        if (scrollEvents.Count < 3)
+            return new DetectionSignal { SignalName = "ScrollBehavior", Weight = 0.08, Score = 0.5, Description = "Insufficient scroll data." };
+
+        // Extract scroll deltas and timing
+        var deltas = new List<double>();
+        var scrollIntervals = new List<double>();
+        var mouseYDuringScroll = new List<int>();
+
+        for (int i = 0; i < scrollEvents.Count; i++)
+        {
+            // Get delta from ScrollData if available, otherwise estimate from mouse Y movement
+            if (scrollEvents[i].Scroll?.DeltaY != null && scrollEvents[i].Scroll!.DeltaY != 0)
+            {
+                deltas.Add(Math.Abs(scrollEvents[i].Scroll!.DeltaY));
+            }
+            else if (scrollEvents[i].Mouse != null)
+            {
+                // Estimate scroll from mouse Y position changes between scroll events
+                if (i > 0 && scrollEvents[i - 1].Mouse != null)
+                {
+                    int dy = Math.Abs(scrollEvents[i].Mouse!.Y - scrollEvents[i - 1].Mouse!.Y);
+                    if (dy > 0) deltas.Add(dy);
+                }
+            }
+
+            // Mouse Y during scroll
+            if (scrollEvents[i].Mouse != null)
+            {
+                mouseYDuringScroll.Add(scrollEvents[i].Mouse!.Y);
+            }
+
+            // Scroll intervals
+            if (i > 0)
+            {
+                var gap = (scrollEvents[i].Timestamp - scrollEvents[i - 1].Timestamp).TotalMilliseconds;
+                scrollIntervals.Add(gap);
+            }
+        }
+
+        double score = 0.5; // Default neutral
+
+        // 1. Scroll delta analysis: humans scroll 50-150px, bots scroll 300-1000px
+        if (deltas.Count >= 2)
+        {
+            double avgDelta = deltas.Average();
+            double deltaCV = deltas.Count > 1
+                ? Math.Sqrt(deltas.Sum(d => Math.Pow(d - avgDelta, 2)) / deltas.Count) / avgDelta
+                : 0;
+
+            // Large uniform scrolls = bot
+            double deltaScore;
+            if (avgDelta > 500 && deltaCV < 0.2) deltaScore = 0.9;      // Big uniform jumps
+            else if (avgDelta > 300 && deltaCV < 0.3) deltaScore = 0.7;  // Large-ish uniform
+            else if (avgDelta > 200 && deltaCV < 0.15) deltaScore = 0.6; // Medium but too consistent
+            else if (deltaCV < 0.1) deltaScore = 0.7;                     // Any size but zero variance
+            else deltaScore = 0.1;                                         // Variable = human
+
+            score = deltaScore * 0.35;
+        }
+        else
+        {
+            score = 0.5 * 0.35;
+        }
+
+        // 2. Scroll interval regularity: humans scroll at variable rates
+        if (scrollIntervals.Count >= 2)
+        {
+            double avgInterval = scrollIntervals.Average();
+            double intervalCV = Math.Sqrt(scrollIntervals.Sum(i => Math.Pow(i - avgInterval, 2)) / scrollIntervals.Count) / avgInterval;
+
+            // Very regular scroll intervals = bot (reading at constant speed is unnatural)
+            double intervalScore;
+            if (intervalCV < 0.15) intervalScore = 0.9;    // Almost metronomic
+            else if (intervalCV < 0.25) intervalScore = 0.7;
+            else if (intervalCV < 0.40) intervalScore = 0.4;
+            else intervalScore = 0.1;                       // Variable = human
+
+            score += intervalScore * 0.30;
+        }
+        else
+        {
+            score += 0.5 * 0.30;
+        }
+
+        // 3. Mouse Y focal point: humans keep mouse near reading zone (30-40% of viewport)
+        // Bots either have no mouse correlation or mouse stays fixed
+        if (mouseYDuringScroll.Count >= 3)
+        {
+            double avgMouseY = mouseYDuringScroll.Average();
+            double mouseYCV = Math.Sqrt(mouseYDuringScroll.Sum(y => Math.Pow(y - avgMouseY, 2)) / mouseYDuringScroll.Count) / Math.Max(1, avgMouseY);
+
+            // If mouse Y increases linearly with scroll (bot scrolling pattern)
+            bool isLinearMouseY = true;
+            for (int i = 1; i < mouseYDuringScroll.Count; i++)
+            {
+                if (mouseYDuringScroll[i] < mouseYDuringScroll[i - 1] - 20) // Mouse went UP = human re-reading
+                {
+                    isLinearMouseY = false;
+                    break;
+                }
+            }
+
+            double focalScore;
+            if (isLinearMouseY && mouseYCV > 0.5) focalScore = 0.8;  // Mouse just goes down linearly = bot
+            else if (mouseYCV < 0.1) focalScore = 0.7;                // Mouse doesn't move at all during scroll = bot
+            else focalScore = 0.1;                                     // Mouse moves around reading zone = human
+
+            score += focalScore * 0.35;
+        }
+        else
+        {
+            score += 0.5 * 0.35;
+        }
+
+        return new DetectionSignal
+        {
+            SignalName = "ScrollBehavior",
+            Weight = 0.08,
+            Score = Math.Round(score, 4),
+            Description = $"Analyzed {scrollEvents.Count} scroll events. Deltas: {deltas.Count}, Intervals: {scrollIntervals.Count}."
         };
     }
 

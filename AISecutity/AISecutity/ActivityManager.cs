@@ -1,17 +1,19 @@
-﻿namespace AISecutity
+﻿using AISecutity.Models;
+
+namespace AISecutity
 {
     public class ActivityManager
     {
-        private readonly List<Activity> _activities;
+        private readonly List<ActivityEvent> _activities;
         public ActivityManager()
         {
-            _activities = new List<Activity>();
+            _activities = new List<ActivityEvent>();
         }
-        public void AddActivity(Activity activity)
+        public void AddActivity(ActivityEvent activity)
         {
             _activities.Add(activity);
         }
-        public IEnumerable<Activity> GetActivities()
+        public IEnumerable<ActivityEvent> GetActivities()
         {
             return _activities;
         }

@@ -1,0 +1,78 @@
+[
+  {
+    "agent_name": "headline_agent_003",
+    "event_type": "started",
+    "timestamp": "2026-05-28T12:19:33.329848+00:00",
+    "elapsed_since_start_ms": 17.0,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_003",
+    "event_type": "waiting_semaphore",
+    "timestamp": "2026-05-28T12:19:33.329848+00:00",
+    "elapsed_since_start_ms": 17.0,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_003",
+    "event_type": "acquired_semaphore",
+    "timestamp": "2026-05-28T12:19:33.329848+00:00",
+    "elapsed_since_start_ms": 17.0,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_003",
+    "event_type": "fetch_start",
+    "timestamp": "2026-05-28T12:19:33.331150+00:00",
+    "elapsed_since_start_ms": 18.3,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_003",
+    "event_type": "fetch_end",
+    "timestamp": "2026-05-28T12:19:37.587699+00:00",
+    "elapsed_since_start_ms": 4274.85,
+    "details": {
+      "bytes": 589904
+    }
+  },
+  {
+    "agent_name": "headline_agent_003",
+    "event_type": "parse_start",
+    "timestamp": "2026-05-28T12:19:37.587699+00:00",
+    "elapsed_since_start_ms": 4274.85,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_003",
+    "event_type": "parse_end",
+    "timestamp": "2026-05-28T12:19:37.677451+00:00",
+    "elapsed_since_start_ms": 4364.61,
+    "details": {
+      "item_count": 5
+    }
+  },
+  {
+    "agent_name": "headline_agent_003",
+    "event_type": "write_start",
+    "timestamp": "2026-05-28T12:19:37.677451+00:00",
+    "elapsed_since_start_ms": 4364.61,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_003",
+    "event_type": "write_end",
+    "timestamp": "2026-05-28T12:19:37.679198+00:00",
+    "elapsed_since_start_ms": 4366.35,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_003",
+    "event_type": "completed",
+    "timestamp": "2026-05-28T12:19:37.679198+00:00",
+    "elapsed_since_start_ms": 4366.35,
+    "details": {
+      "item_count": 5
+    }
+  }
+]

@@ -1,0 +1,3402 @@
+[
+  {
+    "sessionId": "challenge-bot-0000",
+    "userId": "cbot-user-036",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.2,
+        "description": "Coefficient of variation: 0.747. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 2771ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.865,
+        "description": "Avg speed: 1118px/s, Speed CV: 0.171, High-speed ratio: 0.86."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.5686,
+        "description": "API ratio: 0.21, Efficiency: 0.79, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 1,
+        "description": "API hits: 3/14 (21.4%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.31, Idle gaps: 0, Pause regularity CV: 0.57."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:24.8922124Z",
+    "totalEventsAnalyzed": 14,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0001",
+    "userId": "cbot-user-041",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.2,
+        "description": "Coefficient of variation: 0.925. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0.0125,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 6.2% under 500ms. Avg interval: 1899ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.7525,
+        "description": "Avg speed: 1086px/s, Speed CV: 0.218, High-speed ratio: 0.82."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.4688,
+        "description": "API ratio: 0.12, Efficiency: 0.59, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.85,
+        "description": "API hits: 2/17 (11.8%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.55,
+        "description": "Pause ratio: 0.12, Idle gaps: 0, Pause regularity CV: 0.00."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:24.9185534Z",
+    "totalEventsAnalyzed": 17,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0002",
+    "userId": "cbot-user-035",
+    "aiProbabilityScore": 0.3713,
+    "isLikelyAiAgent": false,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.1,
+        "description": "Coefficient of variation: 1.137. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 4758ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.865,
+        "description": "Avg speed: 1138px/s, Speed CV: 0.141, High-speed ratio: 0.88."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.4788,
+        "description": "API ratio: 0.06, Efficiency: 0.69, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.5,
+        "description": "API hits: 1/16 (6.2%). Search pattern: False."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.33, Idle gaps: 3, Pause regularity CV: 0.61."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:24.9326802Z",
+    "totalEventsAnalyzed": 16,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0003",
+    "userId": "cbot-user-091",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.1,
+        "description": "Coefficient of variation: 1.222. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0.0286,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 14.3% under 500ms. Avg interval: 2121ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.7525,
+        "description": "Avg speed: 1082px/s, Speed CV: 0.249, High-speed ratio: 0.87."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.4833,
+        "description": "API ratio: 0.13, Efficiency: 0.73, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.7,
+        "description": "API hits: 2/15 (13.3%). Search pattern: False."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.55,
+        "description": "Pause ratio: 0.14, Idle gaps: 0, Pause regularity CV: 0.00."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:24.9352181Z",
+    "totalEventsAnalyzed": 15,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0004",
+    "userId": "cbot-user-025",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.1,
+        "description": "Coefficient of variation: 1.416. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 4056ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.7025,
+        "description": "Avg speed: 1012px/s, Speed CV: 0.269, High-speed ratio: 0.69."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.46,
+        "description": "API ratio: 0.12, Efficiency: 0.50, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.7,
+        "description": "API hits: 2/16 (12.5%). Search pattern: False."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.27, Idle gaps: 2, Pause regularity CV: 0.35."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:24.9373731Z",
+    "totalEventsAnalyzed": 16,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0005",
+    "userId": "cbot-user-074",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.1,
+        "description": "Coefficient of variation: 1.361. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 2581ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.7025,
+        "description": "Avg speed: 993px/s, Speed CV: 0.263, High-speed ratio: 0.63."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.5479,
+        "description": "API ratio: 0.16, Efficiency: 0.58, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.85,
+        "description": "API hits: 3/19 (15.8%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.22, Idle gaps: 1, Pause regularity CV: 0.51."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:24.93933Z",
+    "totalEventsAnalyzed": 19,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0006",
+    "userId": "cbot-user-088",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.2,
+        "description": "Coefficient of variation: 0.958. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 4039ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.7525,
+        "description": "Avg speed: 1073px/s, Speed CV: 0.259, High-speed ratio: 0.82."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.5688,
+        "description": "API ratio: 0.12, Efficiency: 0.59, Browse-then-target: True, Seq API ratio: 0.14."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.85,
+        "description": "API hits: 2/17 (11.8%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.44, Idle gaps: 1, Pause regularity CV: 0.58."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:24.9411956Z",
+    "totalEventsAnalyzed": 17,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0007",
+    "userId": "cbot-user-008",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.2,
+        "description": "Coefficient of variation: 0.974. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0.0308,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 15.4% under 500ms. Avg interval: 2090ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.7525,
+        "description": "Avg speed: 1062px/s, Speed CV: 0.250, High-speed ratio: 0.79."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.4671,
+        "description": "API ratio: 0.14, Efficiency: 0.57, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.85,
+        "description": "API hits: 2/14 (14.3%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.3,
+        "description": "Pause ratio: 0.15, Idle gaps: 0, Pause regularity CV: 0.00."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:24.9430843Z",
+    "totalEventsAnalyzed": 14,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0008",
+    "userId": "cbot-user-039",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.1,
+        "description": "Coefficient of variation: 1.473. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 3066ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.9175,
+        "description": "Avg speed: 1200px/s, Speed CV: 0.000, High-speed ratio: 1.00."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.4629,
+        "description": "API ratio: 0.12, Efficiency: 0.53, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.85,
+        "description": "API hits: 2/17 (11.8%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.25, Idle gaps: 1, Pause regularity CV: 0.64."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:24.9461046Z",
+    "totalEventsAnalyzed": 17,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0009",
+    "userId": "cbot-user-039",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.2,
+        "description": "Coefficient of variation: 0.868. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 2252ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.7525,
+        "description": "Avg speed: 1044px/s, Speed CV: 0.260, High-speed ratio: 0.75."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.5462,
+        "description": "API ratio: 0.19, Efficiency: 0.56, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.85,
+        "description": "API hits: 3/16 (18.8%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.33, Idle gaps: 0, Pause regularity CV: 0.48."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:24.9603707Z",
+    "totalEventsAnalyzed": 16,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0010",
+    "userId": "cbot-user-091",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.1,
+        "description": "Coefficient of variation: 1.030. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0.0143,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 7.1% under 500ms. Avg interval: 2839ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.615,
+        "description": "Avg speed: 1020px/s, Speed CV: 0.293, High-speed ratio: 0.67."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.4633,
+        "description": "API ratio: 0.13, Efficiency: 0.53, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.85,
+        "description": "API hits: 2/15 (13.3%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.3,
+        "description": "Pause ratio: 0.29, Idle gaps: 0, Pause regularity CV: 0.28."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:24.9770081Z",
+    "totalEventsAnalyzed": 15,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0011",
+    "userId": "cbot-user-096",
+    "aiProbabilityScore": 0.3537,
+    "isLikelyAiAgent": false,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.1,
+        "description": "Coefficient of variation: 1.573. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 2762ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.45,
+        "description": "Avg speed: 906px/s, Speed CV: 0.377, High-speed ratio: 0.54."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.5592,
+        "description": "API ratio: 0.15, Efficiency: 0.69, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.85,
+        "description": "API hits: 2/13 (15.4%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.25, Idle gaps: 1, Pause regularity CV: 0.67."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:24.9795375Z",
+    "totalEventsAnalyzed": 13,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0012",
+    "userId": "cbot-user-003",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.2,
+        "description": "Coefficient of variation: 0.743. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 3545ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.615,
+        "description": "Avg speed: 995px/s, Speed CV: 0.300, High-speed ratio: 0.62."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.5592,
+        "description": "API ratio: 0.15, Efficiency: 0.69, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.85,
+        "description": "API hits: 2/13 (15.4%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.58, Idle gaps: 0, Pause regularity CV: 0.58."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:24.9818842Z",
+    "totalEventsAnalyzed": 13,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0013",
+    "userId": "cbot-user-085",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.1,
+        "description": "Coefficient of variation: 1.647. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 4188ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.615,
+        "description": "Avg speed: 973px/s, Speed CV: 0.339, High-speed ratio: 0.67."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.46,
+        "description": "API ratio: 0.11, Efficiency: 0.50, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.85,
+        "description": "API hits: 2/18 (11.1%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.3,
+        "description": "Pause ratio: 0.18, Idle gaps: 3, Pause regularity CV: 0.25."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:24.9978776Z",
+    "totalEventsAnalyzed": 18,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0014",
+    "userId": "cbot-user-021",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.2,
+        "description": "Coefficient of variation: 0.960. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 1953ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.7525,
+        "description": "Avg speed: 1075px/s, Speed CV: 0.206, High-speed ratio: 0.73."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.47,
+        "description": "API ratio: 0.13, Efficiency: 0.60, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.85,
+        "description": "API hits: 2/15 (13.3%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.55,
+        "description": "Pause ratio: 0.14, Idle gaps: 0, Pause regularity CV: 0.00."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.0105708Z",
+    "totalEventsAnalyzed": 15,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0015",
+    "userId": "cbot-user-066",
+    "aiProbabilityScore": 0.75,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.1,
+        "description": "Coefficient of variation: 1.299. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 4532ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.8125,
+        "description": "Avg speed: 1106px/s, Speed CV: 0.216, High-speed ratio: 0.83."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.6256,
+        "description": "API ratio: 0.11, Efficiency: 0.56, Browse-then-target: True, Seq API ratio: 0.50."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.85,
+        "description": "API hits: 2/18 (11.1%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.29, Idle gaps: 2, Pause regularity CV: 0.60."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.0135728Z",
+    "totalEventsAnalyzed": 18,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0016",
+    "userId": "cbot-user-088",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.1,
+        "description": "Coefficient of variation: 1.335. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 3475ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.7525,
+        "description": "Avg speed: 1049px/s, Speed CV: 0.228, High-speed ratio: 0.73."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.4767,
+        "description": "API ratio: 0.13, Efficiency: 0.67, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.7,
+        "description": "API hits: 2/15 (13.3%). Search pattern: False."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.29, Idle gaps: 1, Pause regularity CV: 0.41."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.0303036Z",
+    "totalEventsAnalyzed": 15,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0017",
+    "userId": "cbot-user-076",
+    "aiProbabilityScore": 0.3348,
+    "isLikelyAiAgent": false,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.4,
+        "description": "Coefficient of variation: 0.645. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 2533ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.45,
+        "description": "Avg speed: 906px/s, Speed CV: 0.414, High-speed ratio: 0.58."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.4767,
+        "description": "API ratio: 0.08, Efficiency: 0.67, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.5,
+        "description": "API hits: 1/12 (8.3%). Search pattern: False."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.36, Idle gaps: 0, Pause regularity CV: 0.37."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.0440354Z",
+    "totalEventsAnalyzed": 12,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0018",
+    "userId": "cbot-user-018",
+    "aiProbabilityScore": 0.2548,
+    "isLikelyAiAgent": false,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.2,
+        "description": "Coefficient of variation: 0.815. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 3914ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.8125,
+        "description": "Avg speed: 1108px/s, Speed CV: 0.247, High-speed ratio: 0.92."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.0667,
+        "description": "API ratio: 0.00, Efficiency: 0.67, Browse-then-target: False, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0,
+        "description": "API hits: 0/12 (0.0%). Search pattern: False."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.3,
+        "description": "Pause ratio: 0.45, Idle gaps: 0, Pause regularity CV: 0.19."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.0466458Z",
+    "totalEventsAnalyzed": 12,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0019",
+    "userId": "cbot-user-069",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.1,
+        "description": "Coefficient of variation: 1.040. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 5012ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.805,
+        "description": "Avg speed: 1074px/s, Speed CV: 0.196, High-speed ratio: 0.73."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.47,
+        "description": "API ratio: 0.13, Efficiency: 0.60, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.85,
+        "description": "API hits: 2/15 (13.3%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.43, Idle gaps: 2, Pause regularity CV: 0.50."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.068685Z",
+    "totalEventsAnalyzed": 15,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0020",
+    "userId": "cbot-user-020",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.2,
+        "description": "Coefficient of variation: 0.977. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 2548ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.8125,
+        "description": "Avg speed: 1119px/s, Speed CV: 0.214, High-speed ratio: 0.92."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.5592,
+        "description": "API ratio: 0.15, Efficiency: 0.69, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.7,
+        "description": "API hits: 2/13 (15.4%). Search pattern: False."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.3,
+        "description": "Pause ratio: 0.17, Idle gaps: 1, Pause regularity CV: 0.00."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.0837979Z",
+    "totalEventsAnalyzed": 13,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0021",
+    "userId": "cbot-user-007",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.4,
+        "description": "Coefficient of variation: 0.681. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 3523ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.865,
+        "description": "Avg speed: 1157px/s, Speed CV: 0.145, High-speed ratio: 0.94."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.54,
+        "description": "API ratio: 0.19, Efficiency: 0.50, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.85,
+        "description": "API hits: 3/16 (18.8%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.47, Idle gaps: 0, Pause regularity CV: 0.41."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.0863171Z",
+    "totalEventsAnalyzed": 16,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0022",
+    "userId": "cbot-user-040",
+    "aiProbabilityScore": 0.3623,
+    "isLikelyAiAgent": false,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.2,
+        "description": "Coefficient of variation: 0.707. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 2087ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.7525,
+        "description": "Avg speed: 1076px/s, Speed CV: 0.240, High-speed ratio: 0.81."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.4663,
+        "description": "API ratio: 0.06, Efficiency: 0.56, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.5,
+        "description": "API hits: 1/16 (6.2%). Search pattern: False."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.27, Idle gaps: 0, Pause regularity CV: 0.57."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.0883204Z",
+    "totalEventsAnalyzed": 16,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0023",
+    "userId": "cbot-user-097",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.2,
+        "description": "Coefficient of variation: 0.843. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0.0133,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 6.7% under 500ms. Avg interval: 4549ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.865,
+        "description": "Avg speed: 1118px/s, Speed CV: 0.160, High-speed ratio: 0.81."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.4725,
+        "description": "API ratio: 0.12, Efficiency: 0.62, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.85,
+        "description": "API hits: 2/16 (12.5%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.53, Idle gaps: 1, Pause regularity CV: 0.78."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.0902016Z",
+    "totalEventsAnalyzed": 16,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0024",
+    "userId": "cbot-user-088",
+    "aiProbabilityScore": 0.75,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.4,
+        "description": "Coefficient of variation: 0.537. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0.14,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 20.0% under 500ms. Avg interval: 1277ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.755,
+        "description": "Avg speed: 1058px/s, Speed CV: 0.194, High-speed ratio: 0.62."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.4788,
+        "description": "API ratio: 0.12, Efficiency: 0.69, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.85,
+        "description": "API hits: 2/16 (12.5%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.95,
+        "description": "Pause ratio: 0.00, Idle gaps: 0, Pause regularity CV: 0.00."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.0920725Z",
+    "totalEventsAnalyzed": 16,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0025",
+    "userId": "cbot-user-091",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.2,
+        "description": "Coefficient of variation: 0.921. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 1780ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.615,
+        "description": "Avg speed: 976px/s, Speed CV: 0.302, High-speed ratio: 0.57."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.4743,
+        "description": "API ratio: 0.14, Efficiency: 0.64, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.7,
+        "description": "API hits: 2/14 (14.3%). Search pattern: False."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.3,
+        "description": "Pause ratio: 0.15, Idle gaps: 0, Pause regularity CV: 0.00."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.1126005Z",
+    "totalEventsAnalyzed": 14,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0026",
+    "userId": "cbot-user-027",
+    "aiProbabilityScore": 0.3607,
+    "isLikelyAiAgent": false,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.1,
+        "description": "Coefficient of variation: 1.385. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0.0167,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 8.3% under 500ms. Avg interval: 3938ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.48,
+        "description": "Avg speed: 917px/s, Speed CV: 0.289, High-speed ratio: 0.46."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.5515,
+        "description": "API ratio: 0.15, Efficiency: 0.62, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.85,
+        "description": "API hits: 2/13 (15.4%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.25, Idle gaps: 1, Pause regularity CV: 0.33."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.1154255Z",
+    "totalEventsAnalyzed": 13,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0027",
+    "userId": "cbot-user-075",
+    "aiProbabilityScore": 0.2033,
+    "isLikelyAiAgent": false,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.1,
+        "description": "Coefficient of variation: 1.199. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0.0133,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 6.7% under 500ms. Avg interval: 3294ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.665,
+        "description": "Avg speed: 1034px/s, Speed CV: 0.284, High-speed ratio: 0.81."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.0562,
+        "description": "API ratio: 0.00, Efficiency: 0.56, Browse-then-target: False, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0,
+        "description": "API hits: 0/16 (0.0%). Search pattern: False."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.27, Idle gaps: 2, Pause regularity CV: 0.47."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.1306362Z",
+    "totalEventsAnalyzed": 16,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0028",
+    "userId": "cbot-user-029",
+    "aiProbabilityScore": 0.3317,
+    "isLikelyAiAgent": false,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.1,
+        "description": "Coefficient of variation: 1.143. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 3863ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.615,
+        "description": "Avg speed: 978px/s, Speed CV: 0.330, High-speed ratio: 0.67."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.4683,
+        "description": "API ratio: 0.08, Efficiency: 0.58, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.5,
+        "description": "API hits: 1/12 (8.3%). Search pattern: False."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.3,
+        "description": "Pause ratio: 0.27, Idle gaps: 1, Pause regularity CV: 0.14."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.1331186Z",
+    "totalEventsAnalyzed": 12,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0029",
+    "userId": "cbot-user-049",
+    "aiProbabilityScore": 0.3943,
+    "isLikelyAiAgent": false,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.1,
+        "description": "Coefficient of variation: 1.695. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 2206ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.56,
+        "description": "Avg speed: 991px/s, Speed CV: 0.361, High-speed ratio: 0.71."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.5471,
+        "description": "API ratio: 0.19, Efficiency: 0.57, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.85,
+        "description": "API hits: 4/21 (19.0%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.55,
+        "description": "Pause ratio: 0.10, Idle gaps: 1, Pause regularity CV: 0.00."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.1352042Z",
+    "totalEventsAnalyzed": 21,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0030",
+    "userId": "cbot-user-030",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.2,
+        "description": "Coefficient of variation: 0.732. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 2425ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.615,
+        "description": "Avg speed: 993px/s, Speed CV: 0.315, High-speed ratio: 0.65."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.5429,
+        "description": "API ratio: 0.18, Efficiency: 0.53, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.85,
+        "description": "API hits: 3/17 (17.6%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.19, Idle gaps: 0, Pause regularity CV: 0.33."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.1372974Z",
+    "totalEventsAnalyzed": 17,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0031",
+    "userId": "cbot-user-062",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.2,
+        "description": "Coefficient of variation: 0.866. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 2118ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.865,
+        "description": "Avg speed: 1128px/s, Speed CV: 0.157, High-speed ratio: 0.88."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.5547,
+        "description": "API ratio: 0.18, Efficiency: 0.65, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.85,
+        "description": "API hits: 3/17 (17.6%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.55,
+        "description": "Pause ratio: 0.12, Idle gaps: 0, Pause regularity CV: 0.00."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.1392305Z",
+    "totalEventsAnalyzed": 17,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0032",
+    "userId": "cbot-user-001",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.2,
+        "description": "Coefficient of variation: 0.970. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 5790ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.865,
+        "description": "Avg speed: 1115px/s, Speed CV: 0.192, High-speed ratio: 0.88."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.5488,
+        "description": "API ratio: 0.18, Efficiency: 0.59, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.7,
+        "description": "API hits: 3/17 (17.6%). Search pattern: False."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.44, Idle gaps: 4, Pause regularity CV: 0.58."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.1624327Z",
+    "totalEventsAnalyzed": 17,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0033",
+    "userId": "cbot-user-035",
+    "aiProbabilityScore": 0.3143,
+    "isLikelyAiAgent": false,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.2,
+        "description": "Coefficient of variation: 0.703. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 2137ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.45,
+        "description": "Avg speed: 932px/s, Speed CV: 0.354, High-speed ratio: 0.57."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.4671,
+        "description": "API ratio: 0.07, Efficiency: 0.57, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.5,
+        "description": "API hits: 1/14 (7.1%). Search pattern: False."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.3,
+        "description": "Pause ratio: 0.15, Idle gaps: 0, Pause regularity CV: 0.00."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.1651469Z",
+    "totalEventsAnalyzed": 14,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0034",
+    "userId": "cbot-user-048",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.1,
+        "description": "Coefficient of variation: 1.248. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 4654ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.665,
+        "description": "Avg speed: 1054px/s, Speed CV: 0.286, High-speed ratio: 0.79."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.5426,
+        "description": "API ratio: 0.16, Efficiency: 0.53, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.85,
+        "description": "API hits: 3/19 (15.8%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.28, Idle gaps: 4, Pause regularity CV: 0.67."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.1680442Z",
+    "totalEventsAnalyzed": 19,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0035",
+    "userId": "cbot-user-096",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.4,
+        "description": "Coefficient of variation: 0.578. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 1512ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.7025,
+        "description": "Avg speed: 1019px/s, Speed CV: 0.240, High-speed ratio: 0.62."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.5525,
+        "description": "API ratio: 0.19, Efficiency: 0.62, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.85,
+        "description": "API hits: 3/16 (18.8%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.5,
+        "description": "Pause ratio: 0.07, Idle gaps: 0, Pause regularity CV: 0.00."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.1808038Z",
+    "totalEventsAnalyzed": 16,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0036",
+    "userId": "cbot-user-079",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.2,
+        "description": "Coefficient of variation: 0.953. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0.0235,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 11.8% under 500ms. Avg interval: 2862ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.665,
+        "description": "Avg speed: 1028px/s, Speed CV: 0.315, High-speed ratio: 0.78."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.46,
+        "description": "API ratio: 0.06, Efficiency: 0.50, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.65,
+        "description": "API hits: 1/18 (5.6%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.29, Idle gaps: 0, Pause regularity CV: 0.40."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.1957111Z",
+    "totalEventsAnalyzed": 18,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0037",
+    "userId": "cbot-user-066",
+    "aiProbabilityScore": 0.3877,
+    "isLikelyAiAgent": false,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.2,
+        "description": "Coefficient of variation: 0.787. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0.025,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 12.5% under 500ms. Avg interval: 1798ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.7525,
+        "description": "Avg speed: 1065px/s, Speed CV: 0.260, High-speed ratio: 0.76."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.4688,
+        "description": "API ratio: 0.06, Efficiency: 0.59, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.5,
+        "description": "API hits: 1/17 (5.9%). Search pattern: False."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.55,
+        "description": "Pause ratio: 0.12, Idle gaps: 0, Pause regularity CV: 0.00."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.2143254Z",
+    "totalEventsAnalyzed": 17,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0038",
+    "userId": "cbot-user-001",
+    "aiProbabilityScore": 0.3598,
+    "isLikelyAiAgent": false,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.1,
+        "description": "Coefficient of variation: 1.193. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 4537ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.8125,
+        "description": "Avg speed: 1107px/s, Speed CV: 0.204, High-speed ratio: 0.82."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.4688,
+        "description": "API ratio: 0.06, Efficiency: 0.59, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.5,
+        "description": "API hits: 1/17 (5.9%). Search pattern: False."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.44, Idle gaps: 1, Pause regularity CV: 0.45."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.2171326Z",
+    "totalEventsAnalyzed": 17,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0039",
+    "userId": "cbot-user-027",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.1,
+        "description": "Coefficient of variation: 1.540. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0.0222,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 11.1% under 500ms. Avg interval: 2714ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.615,
+        "description": "Avg speed: 994px/s, Speed CV: 0.313, High-speed ratio: 0.68."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.5426,
+        "description": "API ratio: 0.16, Efficiency: 0.53, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.85,
+        "description": "API hits: 3/19 (15.8%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.22, Idle gaps: 1, Pause regularity CV: 1.06."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.2191668Z",
+    "totalEventsAnalyzed": 19,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0040",
+    "userId": "cbot-user-002",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.1,
+        "description": "Coefficient of variation: 1.124. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 5297ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.8125,
+        "description": "Avg speed: 1102px/s, Speed CV: 0.243, High-speed ratio: 0.87."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.47,
+        "description": "API ratio: 0.07, Efficiency: 0.60, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.65,
+        "description": "API hits: 1/15 (6.7%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.43, Idle gaps: 2, Pause regularity CV: 1.05."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.2210501Z",
+    "totalEventsAnalyzed": 15,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0041",
+    "userId": "cbot-user-046",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.4,
+        "description": "Coefficient of variation: 0.686. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0.0125,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 6.2% under 500ms. Avg interval: 2069ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.7025,
+        "description": "Avg speed: 983px/s, Speed CV: 0.275, High-speed ratio: 0.59."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.53,
+        "description": "Analyzed 2 keyboard events for consistency and error patterns."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.5488,
+        "description": "API ratio: 0.24, Efficiency: 0.59, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 1,
+        "description": "API hits: 4/17 (23.5%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.3,
+        "description": "Pause ratio: 0.19, Idle gaps: 0, Pause regularity CV: 0.00."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.2248786Z",
+    "totalEventsAnalyzed": 17,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0042",
+    "userId": "cbot-user-056",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.1,
+        "description": "Coefficient of variation: 1.093. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 6117ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.665,
+        "description": "Avg speed: 1005px/s, Speed CV: 0.304, High-speed ratio: 0.73."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.4767,
+        "description": "API ratio: 0.13, Efficiency: 0.67, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.85,
+        "description": "API hits: 2/15 (13.3%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.57, Idle gaps: 2, Pause regularity CV: 0.34."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.2269323Z",
+    "totalEventsAnalyzed": 15,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0043",
+    "userId": "cbot-user-070",
+    "aiProbabilityScore": 0.219,
+    "isLikelyAiAgent": false,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.1,
+        "description": "Coefficient of variation: 1.303. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0.0133,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 6.7% under 500ms. Avg interval: 3751ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.7525,
+        "description": "Avg speed: 1089px/s, Speed CV: 0.245, High-speed ratio: 0.81."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.05,
+        "description": "API ratio: 0.00, Efficiency: 0.50, Browse-then-target: False, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0,
+        "description": "API hits: 0/16 (0.0%). Search pattern: False."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.27, Idle gaps: 2, Pause regularity CV: 0.74."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.2290267Z",
+    "totalEventsAnalyzed": 16,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0044",
+    "userId": "cbot-user-062",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.1,
+        "description": "Coefficient of variation: 1.508. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 3848ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.615,
+        "description": "Avg speed: 978px/s, Speed CV: 0.324, High-speed ratio: 0.61."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.54,
+        "description": "API ratio: 0.17, Efficiency: 0.50, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.85,
+        "description": "API hits: 3/18 (16.7%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.3,
+        "description": "Pause ratio: 0.18, Idle gaps: 3, Pause regularity CV: 0.11."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.2471913Z",
+    "totalEventsAnalyzed": 18,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0045",
+    "userId": "cbot-user-095",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.2,
+        "description": "Coefficient of variation: 0.943. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0.0154,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 7.7% under 500ms. Avg interval: 2643ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.9175,
+        "description": "Avg speed: 1174px/s, Speed CV: 0.081, High-speed ratio: 0.93."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.4743,
+        "description": "API ratio: 0.14, Efficiency: 0.64, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.7,
+        "description": "API hits: 2/14 (14.3%). Search pattern: False."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.31, Idle gaps: 1, Pause regularity CV: 0.62."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.2500687Z",
+    "totalEventsAnalyzed": 14,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0046",
+    "userId": "cbot-user-078",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.1,
+        "description": "Coefficient of variation: 1.258. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0.0125,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 6.2% under 500ms. Avg interval: 3585ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.7525,
+        "description": "Avg speed: 1031px/s, Speed CV: 0.260, High-speed ratio: 0.76."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.4688,
+        "description": "API ratio: 0.12, Efficiency: 0.59, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.7,
+        "description": "API hits: 2/17 (11.8%). Search pattern: False."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.25, Idle gaps: 2, Pause regularity CV: 0.36."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.2523164Z",
+    "totalEventsAnalyzed": 17,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0047",
+    "userId": "cbot-user-005",
+    "aiProbabilityScore": 0.6,
+    "isLikelyAiAgent": true,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.1,
+        "description": "Coefficient of variation: 1.570. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0.0118,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 5.9% under 500ms. Avg interval: 2364ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.7525,
+        "description": "Avg speed: 1054px/s, Speed CV: 0.271, High-speed ratio: 0.78."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.5456,
+        "description": "API ratio: 0.17, Efficiency: 0.56, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.85,
+        "description": "API hits: 3/18 (16.7%). Search pattern: True."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.55,
+        "description": "Pause ratio: 0.12, Idle gaps: 1, Pause regularity CV: 0.00."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.2544383Z",
+    "totalEventsAnalyzed": 18,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0048",
+    "userId": "cbot-user-075",
+    "aiProbabilityScore": 0.4214,
+    "isLikelyAiAgent": false,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.4,
+        "description": "Coefficient of variation: 0.606. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 0.0% under 500ms. Avg interval: 2471ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.865,
+        "description": "Avg speed: 1160px/s, Speed CV: 0.105, High-speed ratio: 0.93."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.4633,
+        "description": "API ratio: 0.07, Efficiency: 0.53, Browse-then-target: True, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0.5,
+        "description": "API hits: 1/15 (6.7%). Search pattern: False."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.3,
+        "description": "Pause ratio: 0.21, Idle gaps: 0, Pause regularity CV: 0.00."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.2794413Z",
+    "totalEventsAnalyzed": 15,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  },
+  {
+    "sessionId": "challenge-bot-0049",
+    "userId": "cbot-user-086",
+    "aiProbabilityScore": 0.1262,
+    "isLikelyAiAgent": false,
+    "signals": [
+      {
+        "signalName": "TimingRegularity",
+        "weight": 0.15,
+        "score": 0.1,
+        "description": "Coefficient of variation: 1.686. Lower = more robotic."
+      },
+      {
+        "signalName": "ActionSpeed",
+        "weight": 0.15,
+        "score": 0.0267,
+        "description": "0.0% under 50ms, 0.0% under 200ms, 13.3% under 500ms. Avg interval: 3211ms."
+      },
+      {
+        "signalName": "MouseBehavior",
+        "weight": 0.1,
+        "score": 0,
+        "description": "Linear movement ratio: 0.00, No-curve ratio: 0.00."
+      },
+      {
+        "signalName": "MouseSpeedProfile",
+        "weight": 0.2,
+        "score": 0.255,
+        "description": "Avg speed: 785px/s, Speed CV: 0.494, High-speed ratio: 0.50."
+      },
+      {
+        "signalName": "KeyboardBehavior",
+        "weight": 0.1,
+        "score": 0.5,
+        "description": "Insufficient keyboard data."
+      },
+      {
+        "signalName": "NavigationPattern",
+        "weight": 0.15,
+        "score": 0.05,
+        "description": "API ratio: 0.00, Efficiency: 0.50, Browse-then-target: False, Seq API ratio: 0.00."
+      },
+      {
+        "signalName": "ApiTargeting",
+        "weight": 0.15,
+        "score": 0,
+        "description": "API hits: 0/16 (0.0%). Search pattern: False."
+      },
+      {
+        "signalName": "SessionRhythm",
+        "weight": 0.05,
+        "score": 0.1,
+        "description": "Pause ratio: 0.27, Idle gaps: 1, Pause regularity CV: 0.35."
+      }
+    ],
+    "analyzedAt": "2026-05-28T13:15:25.2823567Z",
+    "totalEventsAnalyzed": 16,
+    "groundTruth": "challenge_bot",
+    "evasion_techniques": [
+      "log-normal timing distribution",
+      "bezier-curved mouse paths",
+      "human typing with real error rates",
+      "browsing phases (explore before targeting)",
+      "thinking pauses and distractions",
+      "realistic mouse speed (300-1000 px/s)",
+      "natural endpoint progression"
+    ]
+  }
+]

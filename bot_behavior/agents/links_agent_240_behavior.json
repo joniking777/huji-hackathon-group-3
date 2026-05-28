@@ -1,0 +1,78 @@
+[
+  {
+    "agent_name": "links_agent_240",
+    "event_type": "started",
+    "timestamp": "2026-05-28T12:19:33.346260+00:00",
+    "elapsed_since_start_ms": 33.41,
+    "details": {}
+  },
+  {
+    "agent_name": "links_agent_240",
+    "event_type": "waiting_semaphore",
+    "timestamp": "2026-05-28T12:19:33.346260+00:00",
+    "elapsed_since_start_ms": 33.41,
+    "details": {}
+  },
+  {
+    "agent_name": "links_agent_240",
+    "event_type": "acquired_semaphore",
+    "timestamp": "2026-05-28T12:20:24.311412+00:00",
+    "elapsed_since_start_ms": 50998.57,
+    "details": {}
+  },
+  {
+    "agent_name": "links_agent_240",
+    "event_type": "fetch_start",
+    "timestamp": "2026-05-28T12:20:24.311412+00:00",
+    "elapsed_since_start_ms": 50998.57,
+    "details": {}
+  },
+  {
+    "agent_name": "links_agent_240",
+    "event_type": "fetch_end",
+    "timestamp": "2026-05-28T12:20:27.065217+00:00",
+    "elapsed_since_start_ms": 53752.37,
+    "details": {
+      "bytes": 589904
+    }
+  },
+  {
+    "agent_name": "links_agent_240",
+    "event_type": "parse_start",
+    "timestamp": "2026-05-28T12:20:27.065217+00:00",
+    "elapsed_since_start_ms": 53752.37,
+    "details": {}
+  },
+  {
+    "agent_name": "links_agent_240",
+    "event_type": "parse_end",
+    "timestamp": "2026-05-28T12:20:27.121246+00:00",
+    "elapsed_since_start_ms": 53808.4,
+    "details": {
+      "item_count": 378
+    }
+  },
+  {
+    "agent_name": "links_agent_240",
+    "event_type": "write_start",
+    "timestamp": "2026-05-28T12:20:27.121246+00:00",
+    "elapsed_since_start_ms": 53808.4,
+    "details": {}
+  },
+  {
+    "agent_name": "links_agent_240",
+    "event_type": "write_end",
+    "timestamp": "2026-05-28T12:20:27.121246+00:00",
+    "elapsed_since_start_ms": 53808.4,
+    "details": {}
+  },
+  {
+    "agent_name": "links_agent_240",
+    "event_type": "completed",
+    "timestamp": "2026-05-28T12:20:27.121246+00:00",
+    "elapsed_since_start_ms": 53808.4,
+    "details": {
+      "item_count": 378
+    }
+  }
+]

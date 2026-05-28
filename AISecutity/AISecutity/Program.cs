@@ -1,6 +1,8 @@
 using AISecutity;
+using AISecutity.Data;
 using AISecutity.Detection;
 using AISecutity.Middleware;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,9 +10,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
+// === Database (SQLite) ===
+builder.Services.AddDbContext<SecurityDbContext>(options =>
+    options.UseSqlite("Data Source=security.db"));
+
 // Register AI detection services
 builder.Services.AddSingleton<IAiDetectionEngine, AiDetectionEngine>();
 builder.Services.AddSingleton<ActivityManager>();
+builder.Services.AddScoped<BanService>();
 
 // Register AI blocking middleware with options
 builder.Services.AddAiBlocking(options =>
@@ -20,6 +27,7 @@ builder.Services.AddAiBlocking(options =>
     options.ExcludedPaths = new List<string>
     {
         "/api/detection",
+        "/api/ban",
         "/health",
         "/swagger",
         "/openapi"
@@ -38,6 +46,13 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
+// === Auto-create database on startup ===
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<SecurityDbContext>();
+    db.Database.EnsureCreated();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

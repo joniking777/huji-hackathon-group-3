@@ -1,0 +1,78 @@
+[
+  {
+    "agent_name": "image_agent_072",
+    "event_type": "started",
+    "timestamp": "2026-05-28T12:19:33.341659+00:00",
+    "elapsed_since_start_ms": 28.81,
+    "details": {}
+  },
+  {
+    "agent_name": "image_agent_072",
+    "event_type": "waiting_semaphore",
+    "timestamp": "2026-05-28T12:19:33.341659+00:00",
+    "elapsed_since_start_ms": 28.81,
+    "details": {}
+  },
+  {
+    "agent_name": "image_agent_072",
+    "event_type": "acquired_semaphore",
+    "timestamp": "2026-05-28T12:19:55.107763+00:00",
+    "elapsed_since_start_ms": 21794.92,
+    "details": {}
+  },
+  {
+    "agent_name": "image_agent_072",
+    "event_type": "fetch_start",
+    "timestamp": "2026-05-28T12:19:55.108760+00:00",
+    "elapsed_since_start_ms": 21795.91,
+    "details": {}
+  },
+  {
+    "agent_name": "image_agent_072",
+    "event_type": "fetch_end",
+    "timestamp": "2026-05-28T12:19:58.180250+00:00",
+    "elapsed_since_start_ms": 24867.4,
+    "details": {
+      "bytes": 589904
+    }
+  },
+  {
+    "agent_name": "image_agent_072",
+    "event_type": "parse_start",
+    "timestamp": "2026-05-28T12:19:58.180250+00:00",
+    "elapsed_since_start_ms": 24867.4,
+    "details": {}
+  },
+  {
+    "agent_name": "image_agent_072",
+    "event_type": "parse_end",
+    "timestamp": "2026-05-28T12:19:58.231742+00:00",
+    "elapsed_since_start_ms": 24918.9,
+    "details": {
+      "item_count": 202
+    }
+  },
+  {
+    "agent_name": "image_agent_072",
+    "event_type": "write_start",
+    "timestamp": "2026-05-28T12:19:58.231742+00:00",
+    "elapsed_since_start_ms": 24918.9,
+    "details": {}
+  },
+  {
+    "agent_name": "image_agent_072",
+    "event_type": "write_end",
+    "timestamp": "2026-05-28T12:19:58.231742+00:00",
+    "elapsed_since_start_ms": 24918.9,
+    "details": {}
+  },
+  {
+    "agent_name": "image_agent_072",
+    "event_type": "completed",
+    "timestamp": "2026-05-28T12:19:58.231742+00:00",
+    "elapsed_since_start_ms": 24918.9,
+    "details": {
+      "item_count": 202
+    }
+  }
+]

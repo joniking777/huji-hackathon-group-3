@@ -1,0 +1,78 @@
+[
+  {
+    "agent_name": "metadata_agent_229",
+    "event_type": "started",
+    "timestamp": "2026-05-28T12:19:33.348411+00:00",
+    "elapsed_since_start_ms": 35.57,
+    "details": {}
+  },
+  {
+    "agent_name": "metadata_agent_229",
+    "event_type": "waiting_semaphore",
+    "timestamp": "2026-05-28T12:19:33.348411+00:00",
+    "elapsed_since_start_ms": 35.57,
+    "details": {}
+  },
+  {
+    "agent_name": "metadata_agent_229",
+    "event_type": "acquired_semaphore",
+    "timestamp": "2026-05-28T12:20:43.601957+00:00",
+    "elapsed_since_start_ms": 70289.11,
+    "details": {}
+  },
+  {
+    "agent_name": "metadata_agent_229",
+    "event_type": "fetch_start",
+    "timestamp": "2026-05-28T12:20:43.601957+00:00",
+    "elapsed_since_start_ms": 70289.11,
+    "details": {}
+  },
+  {
+    "agent_name": "metadata_agent_229",
+    "event_type": "fetch_end",
+    "timestamp": "2026-05-28T12:20:47.081932+00:00",
+    "elapsed_since_start_ms": 73769.09,
+    "details": {
+      "bytes": 589995
+    }
+  },
+  {
+    "agent_name": "metadata_agent_229",
+    "event_type": "parse_start",
+    "timestamp": "2026-05-28T12:20:47.081932+00:00",
+    "elapsed_since_start_ms": 73769.09,
+    "details": {}
+  },
+  {
+    "agent_name": "metadata_agent_229",
+    "event_type": "parse_end",
+    "timestamp": "2026-05-28T12:20:47.146641+00:00",
+    "elapsed_since_start_ms": 73833.8,
+    "details": {
+      "item_count": 111
+    }
+  },
+  {
+    "agent_name": "metadata_agent_229",
+    "event_type": "write_start",
+    "timestamp": "2026-05-28T12:20:47.146641+00:00",
+    "elapsed_since_start_ms": 73833.8,
+    "details": {}
+  },
+  {
+    "agent_name": "metadata_agent_229",
+    "event_type": "write_end",
+    "timestamp": "2026-05-28T12:20:47.148141+00:00",
+    "elapsed_since_start_ms": 73835.3,
+    "details": {}
+  },
+  {
+    "agent_name": "metadata_agent_229",
+    "event_type": "completed",
+    "timestamp": "2026-05-28T12:20:47.148141+00:00",
+    "elapsed_since_start_ms": 73835.3,
+    "details": {
+      "item_count": 111
+    }
+  }
+]

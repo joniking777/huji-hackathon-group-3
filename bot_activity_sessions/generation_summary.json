@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-05-28T12:36:25.392605+00:00",
+  "total_sessions": 1000,
+  "bot_sessions": 400,
+  "human_sessions": 400,
+  "sneaky_bot_sessions": 200,
+  "total_events": 15222,
+  "avg_events_per_session": {
+    "bot": 19.325,
+    "human": 12.18,
+    "sneaky_bot": 13.1
+  },
+  "schema_version": "1.0",
+  "compatible_with": "AISecutity.Models.ActivitySession"
+}

@@ -1,0 +1,78 @@
+[
+  {
+    "agent_name": "headline_agent_136",
+    "event_type": "started",
+    "timestamp": "2026-05-28T12:19:33.341659+00:00",
+    "elapsed_since_start_ms": 28.81,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_136",
+    "event_type": "waiting_semaphore",
+    "timestamp": "2026-05-28T12:19:33.341659+00:00",
+    "elapsed_since_start_ms": 28.81,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_136",
+    "event_type": "acquired_semaphore",
+    "timestamp": "2026-05-28T12:19:41.083331+00:00",
+    "elapsed_since_start_ms": 7770.49,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_136",
+    "event_type": "fetch_start",
+    "timestamp": "2026-05-28T12:19:41.083331+00:00",
+    "elapsed_since_start_ms": 7770.49,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_136",
+    "event_type": "fetch_end",
+    "timestamp": "2026-05-28T12:19:44.648763+00:00",
+    "elapsed_since_start_ms": 11335.92,
+    "details": {
+      "bytes": 589904
+    }
+  },
+  {
+    "agent_name": "headline_agent_136",
+    "event_type": "parse_start",
+    "timestamp": "2026-05-28T12:19:44.648763+00:00",
+    "elapsed_since_start_ms": 11335.92,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_136",
+    "event_type": "parse_end",
+    "timestamp": "2026-05-28T12:19:44.732194+00:00",
+    "elapsed_since_start_ms": 11419.35,
+    "details": {
+      "item_count": 5
+    }
+  },
+  {
+    "agent_name": "headline_agent_136",
+    "event_type": "write_start",
+    "timestamp": "2026-05-28T12:19:44.732194+00:00",
+    "elapsed_since_start_ms": 11419.35,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_136",
+    "event_type": "write_end",
+    "timestamp": "2026-05-28T12:19:44.748256+00:00",
+    "elapsed_since_start_ms": 11435.41,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_136",
+    "event_type": "completed",
+    "timestamp": "2026-05-28T12:19:44.748256+00:00",
+    "elapsed_since_start_ms": 11435.41,
+    "details": {
+      "item_count": 5
+    }
+  }
+]

@@ -1,0 +1,78 @@
+[
+  {
+    "agent_name": "headline_agent_055",
+    "event_type": "started",
+    "timestamp": "2026-05-28T12:19:33.341659+00:00",
+    "elapsed_since_start_ms": 28.81,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_055",
+    "event_type": "waiting_semaphore",
+    "timestamp": "2026-05-28T12:19:33.341659+00:00",
+    "elapsed_since_start_ms": 28.81,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_055",
+    "event_type": "acquired_semaphore",
+    "timestamp": "2026-05-28T12:19:35.854629+00:00",
+    "elapsed_since_start_ms": 2541.78,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_055",
+    "event_type": "fetch_start",
+    "timestamp": "2026-05-28T12:19:35.854629+00:00",
+    "elapsed_since_start_ms": 2541.78,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_055",
+    "event_type": "fetch_end",
+    "timestamp": "2026-05-28T12:19:38.315451+00:00",
+    "elapsed_since_start_ms": 5002.6,
+    "details": {
+      "bytes": 589904
+    }
+  },
+  {
+    "agent_name": "headline_agent_055",
+    "event_type": "parse_start",
+    "timestamp": "2026-05-28T12:19:38.315451+00:00",
+    "elapsed_since_start_ms": 5002.6,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_055",
+    "event_type": "parse_end",
+    "timestamp": "2026-05-28T12:19:38.380982+00:00",
+    "elapsed_since_start_ms": 5068.14,
+    "details": {
+      "item_count": 5
+    }
+  },
+  {
+    "agent_name": "headline_agent_055",
+    "event_type": "write_start",
+    "timestamp": "2026-05-28T12:19:38.381983+00:00",
+    "elapsed_since_start_ms": 5069.14,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_055",
+    "event_type": "write_end",
+    "timestamp": "2026-05-28T12:19:38.382613+00:00",
+    "elapsed_since_start_ms": 5069.77,
+    "details": {}
+  },
+  {
+    "agent_name": "headline_agent_055",
+    "event_type": "completed",
+    "timestamp": "2026-05-28T12:19:38.382613+00:00",
+    "elapsed_since_start_ms": 5069.77,
+    "details": {
+      "item_count": 5
+    }
+  }
+]

@@ -1,0 +1,78 @@
+[
+  {
+    "agent_name": "links_agent_131",
+    "event_type": "started",
+    "timestamp": "2026-05-28T12:19:33.345791+00:00",
+    "elapsed_since_start_ms": 32.95,
+    "details": {}
+  },
+  {
+    "agent_name": "links_agent_131",
+    "event_type": "waiting_semaphore",
+    "timestamp": "2026-05-28T12:19:33.345791+00:00",
+    "elapsed_since_start_ms": 32.95,
+    "details": {}
+  },
+  {
+    "agent_name": "links_agent_131",
+    "event_type": "acquired_semaphore",
+    "timestamp": "2026-05-28T12:20:16.924465+00:00",
+    "elapsed_since_start_ms": 43611.62,
+    "details": {}
+  },
+  {
+    "agent_name": "links_agent_131",
+    "event_type": "fetch_start",
+    "timestamp": "2026-05-28T12:20:16.924465+00:00",
+    "elapsed_since_start_ms": 43611.62,
+    "details": {}
+  },
+  {
+    "agent_name": "links_agent_131",
+    "event_type": "fetch_end",
+    "timestamp": "2026-05-28T12:20:19.582423+00:00",
+    "elapsed_since_start_ms": 46269.58,
+    "details": {
+      "bytes": 589904
+    }
+  },
+  {
+    "agent_name": "links_agent_131",
+    "event_type": "parse_start",
+    "timestamp": "2026-05-28T12:20:19.582423+00:00",
+    "elapsed_since_start_ms": 46269.58,
+    "details": {}
+  },
+  {
+    "agent_name": "links_agent_131",
+    "event_type": "parse_end",
+    "timestamp": "2026-05-28T12:20:19.682645+00:00",
+    "elapsed_since_start_ms": 46369.8,
+    "details": {
+      "item_count": 378
+    }
+  },
+  {
+    "agent_name": "links_agent_131",
+    "event_type": "write_start",
+    "timestamp": "2026-05-28T12:20:19.682645+00:00",
+    "elapsed_since_start_ms": 46369.8,
+    "details": {}
+  },
+  {
+    "agent_name": "links_agent_131",
+    "event_type": "write_end",
+    "timestamp": "2026-05-28T12:20:19.696785+00:00",
+    "elapsed_since_start_ms": 46383.94,
+    "details": {}
+  },
+  {
+    "agent_name": "links_agent_131",
+    "event_type": "completed",
+    "timestamp": "2026-05-28T12:20:19.696785+00:00",
+    "elapsed_since_start_ms": 46383.94,
+    "details": {
+      "item_count": 378
+    }
+  }
+]

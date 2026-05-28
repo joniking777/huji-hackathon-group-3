@@ -1,0 +1,78 @@
+[
+  {
+    "agent_name": "image_agent_174",
+    "event_type": "started",
+    "timestamp": "2026-05-28T12:19:33.341659+00:00",
+    "elapsed_since_start_ms": 28.81,
+    "details": {}
+  },
+  {
+    "agent_name": "image_agent_174",
+    "event_type": "waiting_semaphore",
+    "timestamp": "2026-05-28T12:19:33.341659+00:00",
+    "elapsed_since_start_ms": 28.81,
+    "details": {}
+  },
+  {
+    "agent_name": "image_agent_174",
+    "event_type": "acquired_semaphore",
+    "timestamp": "2026-05-28T12:20:01.817419+00:00",
+    "elapsed_since_start_ms": 28504.57,
+    "details": {}
+  },
+  {
+    "agent_name": "image_agent_174",
+    "event_type": "fetch_start",
+    "timestamp": "2026-05-28T12:20:01.817419+00:00",
+    "elapsed_since_start_ms": 28504.57,
+    "details": {}
+  },
+  {
+    "agent_name": "image_agent_174",
+    "event_type": "fetch_end",
+    "timestamp": "2026-05-28T12:20:04.792383+00:00",
+    "elapsed_since_start_ms": 31479.54,
+    "details": {
+      "bytes": 589904
+    }
+  },
+  {
+    "agent_name": "image_agent_174",
+    "event_type": "parse_start",
+    "timestamp": "2026-05-28T12:20:04.792383+00:00",
+    "elapsed_since_start_ms": 31479.54,
+    "details": {}
+  },
+  {
+    "agent_name": "image_agent_174",
+    "event_type": "parse_end",
+    "timestamp": "2026-05-28T12:20:04.832342+00:00",
+    "elapsed_since_start_ms": 31519.5,
+    "details": {
+      "item_count": 202
+    }
+  },
+  {
+    "agent_name": "image_agent_174",
+    "event_type": "write_start",
+    "timestamp": "2026-05-28T12:20:04.832342+00:00",
+    "elapsed_since_start_ms": 31519.5,
+    "details": {}
+  },
+  {
+    "agent_name": "image_agent_174",
+    "event_type": "write_end",
+    "timestamp": "2026-05-28T12:20:04.847744+00:00",
+    "elapsed_since_start_ms": 31534.9,
+    "details": {}
+  },
+  {
+    "agent_name": "image_agent_174",
+    "event_type": "completed",
+    "timestamp": "2026-05-28T12:20:04.847744+00:00",
+    "elapsed_since_start_ms": 31534.9,
+    "details": {
+      "item_count": 202
+    }
+  }
+]

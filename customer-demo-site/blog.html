@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopMax — בלוג</title>
+
+    <script src="http://localhost:5000/sdk/tracker.js?v=3" 
+            data-api-key="shopmax-demo-key"
+            data-endpoint="http://localhost:5000/api/sdk/track">
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f5f5; color: #333; direction: rtl; }
+        
+        header { background: #2c3e50; color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
+        header h1 { font-size: 24px; }
+        header nav a { color: #ecf0f1; text-decoration: none; margin-left: 20px; font-size: 14px; }
+        header nav a:hover { color: #3498db; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+
+        .page-title { text-align: center; margin-bottom: 40px; }
+        .page-title h2 { font-size: 32px; color: #2c3e50; margin-bottom: 10px; }
+        .page-title p { color: #666; font-size: 16px; }
+
+        .blog-post { background: white; padding: 30px; border-radius: 12px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .blog-post .post-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+        .blog-post .post-meta .date { color: #999; font-size: 13px; }
+        .blog-post .post-meta .category { background: #3498db; color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px; }
+        .blog-post h3 { font-size: 22px; color: #2c3e50; margin-bottom: 14px; }
+        .blog-post p { color: #555; line-height: 1.8; margin-bottom: 12px; font-size: 15px; }
+        .blog-post .read-more { display: inline-block; margin-top: 10px; color: #3498db; text-decoration: none; font-weight: bold; }
+        .blog-post .read-more:hover { color: #2980b9; }
+
+        .blog-sidebar { margin-top: 40px; background: white; padding: 24px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .blog-sidebar h3 { font-size: 18px; margin-bottom: 16px; color: #2c3e50; }
+        .blog-sidebar ul { list-style: none; }
+        .blog-sidebar ul li { padding: 8px 0; border-bottom: 1px solid #eee; }
+        .blog-sidebar ul li:last-child { border-bottom: none; }
+        .blog-sidebar ul li a { color: #3498db; text-decoration: none; }
+        .blog-sidebar ul li a:hover { color: #2980b9; }
+
+        footer { background: #2c3e50; color: #bdc3c7; padding: 30px 40px; text-align: center; margin-top: 60px; }
+
+        .aisec-badge { position: fixed; bottom: 20px; left: 20px; background: rgba(0,0,0,0.8); color: #4ecdc4; padding: 8px 16px; border-radius: 20px; font-size: 12px; z-index: 9999; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🛒 ShopMax</h1>
+        <nav>
+            <a href="index.html">ראשי</a>
+            <a href="about.html">אודות</a>
+            <a href="product1.html">נעלי ריצה</a>
+            <a href="product2.html">אוזניות</a>
+            <a href="product3.html">שעון חכם</a>
+            <a href="blog.html">בלוג</a>
+            <a href="contact.html">צור קשר</a>
+            <a href="cart.html">עגלה</a>
+            <a href="faq.html">שאלות נפוצות</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="page-title">
+            <h2>📝 הבלוג שלנו</h2>
+            <p>טיפים, מדריכים וחדשות מעולם הטכנולוגיה והקניות המקוונות</p>
+        </div>
+
+        <article class="blog-post">
+            <div class="post-meta">
+                <span class="category">טכנולוגיה</span>
+                <span class="date">15 ינואר 2026</span>
+            </div>
+            <h3>המדריך המלא לבחירת אוזניות אלחוטיות בשנת 2026</h3>
+            <p>
+                שוק האוזניות האלחוטיות ממשיך לצמוח בקצב מסחרר, וכיום ישנן עשרות אפשרויות לבחירה. בין אם אתם מחפשים אוזניות לריצה, לעבודה מהבית או לנסיעות ארוכות, חשוב להבין את ההבדלים בין הדגמים השונים. טכנולוגיית ביטול הרעשים האקטיבי (ANC) התקדמה משמעותית בשנים האחרונות, ומאפשרת חוויית האזנה נקייה גם בסביבות רועשות.
+            </p>
+            <p>
+                כשבוחרים אוזניות, יש לשים לב למספר פרמטרים מרכזיים: חיי סוללה, נוחות לאורך זמן, איכות מיקרופון לשיחות, ועמידות במים. אוזניות פרימיום כמו אלו שאנחנו מציעים בחנות מגיעות עם סוללה של 30 שעות ומעלה, מה שמספיק לשבוע שלם של שימוש רגיל ללא טעינה.
+            </p>
+            <p>
+                מגמה חדשה שצוברת תאוצה היא שילוב של בינה מלאכותית באוזניות — מתרגום בזמן אמת ועד התאמה אוטומטית של הסאונד לסביבה. אנחנו צופים שעד סוף 2026, רוב האוזניות בטווח המחירים הבינוני יכללו תכונות AI מתקדמות.
+            </p>
+            <a href="#" class="read-more">קרא עוד ←</a>
+        </article>
+
+        <article class="blog-post">
+            <div class="post-meta">
+                <span class="category">קניות חכמות</span>
+                <span class="date">8 ינואר 2026</span>
+            </div>
+            <h3>5 טיפים לקניות מקוונות בטוחות ומשתלמות</h3>
+            <p>
+                קניות באינטרנט הפכו לחלק בלתי נפרד מחיי היומיום שלנו, אבל עדיין ישנם סיכונים שכדאי להיות מודעים אליהם. הטיפ הראשון והחשוב ביותר הוא לוודא שהאתר בו אתם קונים מאובטח — חפשו את סמל המנעול בשורת הכתובת ואת הפרוטוקול HTTPS. אתרים שמשתמשים בטכנולוגיות אבטחה מתקדמות כמו AISecutity מספקים שכבת הגנה נוספת.
+            </p>
+            <p>
+                טיפ שני חשוב הוא להשוות מחירים לפני רכישה. השתמשו בתוספי דפדפן שמשווים מחירים אוטומטית, ואל תשכחו לבדוק קופונים והנחות. לעיתים קרובות, הרשמה לניוזלטר של חנות יכולה לזכות אתכם בהנחה של 10-15% על הרכישה הראשונה.
+            </p>
+            <p>
+                לבסוף, תמיד קראו את מדיניות ההחזרות לפני הרכישה. חנויות אמינות מציעות מדיניות החזרה גמישה של לפחות 14 יום, ולעיתים אף 30 יום. ב-ShopMax אנחנו מציעים 30 יום להחזרה ללא שאלות, כי שביעות רצון הלקוחות היא בראש סדר העדיפויות שלנו.
+            </p>
+            <a href="#" class="read-more">קרא עוד ←</a>
+        </article>
+
+        <article class="blog-post">
+            <div class="post-meta">
+                <span class="category">חדשנות</span>
+                <span class="date">2 ינואר 2026</span>
+            </div>
+            <h3>שעונים חכמים: מעקב בריאותי שמציל חיים</h3>
+            <p>
+                השעונים החכמים של היום הם הרבה יותר מסתם מכשיר שמראה הודעות מהטלפון. הם הפכו למכשירים רפואיים לכל דבר, עם יכולות מדידה של דופק, רמת חמצן בדם, איכות שינה, ואפילו ביצוע א.ק.ג. מחקרים רבים הראו שהתראות מוקדמות משעונים חכמים הצילו חיים של אנשים שלא ידעו שיש להם בעיות לב.
+            </p>
+            <p>
+                הדור החדש של השעונים החכמים מציע גם מדידת לחץ דם, מעקב אחר רמות סטרס, ואפילו זיהוי מוקדם של מחלות. הטכנולוגיה מתבססת על חיישנים אופטיים מתקדמים ואלגוריתמים של בינה מלאכותית שמנתחים את הנתונים בזמן אמת.
+            </p>
+            <p>
+                אם אתם שוקלים לרכוש שעון חכם, חשוב לבחור דגם שמתאים לאורח החיים שלכם. ספורטאים יעדיפו שעון עם GPS מובנה ועמידות במים גבוהה, בעוד שאנשי עסקים עשויים להעדיף עיצוב אלגנטי יותר עם דגש על ניהול לוח זמנים והודעות. בחנות שלנו תמצאו מגוון רחב של שעונים חכמים לכל צורך ותקציב.
+            </p>
+            <a href="#" class="read-more">קרא עוד ←</a>
+        </article>
+
+        <article class="blog-post">
+            <div class="post-meta">
+                <span class="category">מדריכים</span>
+                <span class="date">25 דצמבר 2025</span>
+            </div>
+            <h3>איך לבחור נעלי ריצה מושלמות — המדריך המלא</h3>
+            <p>
+                בחירת נעלי ריצה היא אחת ההחלטות החשובות ביותר עבור רצים, בין אם אתם מתחילים או מנוסים. נעליים לא מתאימות יכולות לגרום לפציעות, כאבים ואי נוחות שיפגעו בהנאה מהריצה. הצעד הראשון הוא להבין את סוג כף הרגל שלכם — האם יש לכם קשת גבוהה, שטוחה או נורמלית.
+            </p>
+            <p>
+                לאחר שהבנתם את מבנה כף הרגל, חשוב לבחור נעליים עם ריפוד מתאים. רצים כבדים יותר צריכים יותר ריפוד, בעוד שרצים קלים עשויים להעדיף נעליים מינימליסטיות שמאפשרות תחושה טבעית יותר. כמו כן, חשוב להתחשב במשטח הריצה — אספלט, שטח או מסלול.
+            </p>
+            <p>
+                טיפ חשוב: תמיד נסו נעליים בסוף היום, כשכף הרגל מעט נפוחה. זה מבטיח שהנעליים לא יהיו צרות מדי בזמן ריצה. גם מומלץ להשאיר מרווח של כאצבע בין האצבע הגדולה לקצה הנעל. בחנות שלנו תוכלו למצוא את נעלי הריצה המובילות בשוק עם משלוח חינם והחזרה ללא עלות.
+            </p>
+            <a href="#" class="read-more">קרא עוד ←</a>
+        </article>
+
+        <div class="blog-sidebar">
+            <h3>נושאים פופולריים</h3>
+            <ul>
+                <li><a href="#">טכנולוגיה לבישה</a></li>
+                <li><a href="#">אוזניות ורמקולים</a></li>
+                <li><a href="#">נעלי ספורט</a></li>
+                <li><a href="#">אבטחת מידע</a></li>
+                <li><a href="#">קניות חכמות</a></li>
+                <li><a href="#">מבצעים והנחות</a></li>
+                <li><a href="#">סקירות מוצרים</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 ShopMax Demo Store | מוגן על ידי AISecutity Bot Detection</p>
+    </footer>
+
+    <div class="aisec-badge">🛡️ Protected by AISecutity</div>
+</body>
+</html>

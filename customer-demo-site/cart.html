@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopMax — עגלת קניות</title>
+
+    <script src="http://localhost:5000/sdk/tracker.js?v=3" 
+            data-api-key="shopmax-demo-key"
+            data-endpoint="http://localhost:5000/api/sdk/track">
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f5f5; color: #333; direction: rtl; }
+        
+        header { background: #2c3e50; color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
+        header h1 { font-size: 24px; }
+        header nav a { color: #ecf0f1; text-decoration: none; margin-left: 20px; font-size: 14px; }
+        header nav a:hover { color: #3498db; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+
+        .page-title { text-align: center; margin-bottom: 40px; }
+        .page-title h2 { font-size: 32px; color: #2c3e50; margin-bottom: 10px; }
+        .page-title p { color: #666; font-size: 16px; }
+
+        .cart-table { width: 100%; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 24px; }
+        .cart-table table { width: 100%; border-collapse: collapse; }
+        .cart-table th { background: #34495e; color: white; padding: 14px 20px; text-align: right; font-size: 14px; }
+        .cart-table td { padding: 16px 20px; border-bottom: 1px solid #eee; vertical-align: middle; }
+        .cart-table tr:last-child td { border-bottom: none; }
+        .cart-item-info { display: flex; align-items: center; gap: 16px; }
+        .cart-item-info .item-icon { font-size: 36px; min-width: 50px; text-align: center; }
+        .cart-item-info .item-details h4 { font-size: 16px; color: #2c3e50; margin-bottom: 4px; }
+        .cart-item-info .item-details p { color: #888; font-size: 13px; }
+
+        .qty-control { display: flex; align-items: center; gap: 8px; }
+        .qty-control button { width: 30px; height: 30px; border: 1px solid #ddd; background: #f8f8f8; border-radius: 6px; cursor: pointer; font-size: 16px; }
+        .qty-control button:hover { background: #e0e0e0; }
+        .qty-control span { font-size: 16px; font-weight: bold; min-width: 20px; text-align: center; }
+
+        .item-price { font-weight: bold; color: #27ae60; font-size: 16px; }
+        .remove-btn { color: #e74c3c; cursor: pointer; font-size: 18px; border: none; background: none; }
+        .remove-btn:hover { color: #c0392b; }
+
+        .cart-summary { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .cart-summary h3 { font-size: 20px; margin-bottom: 20px; color: #2c3e50; }
+        .summary-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee; font-size: 15px; }
+        .summary-row:last-of-type { border-bottom: none; }
+        .summary-row.total { font-size: 20px; font-weight: bold; color: #2c3e50; padding-top: 16px; border-top: 2px solid #2c3e50; margin-top: 10px; }
+        .checkout-btn { width: 100%; padding: 16px; background: #27ae60; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 18px; font-weight: bold; margin-top: 20px; transition: background 0.3s; }
+        .checkout-btn:hover { background: #219a52; }
+        .continue-shopping { display: block; text-align: center; margin-top: 12px; color: #3498db; text-decoration: none; font-size: 14px; }
+        .continue-shopping:hover { color: #2980b9; }
+
+        .coupon-section { background: white; padding: 24px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 24px; }
+        .coupon-section h4 { margin-bottom: 12px; color: #2c3e50; }
+        .coupon-input { display: flex; gap: 10px; }
+        .coupon-input input { flex: 1; padding: 10px 14px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 14px; }
+        .coupon-input button { padding: 10px 20px; background: #3498db; color: white; border: none; border-radius: 8px; cursor: pointer; }
+
+        .shipping-info { background: white; padding: 24px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-top: 24px; }
+        .shipping-info h4 { margin-bottom: 12px; color: #2c3e50; }
+        .shipping-info p { color: #555; line-height: 1.8; font-size: 14px; }
+
+        footer { background: #2c3e50; color: #bdc3c7; padding: 30px 40px; text-align: center; margin-top: 60px; }
+        .aisec-badge { position: fixed; bottom: 20px; left: 20px; background: rgba(0,0,0,0.8); color: #4ecdc4; padding: 8px 16px; border-radius: 20px; font-size: 12px; z-index: 9999; }
+
+        @media (max-width: 768px) {
+            .cart-table { overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🛒 ShopMax</h1>
+        <nav>
+            <a href="index.html">ראשי</a>
+            <a href="about.html">אודות</a>
+            <a href="product1.html">נעלי ריצה</a>
+            <a href="product2.html">אוזניות</a>
+            <a href="product3.html">שעון חכם</a>
+            <a href="blog.html">בלוג</a>
+            <a href="contact.html">צור קשר</a>
+            <a href="cart.html">עגלה</a>
+            <a href="faq.html">שאלות נפוצות</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="page-title">
+            <h2>🛒 עגלת הקניות שלך</h2>
+            <p>3 פריטים בעגלה</p>
+        </div>
+
+        <div class="cart-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>מוצר</th>
+                        <th>מחיר</th>
+                        <th>כמות</th>
+                        <th>סה"כ</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="cart-item-info">
+                                <div class="item-icon">👟</div>
+                                <div class="item-details">
+                                    <h4>נעלי ריצה Pro</h4>
+                                    <p>מידה: 42 | צבע: שחור</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="item-price">₪329.90</td>
+                        <td>
+                            <div class="qty-control">
+                                <button onclick="updateQty(this, -1)">−</button>
+                                <span>1</span>
+                                <button onclick="updateQty(this, 1)">+</button>
+                            </div>
+                        </td>
+                        <td class="item-price">₪329.90</td>
+                        <td><button class="remove-btn" onclick="removeItem(this)">✕</button></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="cart-item-info">
+                                <div class="item-icon">🎧</div>
+                                <div class="item-details">
+                                    <h4>אוזניות אלחוטיות Premium</h4>
+                                    <p>צבע: כסוף | ביטול רעשים אקטיבי</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="item-price">₪549.90</td>
+                        <td>
+                            <div class="qty-control">
+                                <button onclick="updateQty(this, -1)">−</button>
+                                <span>2</span>
+                                <button onclick="updateQty(this, 1)">+</button>
+                            </div>
+                        </td>
+                        <td class="item-price">₪1,099.80</td>
+                        <td><button class="remove-btn" onclick="removeItem(this)">✕</button></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="cart-item-info">
+                                <div class="item-icon">⌚</div>
+                                <div class="item-details">
+                                    <h4>שעון חכם X</h4>
+                                    <p>צבע: שחור | גודל: 44mm</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="item-price">₪1,099.90</td>
+                        <td>
+                            <div class="qty-control">
+                                <button onclick="updateQty(this, -1)">−</button>
+                                <span>1</span>
+                                <button onclick="updateQty(this, 1)">+</button>
+                            </div>
+                        </td>
+                        <td class="item-price">₪1,099.90</td>
+                        <td><button class="remove-btn" onclick="removeItem(this)">✕</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="coupon-section">
+            <h4>🎟️ קוד קופון</h4>
+            <div class="coupon-input">
+                <input type="text" placeholder="הכנס קוד קופון...">
+                <button onclick="alert('הקופון הופעל בהצלחה! קיבלת 10% הנחה')">הפעל</button>
+            </div>
+        </div>
+
+        <div class="cart-summary">
+            <h3>סיכום הזמנה</h3>
+            <div class="summary-row">
+                <span>סכום ביניים (4 פריטים)</span>
+                <span>₪2,529.60</span>
+            </div>
+            <div class="summary-row">
+                <span>משלוח</span>
+                <span>₪29.90</span>
+            </div>
+            <div class="summary-row">
+                <span>מע"מ (17%)</span>
+                <span>₪430.03</span>
+            </div>
+            <div class="summary-row total">
+                <span>סה"כ לתשלום</span>
+                <span>₪2,989.53</span>
+            </div>
+            <button class="checkout-btn" onclick="alert('מעבר לתשלום...')">💳 מעבר לתשלום</button>
+            <a href="index.html" class="continue-shopping">← המשך בקניות</a>
+        </div>
+
+        <div class="shipping-info">
+            <h4>🚚 מידע על משלוחים</h4>
+            <p>
+                <strong>משלוח רגיל:</strong> 3-5 ימי עסקים — ₪29.90<br>
+                <strong>משלוח מהיר:</strong> 1-2 ימי עסקים — ₪49.90<br>
+                <strong>משלוח חינם:</strong> בהזמנות מעל ₪300 (משלוח רגיל)<br><br>
+                כל המוצרים נשלחים באריזה מוגנת עם מספר מעקב. ניתן לעקוב אחרי המשלוח באזור האישי.
+                אנחנו שולחים לכל רחבי ישראל, כולל יהודה ושומרון. משלוחים בינלאומיים זמינים לחלק מהמדינות — צרו קשר לפרטים.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 ShopMax Demo Store | מוגן על ידי AISecutity Bot Detection</p>
+    </footer>
+
+    <div class="aisec-badge">🛡️ Protected by AISecutity</div>
+
+    <script>
+        function updateQty(btn, change) {
+            const span = btn.parentElement.querySelector('span');
+            let qty = parseInt(span.textContent) + change;
+            if (qty < 1) qty = 1;
+            span.textContent = qty;
+        }
+        function removeItem(btn) {
+            if (confirm('האם למחוק פריט זה מהעגלה?')) {
+                btn.closest('tr').remove();
+            }
+        }
+    </script>
+</body>
+</html>

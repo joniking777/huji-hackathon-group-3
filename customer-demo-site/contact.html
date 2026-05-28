@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopMax — צור קשר</title>
+
+    <script src="http://localhost:5000/sdk/tracker.js?v=3" 
+            data-api-key="shopmax-demo-key"
+            data-endpoint="http://localhost:5000/api/sdk/track">
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f5f5; color: #333; direction: rtl; }
+        
+        header { background: #2c3e50; color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
+        header h1 { font-size: 24px; }
+        header nav a { color: #ecf0f1; text-decoration: none; margin-left: 20px; font-size: 14px; }
+        header nav a:hover { color: #3498db; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+
+        .page-title { text-align: center; margin-bottom: 40px; }
+        .page-title h2 { font-size: 32px; color: #2c3e50; margin-bottom: 10px; }
+        .page-title p { color: #666; font-size: 16px; }
+
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+
+        .contact-form { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .contact-form h3 { font-size: 20px; margin-bottom: 20px; color: #2c3e50; }
+        .form-group { margin-bottom: 16px; }
+        .form-group label { display: block; margin-bottom: 6px; font-weight: 600; color: #444; font-size: 14px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px 16px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 14px; font-family: inherit; transition: border-color 0.3s; }
+        .form-group input:focus, .form-group textarea:focus { border-color: #3498db; outline: none; }
+        .form-group textarea { height: 150px; resize: vertical; }
+        .submit-btn { width: 100%; padding: 14px; background: #27ae60; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: 600; transition: background 0.3s; }
+        .submit-btn:hover { background: #219a52; }
+
+        .contact-info { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .contact-info h3 { font-size: 20px; margin-bottom: 20px; color: #2c3e50; }
+        .info-item { display: flex; align-items: flex-start; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+        .info-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .info-item .icon { font-size: 28px; margin-left: 16px; min-width: 40px; text-align: center; }
+        .info-item .details h4 { font-size: 16px; color: #2c3e50; margin-bottom: 4px; }
+        .info-item .details p { color: #666; font-size: 14px; line-height: 1.6; }
+
+        .map-section { margin-top: 40px; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .map-section h3 { font-size: 20px; margin-bottom: 16px; color: #2c3e50; }
+        .map-placeholder { width: 100%; height: 250px; background: #e8e8e8; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; color: #999; }
+
+        .faq-mini { margin-top: 40px; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .faq-mini h3 { font-size: 20px; margin-bottom: 16px; color: #2c3e50; }
+        .faq-mini p { color: #555; line-height: 1.8; margin-bottom: 12px; }
+
+        footer { background: #2c3e50; color: #bdc3c7; padding: 30px 40px; text-align: center; margin-top: 60px; }
+
+        .aisec-badge { position: fixed; bottom: 20px; left: 20px; background: rgba(0,0,0,0.8); color: #4ecdc4; padding: 8px 16px; border-radius: 20px; font-size: 12px; z-index: 9999; }
+
+        @media (max-width: 768px) {
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🛒 ShopMax</h1>
+        <nav>
+            <a href="index.html">ראשי</a>
+            <a href="about.html">אודות</a>
+            <a href="product1.html">נעלי ריצה</a>
+            <a href="product2.html">אוזניות</a>
+            <a href="product3.html">שעון חכם</a>
+            <a href="blog.html">בלוג</a>
+            <a href="contact.html">צור קשר</a>
+            <a href="cart.html">עגלה</a>
+            <a href="faq.html">שאלות נפוצות</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="page-title">
+            <h2>📞 צור קשר</h2>
+            <p>נשמח לשמוע ממך! מלא את הטופס או פנה אלינו באחת הדרכים הבאות</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-form">
+                <h3>שלח לנו הודעה</h3>
+                <form onsubmit="event.preventDefault(); alert('ההודעה נשלחה בהצלחה! נחזור אליך בהקדם.');">
+                    <div class="form-group">
+                        <label for="name">שם מלא *</label>
+                        <input type="text" id="name" placeholder="הכנס את שמך המלא" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">כתובת אימייל *</label>
+                        <input type="email" id="email" placeholder="example@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">מספר טלפון</label>
+                        <input type="tel" id="phone" placeholder="050-1234567">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">הודעה *</label>
+                        <textarea id="message" placeholder="כתוב את הודעתך כאן..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">שלח הודעה</button>
+                </form>
+            </div>
+
+            <div class="contact-info">
+                <h3>פרטי התקשרות</h3>
+                
+                <div class="info-item">
+                    <div class="icon">📍</div>
+                    <div class="details">
+                        <h4>כתובת</h4>
+                        <p>רחוב הרצל 42, קומה 3<br>תל אביב-יפו, 6120101<br>ישראל</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon">📱</div>
+                    <div class="details">
+                        <h4>טלפון</h4>
+                        <p>03-1234567<br>050-9876543 (וואטסאפ)</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon">✉️</div>
+                    <div class="details">
+                        <h4>אימייל</h4>
+                        <p>support@shopmax.co.il<br>sales@shopmax.co.il</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon">🕐</div>
+                    <div class="details">
+                        <h4>שעות פעילות</h4>
+                        <p>ראשון - חמישי: 09:00 - 18:00<br>שישי: 09:00 - 13:00<br>שבת: סגור</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon">💬</div>
+                    <div class="details">
+                        <h4>צ'אט חי</h4>
+                        <p>זמין בשעות הפעילות<br>זמן תגובה ממוצע: 2 דקות</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="map-section">
+            <h3>📍 המיקום שלנו</h3>
+            <div class="map-placeholder">🗺️ מפה — רחוב הרצל 42, תל אביב</div>
+        </div>
+
+        <div class="faq-mini">
+            <h3>שאלות נפוצות בנושא יצירת קשר</h3>
+            <p><strong>מה זמן התגובה הממוצע?</strong><br>אנחנו משתדלים לחזור לכל פנייה תוך 24 שעות בימי עסקים. פניות דחופות מטופלות תוך שעתיים.</p>
+            <p><strong>האם ניתן להגיע פיזית למשרדים?</strong><br>בהחלט! המשרדים שלנו פתוחים לקהל בשעות הפעילות. מומלץ לתאם מראש בטלפון.</p>
+            <p><strong>איך אפשר לעקוב אחרי הזמנה?</strong><br>ניתן לעקוב אחרי כל הזמנה דרך אזור האישי באתר, או לפנות אלינו עם מספר ההזמנה.</p>
+            <p><strong>האם יש תמיכה טכנית למוצרים?</strong><br>כן, צוות התמיכה הטכנית שלנו זמין בטלפון ובאימייל לכל שאלה לגבי מוצרים שנרכשו בחנות.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 ShopMax Demo Store | מוגן על ידי AISecutity Bot Detection</p>
+    </footer>
+
+    <div class="aisec-badge">🛡️ Protected by AISecutity</div>
+</body>
+</html>

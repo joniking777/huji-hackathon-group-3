@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopMax — שאלות נפוצות</title>
+
+    <script src="http://localhost:5000/sdk/tracker.js?v=3" 
+            data-api-key="shopmax-demo-key"
+            data-endpoint="http://localhost:5000/api/sdk/track">
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f5f5; color: #333; direction: rtl; }
+        
+        header { background: #2c3e50; color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
+        header h1 { font-size: 24px; }
+        header nav a { color: #ecf0f1; text-decoration: none; margin-left: 20px; font-size: 14px; }
+        header nav a:hover { color: #3498db; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+
+        .page-title { text-align: center; margin-bottom: 40px; }
+        .page-title h2 { font-size: 32px; color: #2c3e50; margin-bottom: 10px; }
+        .page-title p { color: #666; font-size: 16px; }
+
+        .faq-section { margin-bottom: 40px; }
+        .faq-section h3 { font-size: 20px; color: #2c3e50; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #3498db; }
+
+        .faq-item { background: white; border-radius: 10px; margin-bottom: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); overflow: hidden; }
+        .faq-question { padding: 18px 24px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 16px; font-weight: 600; color: #2c3e50; transition: background 0.2s; }
+        .faq-question:hover { background: #f0f4f8; }
+        .faq-question .arrow { font-size: 14px; transition: transform 0.3s; color: #3498db; }
+        .faq-question.active .arrow { transform: rotate(180deg); }
+        .faq-answer { padding: 0 24px; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; }
+        .faq-answer.open { padding: 0 24px 20px 24px; max-height: 500px; }
+        .faq-answer p { color: #555; line-height: 1.8; font-size: 15px; margin-bottom: 8px; }
+
+        .faq-contact { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; margin-top: 40px; }
+        .faq-contact h3 { font-size: 20px; margin-bottom: 12px; color: #2c3e50; }
+        .faq-contact p { color: #666; margin-bottom: 16px; line-height: 1.6; }
+        .faq-contact a { display: inline-block; padding: 12px 24px; background: #3498db; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; }
+        .faq-contact a:hover { background: #2980b9; }
+
+        footer { background: #2c3e50; color: #bdc3c7; padding: 30px 40px; text-align: center; margin-top: 60px; }
+        .aisec-badge { position: fixed; bottom: 20px; left: 20px; background: rgba(0,0,0,0.8); color: #4ecdc4; padding: 8px 16px; border-radius: 20px; font-size: 12px; z-index: 9999; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🛒 ShopMax</h1>
+        <nav>
+            <a href="index.html">ראשי</a>
+            <a href="about.html">אודות</a>
+            <a href="product1.html">נעלי ריצה</a>
+            <a href="product2.html">אוזניות</a>
+            <a href="product3.html">שעון חכם</a>
+            <a href="blog.html">בלוג</a>
+            <a href="contact.html">צור קשר</a>
+            <a href="cart.html">עגלה</a>
+            <a href="faq.html">שאלות נפוצות</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="page-title">
+            <h2>❓ שאלות נפוצות</h2>
+            <p>מצאו תשובות לשאלות הנפוצות ביותר שלנו</p>
+        </div>
+
+        <div class="faq-section">
+            <h3>🚚 משלוחים</h3>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>כמה זמן לוקח המשלוח?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>משלוח רגיל מגיע תוך 3-5 ימי עסקים לכל רחבי ישראל. משלוח מהיר (אקספרס) מגיע תוך 1-2 ימי עסקים. לאזורים מרוחקים ייתכן עיכוב של יום נוסף.</p>
+                    <p>לאחר שליחת ההזמנה, תקבלו מספר מעקב באימייל שיאפשר לכם לעקוב אחרי המשלוח בזמן אמת דרך אתר חברת השליחויות.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>כמה עולה המשלוח?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>משלוח רגיל עולה ₪29.90 ומשלוח מהיר עולה ₪49.90. הזמנות מעל ₪300 זכאיות למשלוח רגיל חינם!</p>
+                    <p>אנחנו עובדים עם חברות השליחויות המובילות בישראל כדי להבטיח שהמוצרים שלכם יגיעו בשלמות ובזמן. כל חבילה נארזת באריזה מוגנת עם חומרי ריפוד.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h3>🔄 החזרות והחלפות</h3>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>מה מדיניות ההחזרות שלכם?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>אנחנו מציעים מדיניות החזרה של 30 יום ללא שאלות. אם המוצר לא מתאים לכם מכל סיבה שהיא, תוכלו להחזיר אותו ולקבל החזר כספי מלא.</p>
+                    <p>המוצר צריך להיות במצב חדש, באריזה המקורית, עם כל התוויות והאביזרים. עלות משלוח ההחזרה היא על חשבוננו — פשוט הדפיסו את תווית המשלוח מאזור האישי שלכם.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>איך מחזירים מוצר?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>תהליך ההחזרה פשוט: היכנסו לאזור האישי, בחרו את ההזמנה הרלוונטית, ולחצו על "בקשת החזרה". תקבלו תווית משלוח להדפסה ותוכלו לשלוח את החבילה מכל סניף דואר או נקודת מסירה.</p>
+                    <p>ההחזר הכספי יתבצע תוך 5-7 ימי עסקים מרגע קבלת המוצר במחסן שלנו. תקבלו עדכון באימייל בכל שלב בתהליך.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h3>💳 תשלומים</h3>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>אילו אמצעי תשלום אתם מקבלים?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>אנחנו מקבלים את כל כרטיסי האשראי הנפוצים (ויזה, מאסטרקארד, אמריקן אקספרס, דיינרס), PayPal, ביט, Apple Pay ו-Google Pay.</p>
+                    <p>ניתן גם לשלם בתשלומים ללא ריבית — עד 3 תשלומים בכל הזמנה, ועד 12 תשלומים בהזמנות מעל ₪500. התשלומים מתבצעים דרך מערכת סליקה מאובטחת בתקן PCI DSS.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>האם האתר מאובטח לתשלומים?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>בהחלט! האתר שלנו מוגן בהצפנת SSL 256-bit ועומד בתקן האבטחה הבינלאומי PCI DSS Level 1. פרטי כרטיס האשראי שלכם לעולם לא נשמרים בשרתים שלנו.</p>
+                    <p>בנוסף, אנחנו משתמשים במערכת AISecutity לזיהוי ומניעת הונאות בזמן אמת, מה שמבטיח שהעסקאות שלכם בטוחות לחלוטין. כל עסקה מאומתת בתהליך 3D Secure.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h3>📦 מוצרים ואחריות</h3>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>האם יש אחריות על המוצרים?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>כל המוצרים בחנות מגיעים עם אחריות יצרן מלאה. תקופת האחריות משתנה בהתאם למוצר — בדרך כלל שנה עד שנתיים. פרטי האחריות המדויקים מופיעים בדף המוצר.</p>
+                    <p>במקרה של תקלה במוצר בתקופת האחריות, פנו אלינו ונטפל בנושא. אנחנו מציעים תיקון, החלפה או החזר כספי בהתאם לסוג התקלה ומדיניות היצרן. זמן הטיפול הממוצע הוא 7-14 ימי עסקים.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>האם המוצרים מקוריים?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>כן, 100%! אנחנו עובדים ישירות מול היצרנים והמפיצים הרשמיים בישראל. כל המוצרים בחנות הם מקוריים ומגיעים עם אחריות יצרן מלאה ותעודת מקוריות.</p>
+                    <p>אנחנו לא מוכרים מוצרים מחודשים (refurbished) או מקבילים ללא ציון מפורש. אם מוצר הוא מחודש, זה יצוין בבירור בדף המוצר עם הנחה מתאימה.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h3>👤 חשבון ופרטיות</h3>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>איך מוחקים חשבון?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>ניתן למחוק את החשבון דרך הגדרות החשבון באזור האישי, או על ידי פנייה לשירות הלקוחות שלנו. מחיקת החשבון היא סופית ותגרום למחיקת כל הנתונים האישיים שלכם מהמערכת.</p>
+                    <p>שימו לב: לאחר מחיקת החשבון, לא ניתן יהיה לגשת להיסטוריית ההזמנות או לנקודות מועדון שנצברו. מומלץ להוריד את היסטוריית ההזמנות לפני המחיקה. אנחנו מחויבים לפרטיות שלכם בהתאם לחוק הגנת הפרטיות.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-contact">
+            <h3>לא מצאת תשובה?</h3>
+            <p>צוות שירות הלקוחות שלנו ישמח לעזור לך בכל שאלה. אנחנו זמינים בימים א'-ה' בין 09:00-18:00.</p>
+            <a href="contact.html">צור קשר →</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 ShopMax Demo Store | מוגן על ידי AISecutity Bot Detection</p>
+    </footer>
+
+    <div class="aisec-badge">🛡️ Protected by AISecutity</div>
+
+    <script>
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const isOpen = answer.classList.contains('open');
+            
+            // Close all other answers
+            document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+            document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
+            
+            // Toggle current
+            if (!isOpen) {
+                answer.classList.add('open');
+                element.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

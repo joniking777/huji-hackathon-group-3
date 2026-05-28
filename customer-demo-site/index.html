@@ -21,6 +21,8 @@
         header nav a:hover { color: #3498db; }
         .cart-icon { position: relative; font-size: 20px; cursor: pointer; }
         .cart-badge { position: absolute; top: -8px; right: -8px; background: #e74c3c; color: white; font-size: 11px; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+        .clear-cart-btn { background: rgba(255,255,255,0.1); color: #ecf0f1; border: 1px solid rgba(255,255,255,0.25); border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; margin-right: 4px; transition: background 0.2s; }
+        .clear-cart-btn:hover { background: #e74c3c; border-color: #e74c3c; }
 
         .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 50px 40px; text-align: center; }
         .hero h2 { font-size: 32px; margin-bottom: 10px; }
@@ -76,6 +78,7 @@
             <a href="contact.html">צור קשר</a>
             <a href="faq.html">שאלות נפוצות</a>
             <a href="cart.html" class="cart-icon">🛒<span class="cart-badge" id="cart-count">0</span></a>
+            <button class="clear-cart-btn" onclick="clearCart()" title="אפס את עגלת הקניות">🗑️ אפס סל</button>
         </nav>
     </header>
 
@@ -169,8 +172,21 @@
 
     <script>
         // === CART ===
-        let cart = JSON.parse(localStorage.getItem('shopmax_cart') || '[]');
+        // sessionStorage = the cart auto-resets when the tab/browser is closed and reopened.
+        // localStorage was used before, which persisted forever — that's why the cart kept "remembering" old items.
+        const CART_KEY = 'shopmax_cart';
+
+        // One-time cleanup of the old persistent cart from the previous version.
+        if (localStorage.getItem(CART_KEY) !== null) {
+            localStorage.removeItem(CART_KEY);
+        }
+
+        let cart = JSON.parse(sessionStorage.getItem(CART_KEY) || '[]');
         updateCartBadge();
+
+        function saveCart() {
+            sessionStorage.setItem(CART_KEY, JSON.stringify(cart));
+        }
 
         function addToCart(name, price) {
             const existing = cart.find(item => item.name === name);
@@ -179,7 +195,7 @@
             } else {
                 cart.push({ name, price, qty: 1 });
             }
-            localStorage.setItem('shopmax_cart', JSON.stringify(cart));
+            saveCart();
             updateCartBadge();
             showToast('✓ ' + name + ' נוסף לסל!');
             
@@ -190,6 +206,18 @@
                 event.target.textContent = 'הוסף לסל';
                 event.target.classList.remove('added');
             }, 1500);
+        }
+
+        function clearCart() {
+            if (cart.length === 0) {
+                showToast('הסל כבר ריק');
+                return;
+            }
+            if (!confirm('לאפס את עגלת הקניות?')) return;
+            cart = [];
+            saveCart();
+            updateCartBadge();
+            showToast('🗑️ הסל אופס');
         }
 
         function updateCartBadge() {

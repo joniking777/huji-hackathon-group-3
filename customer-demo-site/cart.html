@@ -51,6 +51,14 @@
         .summary-row.total { font-size: 20px; font-weight: bold; color: #2c3e50; padding-top: 16px; border-top: 2px solid #2c3e50; margin-top: 10px; }
         .checkout-btn { width: 100%; padding: 16px; background: #27ae60; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 18px; font-weight: bold; margin-top: 20px; transition: background 0.3s; }
         .checkout-btn:hover { background: #219a52; }
+        .clear-cart-btn { width: 100%; padding: 12px; background: transparent; color: #e74c3c; border: 2px solid #e74c3c; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: bold; margin-top: 10px; transition: all 0.2s; }
+        .clear-cart-btn:hover { background: #e74c3c; color: white; }
+        .empty-cart { text-align: center; padding: 60px 20px; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .empty-cart .icon { font-size: 64px; margin-bottom: 16px; }
+        .empty-cart h3 { color: #2c3e50; margin-bottom: 8px; }
+        .empty-cart p { color: #888; margin-bottom: 20px; }
+        .empty-cart a { display: inline-block; padding: 12px 24px; background: #3498db; color: white; text-decoration: none; border-radius: 8px; }
+        .empty-cart a:hover { background: #2980b9; }
         .continue-shopping { display: block; text-align: center; margin-top: 12px; color: #3498db; text-decoration: none; font-size: 14px; }
         .continue-shopping:hover { color: #2980b9; }
 
@@ -91,89 +99,12 @@
     <div class="container">
         <div class="page-title">
             <h2>🛒 עגלת הקניות שלך</h2>
-            <p>3 פריטים בעגלה</p>
+            <p id="cart-subtitle">טוען...</p>
         </div>
 
-        <div class="cart-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>מוצר</th>
-                        <th>מחיר</th>
-                        <th>כמות</th>
-                        <th>סה"כ</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <div class="cart-item-info">
-                                <div class="item-icon">👟</div>
-                                <div class="item-details">
-                                    <h4>נעלי ריצה Pro</h4>
-                                    <p>מידה: 42 | צבע: שחור</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="item-price">₪329.90</td>
-                        <td>
-                            <div class="qty-control">
-                                <button onclick="updateQty(this, -1)">−</button>
-                                <span>1</span>
-                                <button onclick="updateQty(this, 1)">+</button>
-                            </div>
-                        </td>
-                        <td class="item-price">₪329.90</td>
-                        <td><button class="remove-btn" onclick="removeItem(this)">✕</button></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="cart-item-info">
-                                <div class="item-icon">🎧</div>
-                                <div class="item-details">
-                                    <h4>אוזניות אלחוטיות Premium</h4>
-                                    <p>צבע: כסוף | ביטול רעשים אקטיבי</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="item-price">₪549.90</td>
-                        <td>
-                            <div class="qty-control">
-                                <button onclick="updateQty(this, -1)">−</button>
-                                <span>2</span>
-                                <button onclick="updateQty(this, 1)">+</button>
-                            </div>
-                        </td>
-                        <td class="item-price">₪1,099.80</td>
-                        <td><button class="remove-btn" onclick="removeItem(this)">✕</button></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="cart-item-info">
-                                <div class="item-icon">⌚</div>
-                                <div class="item-details">
-                                    <h4>שעון חכם X</h4>
-                                    <p>צבע: שחור | גודל: 44mm</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="item-price">₪1,099.90</td>
-                        <td>
-                            <div class="qty-control">
-                                <button onclick="updateQty(this, -1)">−</button>
-                                <span>1</span>
-                                <button onclick="updateQty(this, 1)">+</button>
-                            </div>
-                        </td>
-                        <td class="item-price">₪1,099.90</td>
-                        <td><button class="remove-btn" onclick="removeItem(this)">✕</button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <div id="cart-content"></div>
 
-        <div class="coupon-section">
+        <div class="coupon-section" id="coupon-section" style="display:none">
             <h4>🎟️ קוד קופון</h4>
             <div class="coupon-input">
                 <input type="text" placeholder="הכנס קוד קופון...">
@@ -181,25 +112,14 @@
             </div>
         </div>
 
-        <div class="cart-summary">
+        <div class="cart-summary" id="cart-summary" style="display:none">
             <h3>סיכום הזמנה</h3>
-            <div class="summary-row">
-                <span>סכום ביניים (4 פריטים)</span>
-                <span>₪2,529.60</span>
-            </div>
-            <div class="summary-row">
-                <span>משלוח</span>
-                <span>₪29.90</span>
-            </div>
-            <div class="summary-row">
-                <span>מע"מ (17%)</span>
-                <span>₪430.03</span>
-            </div>
-            <div class="summary-row total">
-                <span>סה"כ לתשלום</span>
-                <span>₪2,989.53</span>
-            </div>
+            <div class="summary-row"><span id="subtotal-label">סכום ביניים</span><span id="subtotal-val">₪0.00</span></div>
+            <div class="summary-row"><span>משלוח</span><span id="shipping-val">₪29.90</span></div>
+            <div class="summary-row"><span>מע"מ (17%)</span><span id="vat-val">₪0.00</span></div>
+            <div class="summary-row total"><span>סה"כ לתשלום</span><span id="total-val">₪0.00</span></div>
             <button class="checkout-btn" onclick="alert('מעבר לתשלום...')">💳 מעבר לתשלום</button>
+            <button class="clear-cart-btn" onclick="clearCart()">🗑️ אפס את כל הסל</button>
             <a href="index.html" class="continue-shopping">← המשך בקניות</a>
         </div>
 
@@ -222,17 +142,140 @@
     <div class="aisec-badge">🛡️ Protected by AISecutity</div>
 
     <script>
-        function updateQty(btn, change) {
-            const span = btn.parentElement.querySelector('span');
-            let qty = parseInt(span.textContent) + change;
-            if (qty < 1) qty = 1;
-            span.textContent = qty;
+        // === CART STATE ===
+        // sessionStorage so the cart auto-resets when the browser is closed.
+        const CART_KEY = 'shopmax_cart';
+        const SHIPPING = 29.90;
+        const VAT = 0.17;
+
+        // One-time cleanup of the old persistent cart from the previous version.
+        if (localStorage.getItem(CART_KEY) !== null) {
+            localStorage.removeItem(CART_KEY);
         }
-        function removeItem(btn) {
-            if (confirm('האם למחוק פריט זה מהעגלה?')) {
-                btn.closest('tr').remove();
+
+        // Map product names → emoji icon (for products added from index.html)
+        const ICONS = {
+            'נעלי ריצה Pro': '👟',
+            'אוזניות אלחוטיות': '🎧',
+            'אוזניות אלחוטיות Premium': '🎧',
+            'שעון חכם X': '⌚',
+            'מעמד למחשב נייד': '💻',
+            'כיסוי לטלפון': '📱',
+            'כיסוי לטלפון Ultra': '📱',
+            'תיק גב לטיולים': '🎒',
+        };
+
+        let cart = JSON.parse(sessionStorage.getItem(CART_KEY) || '[]');
+
+        function saveCart() {
+            sessionStorage.setItem(CART_KEY, JSON.stringify(cart));
+        }
+
+        function fmt(n) {
+            return '₪' + n.toLocaleString('he-IL', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        function render() {
+            const subtitle = document.getElementById('cart-subtitle');
+            const content = document.getElementById('cart-content');
+            const summary = document.getElementById('cart-summary');
+            const coupon = document.getElementById('coupon-section');
+
+            if (cart.length === 0) {
+                subtitle.textContent = 'הסל ריק';
+                content.innerHTML = `
+                    <div class="empty-cart">
+                        <div class="icon">🛒</div>
+                        <h3>הסל שלך ריק כרגע</h3>
+                        <p>הוסף מוצרים מהדף הראשי והם יופיעו כאן</p>
+                        <a href="index.html">← לחזור לחנות</a>
+                    </div>`;
+                summary.style.display = 'none';
+                coupon.style.display = 'none';
+                return;
             }
+
+            const totalQty = cart.reduce((s, it) => s + it.qty, 0);
+            subtitle.textContent = totalQty + ' פריטים בעגלה';
+
+            const rows = cart.map((it, idx) => {
+                const icon = ICONS[it.name] || '📦';
+                const lineTotal = it.price * it.qty;
+                return `
+                    <tr>
+                        <td>
+                            <div class="cart-item-info">
+                                <div class="item-icon">${icon}</div>
+                                <div class="item-details">
+                                    <h4>${it.name}</h4>
+                                    <p>פריט #${idx + 1}</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="item-price">${fmt(it.price)}</td>
+                        <td>
+                            <div class="qty-control">
+                                <button onclick="updateQty(${idx}, -1)">−</button>
+                                <span>${it.qty}</span>
+                                <button onclick="updateQty(${idx}, 1)">+</button>
+                            </div>
+                        </td>
+                        <td class="item-price">${fmt(lineTotal)}</td>
+                        <td><button class="remove-btn" onclick="removeItem(${idx})">✕</button></td>
+                    </tr>`;
+            }).join('');
+
+            content.innerHTML = `
+                <div class="cart-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>מוצר</th>
+                                <th>מחיר</th>
+                                <th>כמות</th>
+                                <th>סה"כ</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>${rows}</tbody>
+                    </table>
+                </div>`;
+
+            // Totals
+            const subtotal = cart.reduce((s, it) => s + it.price * it.qty, 0);
+            const vat = subtotal * VAT;
+            const total = subtotal + SHIPPING + vat;
+            document.getElementById('subtotal-label').textContent = `סכום ביניים (${totalQty} פריטים)`;
+            document.getElementById('subtotal-val').textContent = fmt(subtotal);
+            document.getElementById('shipping-val').textContent = fmt(SHIPPING);
+            document.getElementById('vat-val').textContent = fmt(vat);
+            document.getElementById('total-val').textContent = fmt(total);
+            summary.style.display = 'block';
+            coupon.style.display = 'block';
         }
+
+        function updateQty(idx, change) {
+            cart[idx].qty = Math.max(1, cart[idx].qty + change);
+            saveCart();
+            render();
+        }
+
+        function removeItem(idx) {
+            if (!confirm('האם למחוק פריט זה מהעגלה?')) return;
+            cart.splice(idx, 1);
+            saveCart();
+            render();
+        }
+
+        function clearCart() {
+            if (cart.length === 0) return;
+            if (!confirm('לאפס את כל עגלת הקניות?')) return;
+            cart = [];
+            saveCart();
+            render();
+        }
+
+        render();
     </script>
 </body>
 </html>

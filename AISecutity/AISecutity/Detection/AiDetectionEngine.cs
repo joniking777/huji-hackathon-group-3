@@ -26,9 +26,9 @@ namespace AISecutity.Detection;
 public class AiDetectionEngine : IAiDetectionEngine
 {
     // Tiered thresholds — separate "monitor", "challenge", and "block" levels
-    private const double MonitorThreshold = 0.40;   // Log it, watch closely
-    private const double ChallengeThreshold = 0.60; // Show CAPTCHA
-    private const double BlockThreshold = 0.75;     // Hard block
+    private const double MonitorThreshold = 0.30;   // Log it, watch closely
+    private const double ChallengeThreshold = 0.50; // Show CAPTCHA
+    private const double BlockThreshold = 0.65;     // Hard block
 
     // Threshold adjustments based on user history
     private const double FirstVisitBonus = 0.10;    // First-timers get +0.10 threshold (more lenient)

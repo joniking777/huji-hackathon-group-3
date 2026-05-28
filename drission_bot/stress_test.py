@@ -235,22 +235,22 @@ def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     print("=" * 70)
-    print("  STRESS TEST — 150 Sessions (100 bots + 50 humans)")
+    print("  STRESS TEST — 400 Sessions (50 variants × 6 bot types + 100 humans)")
     print("=" * 70)
 
-    # Generate sessions
+    # Generate sessions — 50 variants of each bot type
     sessions = []
-    for i in range(20):
-        sessions.append(gen_speed_scraper(i))
-    for i in range(20):
-        sessions.append(gen_stealth_crawler(i))
-    for i in range(20):
-        sessions.append(gen_form_spammer(i))
-    for i in range(20):
-        sessions.append(gen_content_thief(i))
-    for i in range(20):
-        sessions.append(gen_drission_bot(i))
     for i in range(50):
+        sessions.append(gen_speed_scraper(i))
+    for i in range(50):
+        sessions.append(gen_stealth_crawler(i))
+    for i in range(50):
+        sessions.append(gen_form_spammer(i))
+    for i in range(50):
+        sessions.append(gen_content_thief(i))
+    for i in range(50):
+        sessions.append(gen_drission_bot(i))
+    for i in range(100):
         sessions.append(gen_human(i))
 
     random.shuffle(sessions)

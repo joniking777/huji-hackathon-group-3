@@ -26,6 +26,21 @@ public class RateLimitingMiddleware
     public async Task InvokeAsync(HttpContext context)
     {
         var ip = context.Connection.RemoteIpAddress?.ToString() ?? "unknown";
+        var path = context.Request.Path.Value ?? "";
+
+        // Skip rate limiting for SDK/dashboard endpoints (they handle their own throttling)
+        if (path.StartsWith("/api/sdk/") || path.StartsWith("/sdk/"))
+        {
+            await _next(context);
+            return;
+        }
+
+        // Skip rate limiting for localhost/loopback (development)
+        if (ip == "127.0.0.1" || ip == "::1" || ip == "localhost")
+        {
+            await _next(context);
+            return;
+        }
 
         // Check if IP is currently rate-limited
         if (_blocked.TryGetValue(ip, out var blockedUntil))

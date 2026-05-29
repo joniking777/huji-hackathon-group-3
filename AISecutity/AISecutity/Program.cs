@@ -72,7 +72,7 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-app.UseCors("AllowDemoSite");
+app.UseCors("AllowSdk");
 
 // Serve the SDK JavaScript tracker as a static file
 app.UseStaticFiles(new StaticFileOptions

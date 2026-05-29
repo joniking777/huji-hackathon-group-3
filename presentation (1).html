@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>AISecurity Pitch Deck</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #0d1117;
+        color: #c9d1d9;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .slide {
+        display: none;
+        width: 85%;
+        max-width: 1300px;
+        height: 85vh;
+        padding: 40px;
+        box-sizing: border-box;
+        animation: fadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        position: relative;
+    }
+    .active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.98) translateY(10px); }
+        to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    
+    /* טיפוגרפיה וצבעים */
+    h1, h2, h3 { color: #58a6ff; font-weight: 600; margin-top: 0; }
+    .highlight { color: #3fb950; } 
+    .warning { color: #ff7b72; } 
+    
+    /* שקופית 1 - פתיחה */
+    .slide-1 { align-items: flex-start; text-align: right; justify-content: center; }
+    .slide-1 h1 { font-size: 7em; margin-bottom: 0; letter-spacing: 2px; text-shadow: 0 0 20px rgba(88,166,255,0.4); }
+    .slide-1 h2 { font-size: 2.2em; font-weight: 300; color: #8b949e; margin-top: 10px; border-right: 4px solid #3fb950; padding-right: 15px; }
+    
+    /* שקופית 2 - הבעיה */
+    .cards-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        gap: 30px;
+    }
+    .card {
+        background: #161b22;
+        border: 1px solid #30363d;
+        border-radius: 12px;
+        padding: 30px 20px;
+        text-align: center;
+        flex: 1;
+        transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+    .card h3 { font-size: 2.2em; margin-bottom: 15px; color: #58a6ff; transition: color 0.3s; }
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(88, 166, 255, 0.15);
+        border-color: #58a6ff;
+    }
+    .card p { font-size: 1.3em; color: #8b949e; line-height: 1.4; margin: 0; }
+    
+    /* שקופית 2.1 - תרשים זרימה */
+    .flow-diagram { display: flex; flex-direction: column; gap: 25px; margin-top: 20px; }
+    .flow-row {
+        display: flex; align-items: center; justify-content: space-between;
+        background: #161b22; padding: 20px; border-radius: 8px; border-right: 5px solid #3fb950;
+    }
+    .flow-box { font-size: 1.4em; font-weight: bold; flex: 0 0 auto; width: 170px; text-align: right; }
+    .flow-desc { font-size: 1.25em; color: #c9d1d9; flex: 1; text-align: center; padding: 0 10px; line-height: 1.4; }
+    .flow-result { font-size: 1.25em; color: #ff7b72; font-weight: bold; flex: 1; text-align: center; padding: 0 10px; line-height: 1.4; }
+    .arrow-icon { font-size: 1.6em; color: #58a6ff; flex: 0 0 auto; margin: 0 5px; }
+
+    /* תרשימים ממורכזים לשקופיות 4, 5 */
+    .centered-diagram-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+    }
+    .risk-diagram {
+        display: flex; align-items: center; justify-content: center; gap: 25px;
+        background: #161b22; padding: 40px 30px; border-radius: 12px;
+        border: 1px solid #30363d; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        transform: scale(1.1); /* הגדלת התרשים */
+    }
+    .d-col { display: flex; flex-direction: column; gap: 15px; justify-content: center; }
+    .d-box { 
+        background: #0d1117; border: 1px solid #30363d; padding: 15px 20px; 
+        border-radius: 8px; text-align: center; font-size: 1.2em;
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+    }
+    .d-engine {
+        background: rgba(88,166,255,0.05); border: 2px dashed #58a6ff; padding: 35px 25px;
+        border-radius: 12px; text-align: center; color: #58a6ff; font-weight: bold; font-size: 1.4em;
+    }
+    .d-result {
+        background: rgba(255,123,114,0.1); border: 1px solid #ff7b72; color: #ff7b72; font-weight: bold;
+        font-size: 1.4em; padding: 25px;
+    }
+    .weight-span { color: #8b949e; font-size: 0.8em; display: block; margin-top: 5px; font-weight: normal; }
+
+    /* דאשבורד ביצועים בשקופית 5 */
+    .perf-dashboard {
+        background: #161b22;
+        border: 1px solid #30363d;
+        border-radius: 12px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        direction: ltr;
+        width: 70%;
+        max-width: 900px;
+        transform: scale(1.1);
+    }
+    .perf-header {
+        color: #58a6ff;
+        font-size: 1.6em;
+        font-weight: bold;
+        border-bottom: 1px solid #30363d;
+        padding-bottom: 20px;
+        text-align: center;
+        direction: rtl; 
+    }
+    .perf-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    .perf-label { font-size: 1.4em; width: 160px; text-align: right; color: #c9d1d9; font-weight: bold;}
+    .perf-bar-bg {
+        flex: 1;
+        background: #0d1117;
+        border-radius: 5px;
+        height: 16px;
+        overflow: hidden;
+        border: 1px solid #30363d;
+    }
+    .perf-bar-fill { height: 100%; border-radius: 5px; }
+    .perf-value { width: 60px; text-align: left; font-size: 1.3em; font-weight: bold; }
+
+    /* כפתורים */
+    .btn-container { text-align: center; margin-top: 50px; width: 100%; }
+    .btn {
+        background: linear-gradient(135deg, #1f6feb, #388bfd); border: none; color: #ffffff;
+        padding: 15px 40px; font-size: 1.3em; font-weight: bold; cursor: pointer;
+        border-radius: 30px; transition: all 0.3s; font-family: inherit;
+    }
+    .btn:hover { background: linear-gradient(135deg, #388bfd, #58a6ff); transform: scale(1.05); }
+
+    /* רשימות */
+    ul { list-style-type: none; padding: 0; margin: 0; }
+    .solution-list { margin-top: 40px; }
+    .solution-list li {
+        font-size: 2.2em;
+        font-weight: bold;
+        margin-bottom: 40px;
+        padding-right: 1.2em;
+        color: #c9d1d9;
+        position: relative;
+    }
+    .solution-list li::before {
+        content: "■";
+        color: #3fb950;
+        position: absolute;
+        right: 0;
+        top: 10px;
+        font-size: 0.7em;
+    }
+
+    .footer-note { position: absolute; bottom: 20px; left: 40px; color: #30363d; font-size: 1em; }
+</style>
+</head>
+<body>
+
+<div id="slide-1" class="slide active slide-1">
+    <h1>AISecurity</h1>
+    <h2>זיהוי בוטים מתקדם <span class="highlight">וחסימתם</span></h2>
+    <div class="footer-note">ניווט: חצי מקלדת (שמאל/ימין)</div>
+</div>
+
+<div id="slide-2" class="slide">
+    <h2 style="font-size: 3.8em; text-align: center; margin-bottom: 20px;">הנזק השקט של תעבורת הבוטים</h2>
+    <div class="cards-container">
+        <div class="card">
+            <h3>אובדן הכנסות</h3>
+        </div>
+        <div class="card">
+            <h3>ניפוח עלויות ענן</h3>
+        </div>
+    </div>
+    <div class="btn-container">
+        <button class="btn" onclick="goToSlide('slide-2-1')">הצג את מודל הזרימה</button>
+    </div>
+</div>
+
+<div id="slide-2-1" class="slide">
+    <h2 style="font-size: 2.8em; margin-bottom: 40px;">אפקט הדומינו: הסיוט של מנהל החשבונות שלכם</h2>
+    <div class="flow-diagram">
+        <div class="flow-row">
+            <div class="flow-box highlight">Scraping</div>
+            <div class="arrow-icon">⬅</div>
+            <div class="flow-desc">משתמשים צורכים תוכן מחוץ לאתר</div>
+            <div class="arrow-icon">⬅</div>
+            <div class="flow-desc">משתמשים נמנעים מכניסה לאתר</div>
+            <div class="arrow-icon">⬅</div>
+            <div class="flow-result">ירידה ברווחי פרסום</div>
+        </div>
+        <div class="flow-row">
+            <div class="flow-box highlight">Bot Traffic</div>
+            <div class="arrow-icon">⬅</div>
+            <div class="flow-desc" style="flex: 2;">עומס קריטי מתמשך על השרתים</div>
+            <div class="arrow-icon">⬅</div>
+            <div class="flow-result">זינוק בהוצאות תשתית מיותרות</div>
+        </div>
+    </div>
+    <div class="btn-container">
+        <button class="btn" onclick="goToSlide('slide-3')" style="background: transparent; border: 2px solid #58a6ff; color: #58a6ff; box-shadow: none;">המשך לפתרון</button>
+    </div>
+</div>
+
+<div id="slide-3" class="slide">
+    <h2 style="font-size: 3.8em; margin-bottom: 0;">הפתרון: <span class="highlight">שומר הסף השקוף</span></h2>
+    <ul class="solution-list">
+        <li>ניתוח התנהגות שקוף (Frictionless)</li>
+        <li>סף ודאות מחמיר</li>
+        <li>ענישה דינמית</li>
+    </ul>
+</div>
+
+<div id="slide-4" class="slide">
+    <h2 style="font-size: 3.8em; text-align: center; margin-bottom: 0;">מודל סיכון משוקלל</h2>
+    <h3 style="font-size: 1.8em; color: #8b949e; text-align: center; margin-bottom: 40px; margin-top: 10px;">חיבור של מספר פעולות בעלות משקלים שונים.</h3>
+    
+    <div class="centered-diagram-container">
+        <div class="risk-diagram">
+            <div class="d-col">
+                <div class="d-box">מהירות עכבר <span class="weight-span">משקל משתנה</span></div>
+                <div class="d-box">דפוסי גלילה <span class="weight-span">משקל משתנה</span></div>
+                <div class="d-box">דינמיקת הקלדה <span class="weight-span">משקל משתנה</span></div>
+                <div class="d-box">חזרתיות פעולות <span class="weight-span">משקל משתנה</span></div>
+            </div>
+            <div class="d-col"><div class="arrow-icon" style="margin:0;">⬅</div></div>
+            <div class="d-col">
+                <div class="d-engine">מנוע שקלול<br>סיכונים</div>
+            </div>
+            <div class="d-col"><div class="arrow-icon" style="margin:0;">⬅</div></div>
+            <div class="d-col">
+                <div class="d-box d-result">חסימה<br>דינמית</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="slide-5" class="slide">
+    <h2 style="font-size: 3.8em; text-align: center; margin-bottom: 0;">ביצועים בשטח ומקרי קצה</h2>
+    <h3 style="font-size: 1.6em; color: #8b949e; text-align: center; margin-bottom: 40px; margin-top: 10px;">חסימה אפקטיבית לצד התמודדות עם אוטומציות מתקדמות.</h3>
+    
+    <div class="centered-diagram-container">
+         <div class="perf-dashboard">
+            <div class="perf-header">אחוז ההצלחה בזיהוי הפעילות</div>
+            
+            <div class="perf-row">
+                <div class="perf-label" style="color: #a371f7;">בני אדם</div>
+                <div class="perf-bar-bg">
+                    <div class="perf-bar-fill" style="width: 99%; background: #a371f7; box-shadow: 0 0 10px #a371f7;"></div>
+                </div>
+                <div class="perf-value" style="color: #a371f7;">99%</div>
+            </div>
+
+            <div class="perf-row">
+                <div class="perf-label" style="color: #3fb950;">Standard Bots</div>
+                <div class="perf-bar-bg">
+                    <div class="perf-bar-fill" style="width: 98%; background: #3fb950; box-shadow: 0 0 10px #3fb950;"></div>
+                </div>
+                <div class="perf-value" style="color: #3fb950;">98%</div>
+            </div>
+
+            <div class="perf-row">
+                <div class="perf-label" style="color: #58a6ff;">DrissionPage</div>
+                <div class="perf-bar-bg">
+                    <div class="perf-bar-fill" style="width: 85%; background: #58a6ff; box-shadow: 0 0 10px #58a6ff;"></div>
+                </div>
+                <div class="perf-value" style="color: #58a6ff;">85%</div>
+            </div>
+
+            <div class="perf-row">
+                <div class="perf-label" style="color: #ff7b72;">Camoufox</div>
+                <div class="perf-bar-bg">
+                    <div class="perf-bar-fill" style="width: 65%; background: #ff7b72; box-shadow: 0 0 10px #ff7b72;"></div>
+                </div>
+                <div class="perf-value" style="color: #ff7b72;">65%</div>
+            </div>
+         </div>
+    </div>
+</div>
+
+<script>
+    const slideOrder = ['slide-1', 'slide-2', 'slide-2-1', 'slide-3', 'slide-4', 'slide-5'];
+    let currentIndex = 0;
+
+    function goToSlide(slideId) {
+        document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+        document.getElementById(slideId).classList.add('active');
+        
+        const index = slideOrder.indexOf(slideId);
+        if (index !== -1) {
+            currentIndex = index;
+        }
+    }
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === "ArrowRight") {
+            if (currentIndex > 0) {
+                currentIndex--;
+                goToSlide(slideOrder[currentIndex]);
+            }
+        }
+        else if (event.key === "ArrowLeft") {
+            if (currentIndex < slideOrder.length - 1) {
+                currentIndex++;
+                goToSlide(slideOrder[currentIndex]);
+            }
+        }
+    });
+</script>
+</body>
+</html>

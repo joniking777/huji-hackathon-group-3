@@ -176,19 +176,36 @@
   }, BATCH_INTERVAL);
 
   // Also send on page unload
-  window.addEventListener('beforeunload', function() {
+  function flushEvents() {
     if (events.length === 0) return;
     var payload = {
       apiKey: API_KEY,
       sessionId: SESSION_ID,
       userAgent: navigator.userAgent,
       url: window.location.href,
-      events: events,
+      events: events.splice(0, events.length),
     };
     // sendBeacon with blob to set content-type
     var blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
-    navigator.sendBeacon(ENDPOINT, blob);
-  });
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon(ENDPOINT, blob);
+    } else {
+      // Fallback: sync XHR (last resort)
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', ENDPOINT, false);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send(JSON.stringify(payload));
+    }
+  }
+  window.addEventListener('beforeunload', flushEvents);
+  window.addEventListener('pagehide', flushEvents);
+  // Also flush when clicking links (navigation away)
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest ? e.target.closest('a[href]') : null;
+    if (link && link.href && !link.href.startsWith('javascript:')) {
+      flushEvents();
+    }
+  }, true);
 
   console.log('[AISecutity] Tracker initialized. Session:', SESSION_ID);
 })();

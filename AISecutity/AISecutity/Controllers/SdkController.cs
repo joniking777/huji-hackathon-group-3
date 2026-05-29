@@ -60,9 +60,9 @@ public class SdkController : ControllerBase
             session.LastSeenAt = DateTime.UtcNow;
         }
 
-        // Analyze if we have enough events
+        // Analyze if we have enough events (need at least 8 for reliable detection)
         DetectionResult? result = null;
-        if (session.Events.Count >= 5)
+        if (session.Events.Count >= 8)
         {
             var activitySession = new ActivitySession
             {
